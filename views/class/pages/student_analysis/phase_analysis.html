@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>备课-阶段分析</title>
+    <link rel="stylesheet" type="text/css" href="css/student_analysis/phase_analysis.css" />
+</head>
+
+<body>
+    <div class="prepare_main phase_analysis_body">
+        <div class="prepare_head">
+            <span class="loadurl" data-url="./pages/prepare_lessons.html">查看学情</span>
+            <span class="pitch_on loadurl" data-url="./pages/student_analysis/phase_analysis.html">阶段分析</span>
+            <span class="loadurl" data-url="./pages/repository/repository_class.html">教学参考</span>
+        </div>
+        <div class="phase_analysis_screen">
+            <div class="select_class">
+                <h2>班级</h2>
+                <select id="groups" v-model="select_group" @change="groupchange" v-cloak>
+                <option v-for="group in groupdata" v-bind:value="group.groupid">{{group.groupname}}</option>
+            </select>
+            </div>
+            <div class="select_date">
+                <h2>日期搜索</h2>
+                <div class="select_date_main">
+                    <span id="starttime"></span>
+                    <button type="button" v-on:click="loadChart()">搜索</button>
+                </div>
+            </div>
+        </div>
+        <div class="single_statistics_detail">
+            <div class="cartogram">
+                <p><span></span>作业知识点分析</p>
+                <div class="problem_done"></div>
+            </div>
+            <div class="cartogram">
+                <p><span></span>作业各题目错误原因分析</p>
+                <div class="homework_correct"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/student_analysis/phase_analysis.js"></script>
+
+</html>

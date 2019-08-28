@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>试卷预览页</title>
+    <link rel="stylesheet" type="text/css" href="../../css/zujuan/generate_test.css" />
+</head>
+
+<body>
+    <div class="prepare_main prepare_lessons_manualquestion_main">
+        <div class="prepare_head">
+            <span class="loadurl" data-url="./pages/prepare_lessons.html">查看学情</span>
+            <span class="loadurl" data-url="./pages/student_analysis/phase_analysis.html">阶段分析</span>
+            <span class="loadurl pitch_on" data-url="./pages/prepare_lessons_resource.html">教学参考</span>
+        </div>
+        <div class="second_level_directory">
+            <span class="loadurl" data-url="./pages/repository/repository_class.html">课件</span>
+            <span class="loadurl" data-url="./pages/repository/repository_learningcase.html">学案</span>
+            <div class="item_bank">
+                <span class="pitch_on loadurl" data-url="./pages/zujuan/manualquestion.html">试题库</span>
+                <div class="item_bank_option">
+                    <p class="loadurl" data-url="./pages/zujuan/manualquestion.html">手动选题</p>
+                    <p class="loadurl" data-url="./pages/zujuan/smartchoice.html">智能选题</p>
+                    <p class="loadurl" data-url="./pages/prepare_lessons/taojuan.html">套卷</p>
+                </div>
+            </div>
+            <span class="loadurl" data-url="./pages/repository/upload_resource_list.html">我的资源</span>
+        </div>
+        <div class="test_paper">
+            <div class="test_paper_title">
+                <h2>{{papername}}</h2>
+            </div>
+            <div class="all_question">
+                <div class="test_paper_detail" v-for="type_ques in type_ques_list">
+                    <div class="dati">
+                        <h2>{{type_ques.typeTextName}}</h2>
+                    </div>
+                    <div class="test_paper_question" v-for="(ques,index) in type_ques.quesitons">
+                        <ul>
+                            <li class="change_topic" v-if="paper_type==2" @click="change_que(ques)"><img src="img/zujuan/change_topic.png" />换题
+                            </li>
+                            <!--<li class="unenshrine" @click="star_ques(ques)">
+                            <img src="img/zujuan/gt.png" v-if="ques.collect>0"/>
+                            <img src="img/zujuan/gt_collect.png" v-else/> 收藏
+                        </li>-->
+                            <!--<li @click="del_ques(type_ques,ques)"><img src="img/zujuan/delect_question.png"/>删除</li>-->
+                        </ul>
+                        <div class="test_paper_question_detail">
+                            <p class="tihao">{{ques.topicNumber}}.</p>
+                            <div v-html="get_dochtml_all(ques)"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="operation_homework">
+                    <button type="button" class="save" @click="save_as_homework()">
+                    保存为作业
+                </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="../../js/zujuan/generate_test.js"></script>
+
+</html>

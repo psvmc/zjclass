@@ -1,0 +1,16 @@
+body .layer_ext_zjgreen {
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    overflow: hidden;
+}
+
+.layer_ext_zjgreen .layui-layer-title {
+    background-color: #3dba98;
+    color: #ffffff;
+
+}
+
+.layer_ext_zjgreen .layui-layer-ico {
+    background: url("./close.png") no-repeat;
+}

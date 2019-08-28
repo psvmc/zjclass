@@ -1,0 +1,59 @@
+.resource_list {
+    overflow-y: scroll;
+}
+
+.courseware_list .courseware_li .courseware_li_main .courseware_li_main_information {
+    margin: 0.87rem;
+}
+
+.upload_resource_button {
+    margin: 1rem auto;
+    width: 25.2rem;
+    height: 4.1rem;
+    background-color: #3385e6;
+    border-radius: 2.1rem;
+    border: solid 0.2rem #3385e6;
+    text-align: center;
+    font-family: FZZZHONGJW--GB1-0;
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 4.1rem;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.upload_resource_button img {
+    width: 2.2rem;
+    vertical-align: middle;
+    margin: -4px 10px 0 0;
+}
+
+.resource_list::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.resource_list::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.resource_list::-webkit-scrollbar-track .correction_main::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #eaecf2;
+}
+
+.resource_list::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.resource_list {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}

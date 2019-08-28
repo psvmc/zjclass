@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>智慧教学主页</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<script>
+    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+    var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+    var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+    var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+    if (isIE) {
+        var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+        reIE.test(userAgent);
+        var fIEVersion = parseFloat(RegExp["$1"]);
+        if (fIEVersion == 9 || fIEVersion == 10) {
+        } else {
+            alert("当前页面不支持ie9以下版本浏览.请升级浏览器版本");
+        }
+    }
+</script>
+
+<body>
+<div class="header">
+    <img src="img/smart_campus/logo.png" alt="">
+    <!--<div class="header_right">
+        <div class="message">
+            <i><img src="img/smart_campus/message.png" alt=""></i>
+            <div class="message_list">
+                <ul id="RunTopic">
+                    <li title="您有一条待批改作业">您有一条待批改作业</li>
+                    <li title="您有一条待查看通知">您有一条待查看通知</li>
+                </ul>
+            </div>
+        </div>
+        <div class="tools_download">
+            <i><img src="img/smart_campus/tool_download.png" alt=""></i>
+            <div class="tools_main">
+                <span>工具下载</span>
+                <div class="tools_list">
+                    <img src="img/smart_campus/tool.png" />
+                    <ul>
+                        <li onclick="downstudy()"><a href="javascript:void(0);">星火Study</a></li>
+                        <li><a href="http://aischool.xhkjedu.com/file/Novoasoft Learning65(Science_Class).exe">Class</a></li>
+                        <li><a href="http://aischool.xhkjedu.com/file/Novoasoft Learning65(Science_Class).exe">ScienceWord</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</div>
+<div class="main">
+    <img src="img/smart_campus/main.png" alt="">
+    <div class="teaching_ziyuan">
+        <img src="img/smart_campus/teaching_ziyuan.png"/>
+        <p>教学资源</p>
+    </div>
+    <div class="wisdom_zujuan">
+        <img src="img/smart_campus/wisdom_zujuan.png"/>
+        <p>智能组卷</p>
+    </div>
+    <div class="wisdom_teaching">
+        <img src="img/smart_campus/wisdom_teaching.png"/>
+        <p>智慧教学</p>
+    </div>
+    <div class="kaoshi_ceping">
+        <img src="img/smart_campus/kaoshi_ceping.png"/>
+        <p>考试测评</p>
+    </div>
+    <div class="personal_center">
+        <img src="img/smart_campus/personal_center.png"/>
+        <p>个人中心</p>
+    </div>
+</div>
+<div class="footer">
+    <p>豫ICP备17031890号-1 河南星火燎原软件科技有限公司 Copyright@2003-2017 All Rights Reserved</p>
+</div>
+</body>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/lib/layer/layer.js"></script>
+<script src="js/lib/jquery.cookie.js"></script>
+<script src="js/zj_cookie.js"></script>
+<script src="js/config.js"></script>
+<script src="js/index.js"></script>
+
+</html>
+<script>
+   window.location.href = "main.html";
+</script>

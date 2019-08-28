@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+.login_main:after,
+.login_main_right .username:after,
+.login_main_right .code:after,
+.login_main_right .cipher:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* 检测浏览器版本为ie10以下，显示提示 */
+
+.update_browser {
+    width: 100%;
+    height: 30px;
+    background: #f7e9cb;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.update_browser p {
+    line-height: 30px;
+    float: left;
+    padding-left: 30px;
+}
+
+.update_browser a {
+    display: block;
+    text-decoration: none;
+    border-radius: 4px;
+    line-height: 26px;
+    text-align: center;
+    background: #69ca95;
+    width: 80px;
+    height: 26px;
+    color: #ffffff;
+    cursor: pointer;
+    margin: 2px 0 0 30px;
+    outline: none;
+    float: left;
+}
+
+.login {
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+}
+
+.login_main {
+    width: 94.4rem;
+    height: 48.8rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 0.9rem 0rem rgba(87, 117, 182, 0.29);
+    border-radius: 1.3rem;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -47.2rem;
+    margin-top: -24.4rem;
+}
+
+.login_main_left {
+    width: 45rem;
+    height: 100%;
+    float: left;
+}
+
+.login_main_left img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45rem;
+}
+
+.login_main_right {
+    float: left;
+    width: 49.4rem;
+}
+
+.login_main_right>p {
+    margin-top: 6.2rem;
+    text-align: center;
+}
+
+.login_main_right>p>img {
+    width: 17.6rem;
+}
+
+.login_main_right #login_form {
+    margin: 5rem auto 0 auto;
+    width: 40.6rem;
+}
+
+.login_main_right .username,
+.login_main_right .password {
+    width: 40.6rem;
+    height: 4.3rem;
+    background-color: #ffffff;
+    border-radius: 0.3rem;
+    border: solid 0.1rem #cdcdcd;
+}
+
+.login_main_right .username {
+    margin-bottom: 2rem;
+}
+
+.login_main_right .password {
+    margin-bottom: 2.6rem;
+}
+
+.login_main_right .username img,
+.login_main_right .password img {
+    margin: 1.1rem 1.2rem;
+    float: left;
+    width: 2rem;
+}
+
+.login_main_right .username input,
+.login_main_right .password input {
+    float: left;
+    border: none;
+    font-family: MicrosoftYaHeiLight;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 4.2rem;
+    letter-spacing: 1px;
+    color: #999999;
+    width: 36.2rem;
+    outline: none;
+    overflow: hidden;
+    height: 4.2rem;
+}
+
+.login_main_right .cipher {
+    margin-bottom: 8.6rem;
+}
+
+.login_main_right .cipher .remember_password {
+    float: left;
+    font-family: MicrosoftYaHeiLight;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1.4rem;
+    letter-spacing: 0.1rem;
+    color: #333333;
+    position: relative;
+    padding-left: 2.2rem;
+}
+
+.login_main_right .cipher .remember_password span {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: #ffffff;
+    border-radius: 0.2rem;
+    border: solid 1px #529cff;
+    display: inline-block;
+    position: absolute;
+    float: left;
+    left: 0;
+}
+
+.login_main_right .cipher .remember_password span img {
+    width: 0.9rem;
+    position: absolute;
+    top: 0.4rem;
+    left: 0.3rem;
+}
+
+.login_main_right .cipher .remember_password input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.4rem;
+    height: 1.4rem;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.login_main_right .cipher a {
+    float: right;
+    font-family: MicrosoftYaHeiLight;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1.4rem;
+    letter-spacing: 0.1rem;
+    color: #333333;
+    text-decoration: none;
+}
+
+.login_main_right button {
+    width: 40.5rem;
+    height: 4.4rem;
+    background-color: #3386e6;
+    border-radius: 2.2rem;
+    font-family: MicrosoftYaHei;
+    font-size: 2.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #ffffff;
+    line-height: 4.4rem;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+@media only screen and (max-width: 1681px) {
+    body,
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1601px) {
+    body,
+    html {
+        font-size: 13.5px;
+    }
+}
+
+@media only screen and (max-width: 1441px) {
+    body,
+    html {
+        font-size: 12px;
+    }
+}

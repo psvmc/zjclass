@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>选择班级创建互动课堂</title>
+    <link rel="stylesheet" type="text/css" href="css/lanclass/creating_lanclass.css" />
+</head>
+
+<body>
+    <div class="selclass">
+        <h2>选择班级 <img @click="closeselclass" src="img/zujuan/padlock.png" alt="关闭"></h2>
+        <div class="selclass_main">
+            <div v-for="cban in class_underway" :class="{'pitch_on':cban.groupstatus == 1}">
+                <img v-if="cban.groupstatus==1" src="img/lanclass/underway.png" alt="进行中">
+                <img v-if="cban.groupstatus==0" src="img/lanclass/create.png" alt="待创建">
+                <h2>{{cban.groupname}}</h2>
+                <button type="button" v-if="cban.groupstatus==1" @click="closing_class(cban)"><img
+                    src="img/lanclass/end.png" alt="结束">结束
+            </button>
+                <button type="button" v-if="cban.groupstatus==0&&!lanclassing" @click="creating(cban)" class="loadurl" data-url="./pages/lanclass/lanclass_index.html"><img
+                    src="img/lanclass/creation.png"
+                    alt="创建">创建
+            </button>
+                <button type="button" v-if="cban.groupstatus==0&&lanclassing" class="unclick"><img
+                    src="img/lanclass/creation.png"
+                    alt="创建">创建
+            </button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/lanclass/creating_lanclass.js"></script>
+
+</html>

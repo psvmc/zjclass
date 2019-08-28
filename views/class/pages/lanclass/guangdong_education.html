@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>互动课堂历史</title>
+    <link rel="stylesheet" type="text/css" href="css/lanclass/guangdong_education.css" />
+</head>
+
+<body>
+    <div class="guangdong_education">
+        <div class="guangdong_education_title">
+            <h2><img src="img/lanclass/lanclass.png" alt="">互动历史</h2>
+            <button type="button" class="backtrack loadurl" data-url="./pages/repository/teaching_class.html"><img
+                src="img/public/backtrack.png">返回
+        </button>
+        </div>
+        <div class="guangdong_education_main">
+            <div class="homework_list" v-for="ket in class_list">
+                <img class="homework_list_ico" src="img/public/ico_dangtang.png" />
+                <div class="homework_information">
+                    <h2>{{ket.crname}}</h2>
+                    <p>
+                        <span><img src="img/public/smallico_time.png"/>创建时间：{{ket.createtime}}</span>
+                    </p>
+                </div>
+                <div class="homework_operation">
+                    <span class="loadurl" data-url="./pages/lanclass/lanclass_index.html" v-if="ket.crstate==1" @click="enterclass(ket)">
+                    <img src="img/lanclass/finished.png"/><img src="img/lanclass/on_march.png"/>进行中
+                </span>
+                    <span class="notoperation" v-else="ket.crstate==2" @click="open_analysis(ket)">
+                        <img src="img/lanclass/finished.png"/><img src="img/lanclass/on_march.png"/>查统计
+                </span>
+                </div>
+            </div>
+        </div>
+        <div class="pagingfirst">
+            <zj-page v-if="pages > 0" :showpage="showpage" :currpage="currpage" :pages="pages"></zj-page>
+        </div>
+    </div>
+</body>
+<script src="js/lanclass/guangdong_education.js"></script>
+
+</html>

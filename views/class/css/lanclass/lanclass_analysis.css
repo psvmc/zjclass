@@ -1,0 +1,435 @@
+.lanclass_analysis_head:after,
+.understand_situation_main_title:after,
+.ppt:after,
+.daan:after,
+.jiexi:after,
+.tongji:after,
+.classroom_activity_main:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.lanclass_analysis_main::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.lanclass_analysis_main::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.lanclass_analysis_main::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.lanclass_analysis_main::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.lanclass_analysis_main {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}
+
+.main_important .left_menu {
+    width: 0px;
+    overflow: hidden;
+}
+
+.main_important #content {
+    width: 100%;
+}
+
+.lanclass_analysis_head {
+    height: 4.2rem;
+    padding: 0 1rem;
+    border: 0.1rem solid #dcdcdc;
+}
+
+.lanclass_analysis_head span {
+    float: left;
+    width: 9.8rem;
+    height: 2.4rem;
+    border-radius: 1.2rem;
+    outline: none;
+    font-family: MicrosoftYaHei;
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.4rem;
+    letter-spacing: 0.1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0.1rem 0.1rem 0.6rem 0rem rgba(73, 119, 252, 0.79);
+    color: #4977fc;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.lanclass_analysis_head span img {
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.lanclass_operation {
+    float: right;
+    margin-top: 1rem;
+}
+
+.lanclass_operation button {
+    height: 2.4rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0.1rem 0.6rem 0rem rgba(81, 141, 241, 0.79);
+    border-radius: 1.2rem;
+    border: solid 1px #518df1;
+    padding: 0 1rem;
+    outline: none;
+    cursor: pointer;
+    margin-left: 1.4rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #333333;
+}
+
+.lanclass_operation button.pitch_on {
+    box-shadow: 0rem 0.1rem 0.6rem 0rem rgba(51, 51, 51, 0.79);
+    border: solid 1px #c1c1c1;
+}
+
+.lanclass_analysis_main {
+    padding: 1rem 0;
+    overflow-y: scroll;
+}
+
+/*理解情况*/
+.understand_situation {
+    padding: 0 2rem;
+}
+
+.understand_situation h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 3.5rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 10rem;
+    letter-spacing: 0.1rem;
+    color: #518df1;
+    text-align: center;
+}
+
+.understand_situation_main {
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 1.1rem 0rem rgba(152, 152, 152, 0.4);
+    border-radius: 0.3rem;
+    padding: 0 2rem 1rem 2rem;
+}
+
+.understand_situation_main_title {
+    padding: 1rem 0;
+}
+
+.understand_situation_main_title span {
+    padding-left: 1rem;
+    display: block;
+    float: left;
+    line-height: 2.8rem;
+    border-left: 1rem solid #2e82ff;
+    font-family: MicrosoftYaHei;
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #001516;
+}
+
+.understand_situation_main_title_operation {
+    float: right;
+}
+
+.understand_situation_main_title_operation button {
+    width: 7.4rem;
+    height: 2.4rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0.1rem 0.6rem 0rem rgba(81, 141, 241, 0.79);
+    border-radius: 1.2rem;
+    border: solid 1px #518df1;
+    outline: none;
+    margin-left: 0.6rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #518df1;
+    cursor: pointer;
+}
+
+.understand_situation_main_title_operation button img {
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+    width: 0.9rem;
+}
+
+.understand_situation_main_title_operation button.notclick {
+    box-shadow: 0rem 0.1rem 0.6rem 0rem rgba(120, 118, 121, 0.79);
+    border-radius: 1.2rem;
+    border: solid 1px #a7a7a7;
+    color: #787679;
+}
+
+.ppt {
+    margin-bottom: 1rem;
+}
+
+.ppt_page_left,
+.ppt_page_right {
+    float: left;
+    width: 49%;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 0.3rem 0rem rgba(7, 18, 26, 0.3);
+    border-radius: 0.9rem;
+    height: 30rem;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1.2rem
+}
+
+.ppt_page_left:nth-child(even) {
+    float: right;
+}
+
+.ppt_page_left img,
+.ppt_page_right img {
+    width: 100%;
+}
+
+.understand {
+    width: 15.1rem;
+    height: 11.2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0.8rem;
+    border: solid 0.1rem #d3d0d0;
+    position: absolute;
+    right: 0.6rem;
+    bottom: 0.6rem;
+}
+
+/*学生答题情况*/
+.students_answers {
+    margin: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 1.1rem 0rem rgba(152, 152, 152, 0.4);
+    border-radius: 0.3rem;
+    padding: 2rem 7rem;
+}
+
+.students_answers h2 {
+    font-family: AdobeHeitiStd-Regular;
+    font-size: 4.1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 8rem;
+    letter-spacing: 0rem;
+    color: #518df1;
+    text-align: center;
+}
+
+.students_answers > span {
+    display: block;
+    margin: auto;
+    width: 13.6rem;
+    height: 0.8rem;
+    background-color: #999999;
+    border-radius: 0.2rem;
+    opacity: 0.16;
+}
+
+.students_answers_main {
+    margin-top: 3rem;
+}
+
+.students_answers_main .dati {
+    margin-bottom: 4.8rem;
+}
+
+.students_answers_main .dati h3 {
+    height: 4.6rem;
+    background-color: #f1f5fa;
+    line-height: 4.6rem;
+    padding-left: 1rem;
+    font-family: MicrosoftYaHei;
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #3385e6;
+}
+
+.xiaoti {
+    padding: 1rem 0.6rem;
+}
+
+.xiaoti .tigan {
+    padding: 0.4rem 0;
+    font-family: MicrosoftYaHei;
+    font-size: 2.1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 4.5rem;
+    letter-spacing: 0.1rem;
+    color: #333333;
+}
+
+.daan {
+    padding: 2rem 0;
+}
+
+.jiexi {
+    margin-bottom: 2rem
+}
+
+.daan .daanspan,
+.jiexi .jiexispan {
+    float: left;
+    width: 8rem;
+    height: 3rem;
+    background-color: #3385e6;
+    border-radius: 1.6rem;
+    display: block;
+    font-family: MicrosoftYaHei;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3rem;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.jiexi_main,
+.daan_main {
+    float: left;
+    margin-left: 1rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3rem;
+    letter-spacing: 0.1rem;
+    color: #333333;
+    width: 90%;
+}
+
+.daan_main {
+    color: #f65d5d;
+}
+
+.tongji {
+    height: 4.3rem;
+    background-color: #ffffff;
+    box-shadow: -0.3rem 0.6rem 1.8rem 0rem rgba(94, 186, 255, 0.31);
+    border-radius: 0.6rem;
+    padding: 2.3rem 0;
+}
+
+.tongji p {
+    float: left;
+    margin-left: 1.4rem;
+    font-family: MicrosoftYaHei;
+    font-size: 2.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 4.3rem;
+    letter-spacing: 0rem;
+    color: #333333;
+}
+
+.tongji p img {
+    width: 4.3rem;
+    vertical-align: middle;
+    margin: -4px 0.6rem 0 0;
+}
+
+.tongji p span {
+    color: #f65d5d;
+}
+
+.classroom_activity {
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 1.1rem 0rem rgba(152, 152, 152, 0.4);
+    border-radius: 0.3rem;
+    margin: 0 2rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.classroom_activity > img {
+    margin: 5rem 0;
+    width: 66rem;
+}
+
+.student {
+    width: 15.1rem;
+    height: 10.9rem;
+    background-color: #ffffff;
+    border-radius: 1.3rem;
+    border: solid 0.1rem #d8dae0;
+    margin: 0 0 2.6rem 1rem;
+    float: left;
+}
+
+.student h2 {
+    height: 3rem;
+    background-image: url("../../img/lanclass/studenthead.png");
+    background-size: cover;
+    line-height: 3rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.9rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #333333;
+}
+
+.student h2 img {
+    width: 3rem;
+    height: 3rem;
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.student p {
+    line-height: 5.9rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.9rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #333333;
+}
+
+.student p span {
+    font-family: MicrosoftYaHei;
+    font-size: 3.6rem;
+    font-weight: normal;
+    letter-spacing: 0.2rem;
+    color: #f34d44;
+}
+
+@media only screen and (max-width: 1280px) {
+    .tongji p {
+        margin-left: 1rem;
+        font-size: 2rem;
+    }
+}

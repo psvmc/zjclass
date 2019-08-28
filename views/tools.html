@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="toolbar">
+    <button class="button start_action">开始</button>
+    <button class="button stop_action">结束</button>
+</div>
+</body>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-color: lightcoral;
+    }
+
+
+    .toolbar {
+        width: 100%;
+        height: 66px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+    .toolbar button {
+        margin: 10px 20px;
+        width: 100px;
+        height: 46px;
+        color: white;
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+    }
+</style>
+
+<script>
+    const ffmpeg = require('fluent-ffmpeg');
+    const ffmpegPath = "/Users/zhangjian/psvmc/app/me/electron/zjclass/libs/ffmpeg_mac/ffmpeg";
+    const inputPath = '/Users/zhangjian/psvmc/app/me/electron/zjclass/libs/mv.mp4';
+    const logo = '/Users/zhangjian/psvmc/app/me/electron/zjclass/libs/logo.png';  //水印
+    const outputPath = 'rtmp://39.104.23.195:1935/live/xiaoming';
+
+    let audioStream;
+
+    function getAudioStream() {
+        navigator.mediaDevices.getUserMedia({audio: true, video: false})
+            .then(function (stream) {
+                audioStream = stream;
+                pushStream();
+                stream.onended = () => {
+                    console.log('Micro audio ended.')
+                }
+            })
+            .catch(function (error) {
+                console.log('getUserMedia() failed.')
+            });
+    }
+
+
+    var command;
+
+    function pushStream() {
+        command = ffmpeg("1:0")
+            .setFfmpegPath(ffmpegPath)
+            .inputOptions('-f avfoundation')
+            .inputOptions('-framerate 30')
+            .inputOptions('-video_size 640x480')
+            .on('start', function (commandLine) {
+                console.log('[' + new Date() + '] Vedio is Pushing !');
+                console.log('commandLine: ' + commandLine);
+            })
+            .on('error', function (err, stdout, stderr) {
+                console.log('error: ' + err.message);
+                console.log('stdout: ' + stdout);
+                console.log('stderr: ' + stderr);
+            })
+            .on('end', function () {
+                console.log('[' + new Date() + '] Vedio Pushing is Finished !');
+            })
+            .addOptions([
+                '-vcodec libx264',
+                '-preset ultrafast',
+                '-acodec libmp3lame'
+            ])
+            .format('flv');
+        command
+            .output(outputPath, {
+                end: true
+            })
+            .run();
+    }
+
+    document.querySelector(".start_action").addEventListener("click", function () {
+        // 只是获取麦克风录制权限
+        getAudioStream();
+    });
+
+    document.querySelector(".stop_action").addEventListener("click", function () {
+        if (command) {
+            command.kill();
+        }
+    });
+
+</script>
+</html>

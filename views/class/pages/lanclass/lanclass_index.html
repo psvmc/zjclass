@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>互动课堂主页</title>
+    <link rel="stylesheet" type="text/css" href="css/lanclass/lanclass_index.css" />
+</head>
+
+<body>
+
+    <div class="lanclass">
+        <div class="lanclass_main">
+            <div class="lanclass_head">
+                <h2 @click="close"><img src="img/lanclass/lanclass.png" />互动课堂</h2>
+                <span @click="connect_socket">{{teacheronlinetype}}</span>
+                <button type="button" @click="exit_class"><img src="img/lanclass/class_closing.png"/>课堂结束</button>
+            </div>
+            <div class="classroom_quiz">
+                <div class="quiz">
+                    <p v-for="(homework,index) in homework_list">
+                        <span class="decorate" v-if="homework.status==22" @click="check_result(homework,index)" v-bind:title="homework.papername"><b>{{index+1}}</b>{{homework.papername}}</span>
+                        <span @click="assign_homework(homework,index)" v-if="homework.status==21" v-bind:title="homework.papername"><b>{{index+1}}</b>{{homework.papername}}</span>
+                    </p>
+                </div>
+                <button type="button" @click="qd_begins"><img src="img/lanclass/begins.png"/>开始抢答</button>
+            </div>
+            <div class="ppt">
+                <div class="ppt_main">
+                    <div class="pptnow">
+                        <canvas id="canvas"></canvas>
+                        <img :src="pptnow" />
+                    </div>
+                    <span>{{current_displayable.currpage}}/{{allpagenum}}</span>
+                </div>
+                <div class="ppt_opreation">
+                    <button type="button" class="understand" @click="understand_situation"><img
+                        src="img/lanclass/understand.png"/>理解情况
+                </button>
+                    <button type="button" class="next" :class="{unclick:current_displayable.currpage==current_count}" @click="nextpage(current_displayable.currpage+1)">
+                    <img v-if="current_displayable.currpage==current_count" src="img/lanclass/next_g.png"/>
+                    <img v-else src="img/lanclass/next.png"/>下一页
+                </button>
+                    <button type="button" @click="nextpage(current_displayable.currpage-1)" class="precious" :class="{unclick:current_displayable.currpage==1}">
+                    <img v-if="current_displayable.currpage==1" src="img/lanclass/precious_g.png"/>
+                    <img v-else src="img/lanclass/precious.png"/>上一页
+                </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="student_basket" v-show="begins==0">
+            <div class="student_basket_title">
+                <div class="student_basket_title_main">
+                    <img src="img/zujuan/line.png" />
+                    <img src="img/lanclass/student.png" />
+                    <span>学生栏<b>{{studentnumber}}</b></span>
+                    <img src="img/zujuan/line.png" />
+                </div>
+            </div>
+            <div class="student_basket_main">
+                <div class="student_basket_student">
+                    <div class="online_student">
+                        <h2>在线学生</h2>
+                        <div class="online_student_main">
+                            <dl v-for="stu in onlinestu">
+                                <dt>
+                                <img v-show="stu.headportrait==null||stu.headportrait==''"
+                                     src="img/lanclass/touxiang.png"
+                                     alt="">
+                                <img v-show="stu.headportrait!=''&&stu.headportrait!=null" v-bind:src="stu.headportrait"
+                                     alt="">
+                            </dt>
+                                <dd>{{stu.username}}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="online_student">
+                        <h2>缺席学生</h2>
+                        <div class="online_student_main">
+                            <dl v-for="stu in outlinestu">
+                                <dt>
+                                <img v-show="stu.headportrait==null||stu.headportrait==''"
+                                     src="img/lanclass/touxiang.png"
+                                     alt="">
+                                <img v-show="stu.headportrait!=''&&stu.headportrait!=null" v-bind:src="stu.headportrait"
+                                     alt="">
+                            </dt>
+                                <dd>{{stu.username}}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="start_qingda" v-show="begins==1">
+            <h2><img @click="studentonline" src="img/lanclass/close.png" alt="">用户抢答列表</h2>
+            <div class="start_qingda_main">
+                <dl v-for="stu in qingdastu" :class="{pitch_on:stu.isdianming>0}" @click="call_roll(stu)">
+                    <dt>
+                    <img v-show="stu.headportrait==null||stu.headportrait==''"
+                         src="img/lanclass/touxiang.png"
+                         alt="">
+                    <img v-show="stu.headportrait!=''&&stu.headportrait!=null" v-bind:src="stu.headportrait"
+                         alt="">
+                </dt>
+                    <dd>{{stu.username}}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/lanclass/lanclass_index.js"></script>
+
+</html>

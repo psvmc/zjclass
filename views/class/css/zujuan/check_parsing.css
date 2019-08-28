@@ -1,0 +1,118 @@
+.question_analysis > div:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.pop-up_box {
+    width: 88rem;
+    height: 32rem;
+    background-color: #3385e6;
+    box-shadow: 0rem 0rem 0.9rem 0rem #0f78e1;
+    margin-left: -44rem;
+    margin-top: -16rem;
+}
+
+.check_parsing {
+    width: 100%;
+    height: 100%;
+}
+
+.check_parsing h2 {
+    height: 3.4rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3.4rem;
+    letter-spacing: 0.2rem;
+    color: #ffffff;
+    padding: 0 1rem;
+}
+
+.check_parsing h2 img {
+    float: right;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.check_parsing_main {
+    height: 28.6rem;
+    background-color: #f9f9f9;
+    overflow-y: scroll;
+}
+
+.check_parsing_main .question_detail {
+    box-shadow: 0px 0px 3px 0px rgba(0, 128, 255, 0.17);
+    border: solid 1px #0080ff;
+    margin-top: 0.6rem;
+    margin-left: 0.4rem;
+}
+
+.check_parsing_main .question_property b {
+    background-color: #0080ff;
+}
+
+.question_analysis > div {
+    margin-top: 10px;
+}
+
+.question_analysis > div > h2 {
+    float: left;
+    height: 26px;
+    background-color: #ff7e5c;
+    font-family: SimSun;
+    font-size: 0.8em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 26px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.question_analysis > div > div {
+    float: left;
+    padding-left: 10px;
+    font-family: SimSun;
+    font-size: 0.8em;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #383838;
+    line-height: 28px;
+}
+
+.check_parsing_main .question_property {
+    margin-left: 0.6rem;
+}
+
+.check_parsing_main .question_detail_groupnumber {
+    padding-right: 10px;
+}
+
+.check_parsing_main::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.check_parsing_main::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.check_parsing_main::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.check_parsing_main::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.check_parsing_main {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}

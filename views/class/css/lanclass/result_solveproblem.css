@@ -1,0 +1,330 @@
+.result_solveproblem_bottom:after,
+.result_solveproblem_main:after， .scantran_sheets:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.pop-up_box {
+    width: 100%;
+    height: 100%;
+    background-color: #3385e6;
+    box-shadow: 0rem 0rem 0.9rem 0rem #0f78e1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.result_solveproblem {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.result_solveproblem>h2 {
+    height: 3.4rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3.4rem;
+    letter-spacing: 0.2rem;
+    color: #ffffff;
+    padding: 0 1rem;
+}
+
+.result_solveproblem h2 img {
+    float: right;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.result_solveproblem_main {
+    flex-grow: 1;
+    height: 0;
+    background-color: #ffffff;
+    display: flex;
+}
+
+.submitted {
+    height: 100%;
+    box-sizing: border-box;
+    margin-right: 0.5rem;
+    width: 98.8rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.question_number {
+    margin: 0.4rem;
+    height: 4.8rem;
+    background-color: #f1f5fa;
+    box-shadow: 0rem 0rem 0.4rem 0rem rgba(66, 138, 219, 0.22);
+    border-radius: 0.3rem;
+    border: solid 0.1rem #e8e8e8;
+    padding: 0 1.2rem;
+    display: flex;
+}
+
+.question_number span {
+    margin: 1rem 0.6rem;
+    display: inline-block;
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: #f4f4f4;
+    border-radius: 0.2rem;
+    border: solid 1px #8d8d8d;
+    font-family: MicrosoftYaHei;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.8rem;
+    letter-spacing: 0.1rem;
+    color: #1f1f1f;
+    text-align: center;
+    cursor: pointer;
+}
+
+.question_number span.pitch_on {
+    box-shadow: 0rem 0rem 0.6rem 0rem rgba(44, 137, 230, 0.61);
+    border: 1px solid #ffffff;
+}
+
+.result_solveproblem_bottom {
+    height: 42.8rem;
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+}
+
+.result_solveproblem_bottom .question_information {
+    padding: 1rem;
+    width: 34%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    transition: all .5s ease-in;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.question_information>p {
+    width: 6.2rem;
+    height: 1.8rem;
+    background-color: #568bfc;
+    border-radius: 0.3rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1.8rem;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.question_information>p.answer_analysis {
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.answer_statistical {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 0.4rem 0rem rgba(152, 152, 152, 0.45);
+    border-radius: 0.3rem;
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all .5s ease-in;
+    width: 60%;
+}
+
+.answer_statistical>img {
+    position: absolute;
+    top: 50%;
+    width: 1.4rem;
+    margin-top: -1.4rem;
+    cursor: pointer;
+}
+
+.answer_statistical img.turnoff {
+    left: 0;
+}
+
+img.turnon {
+    right: 0;
+    position: absolute;
+    top: 50%;
+    width: 1.4rem;
+    margin-top: -1.4rem;
+    cursor: pointer;
+    display: none;
+}
+
+.answer_statistical p {
+    font-family: MicrosoftYaHei;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1.4rem;
+    letter-spacing: 0rem;
+    color: #3385e6;
+    padding: 1rem;
+}
+
+.answer_statistical p span {
+    display: inline-block;
+    width: 0.5rem;
+    height: 1.4rem;
+    background-color: #3385e6;
+    border-radius: 0.3rem;
+    margin-right: 0.6rem;
+    float: left;
+}
+
+.answer_statistical_main {
+    max-width: 71rem;
+    max-height: 36rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.result_solveproblem_main .uncommitted {
+    width: 12.7rem;
+    height: 100%;
+    background: #f6f6f6;
+    flex-grow: 1;
+}
+
+.uncommitted p {
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0rem;
+    color: #272727;
+    padding: 0 1rem;
+}
+
+.uncommitted_student {
+    overflow-y: scroll;
+    height: 46.5rem;
+}
+
+.uncommitted_student dl {
+    padding: 0.3rem;
+    float: left;
+}
+
+.uncommitted_student dl dt {
+    width: 3.6rem;
+    height: 3.6rem;
+    background-color: #f27a3e;
+    border: solid 1px #a7a7a7;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.uncommitted_student dl dt img {
+    width: 3.6rem;
+    height: 3.6rem;
+}
+
+.uncommitted_student dl dd {
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: 0.9rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0rem;
+    color: #333333;
+    width: 3.6rem;
+}
+
+.scantran_sheets {
+    height: 37.4rem;
+    overflow-y: scroll;
+    padding: 0 1rem;
+}
+
+.scantran_sheets div {
+    float: left;
+    width: 15rem;
+    height: 12rem;
+    background-color: #b0c1f8;
+    box-shadow: 0.1rem 0.1rem 0.6rem 0rem #bebebe;
+    border-radius: 0.4rem;
+    border: solid 0rem #b4b4b4;
+    margin: 0 1rem 0.4rem 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.scantran_sheets div img {
+    width: 100%;
+    height: 100%;
+}
+
+.scantran_sheets div span {
+    display: inline-block;
+    padding: 0 0.4rem;
+    height: 1.4rem;
+    opacity: 0.7;
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1.4rem;
+    letter-spacing: 0.1rem;
+    color: #275ad3;
+    position: absolute;
+    left: 0;
+    bottom: 1rem;
+    background: #cad5fa;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-left: 0.3rem solid #7f98f2;
+}
+
+.result_solveproblem_bottom .question_information::-webkit-scrollbar,
+.uncommitted_student::-webkit-scrollbar,
+.scantran_sheets::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.result_solveproblem_bottom .question_information::-webkit-scrollbar-button,
+.uncommitted_student::-webkit-scrollbar-button,
+.scantran_sheets::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.result_solveproblem_bottom .question_information::-webkit-scrollbar-track,
+.uncommitted_student::-webkit-scrollbar-track,
+.scantran_sheets::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.result_solveproblem_bottom .question_information::-webkit-scrollbar-thumb,
+.uncommitted_student::-webkit-scrollbar-thumb,
+.scantran_sheets::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.result_solveproblem_bottom .question_information,
+.uncommitted_student,
+.scantran_sheets {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>试卷预览页</title>
+    <link rel="stylesheet" type="text/css" href="css/zujuan/generate_test.css" />
+</head>
+
+<body>
+    <div class="prepare_main prepare_lessons_manualquestion_main">
+        <div class="prepare_head">
+            <span class="pitch_on loadurl" data-url="./pages/prepare_lessons.html">查看学情</span>
+            <span class="loadurl" data-url="./pages/student_analysis/phase_analysis.html">阶段分析</span>
+            <span class="loadurl" data-url="./pages/repository/repository_class.html">教学参考</span>
+        </div>
+
+        <div class="test_paper">
+            <div class="test_paper_title">
+                <h2>{{paper.papername}}</h2>
+            </div>
+            <!--<div class="test_paper_opreation">
+            <span v-if="!is_star" @click="star_paper()">
+					<img src="img/zujuan/collect_group.png"/>
+					收藏组卷
+				</span>
+            <span v-else @click="star_paper()">
+					<img src="img/zujuan/papers_collected.png"/>
+					取消收藏组卷
+				</span>
+        </div>-->
+            <div class="all_question">
+                <div class="test_paper_detail" v-for="type_ques in type_ques_list">
+                    <div class="dati">
+                        <h2>{{type_ques.typeTextName}}</h2>
+                    </div>
+                    <div class="test_paper_question" v-for="(ques,index) in type_ques.quesitons">
+                        <ul>
+                            <li class="change_topic" v-if="paper_type==2" @click="change_que(ques)"><img src="img/zujuan/change_topic.png" />换题
+                            </li>
+                            <li class="unenshrine" @click="star_ques(ques)">
+                                <img src="img/zujuan/gt.png" v-if="ques.collect>0" />
+                                <img src="img/zujuan/gt_collect.png" v-else/> 收藏
+                            </li>
+
+                        </ul>
+                        <div class="test_paper_question" v-for="(ques,index) in type_ques.quesitons">
+                            <div class="test_paper_question_detail">
+                                <p class="tihao">{{ques.topicNumber}}.</p>
+                                <div v-html="get_dochtml_all(ques)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/paper/paper_detail.js"></script>
+</body>
+
+</html>

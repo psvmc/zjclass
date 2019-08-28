@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/student_analysis/single_statistics.css" />
+</head>
+
+<body>
+    <div class="prepare_main single_statistics_body">
+        <div class="prepare_head">
+            <span class="loadurl pitch_on" data-url="./pages/lecture.html">学情展示</span>
+            <span class="loadurl" data-url="./pages/repository/teaching_class.html">授课包</span>
+            <span class="loadurl" data-url="./pages/comment/classroom_training.html">当堂小测</span>
+        </div>
+        <div class="single_statistics_head">
+            <div class="homework_name">
+                <p>{{homework.papername}}-{{homework.groupname}}</p>
+                <span><b></b></span>
+            </div>
+            <button class="loadurl" data-url="./pages/lecture.html"><img src="img/public/backtrack.png"/>返回</button>
+        </div>
+        <div class="single_statistics_detail">
+            <div class="cartogram">
+                <p><span></span>题目完成用时</p>
+                <div class="problem_done"></div>
+            </div>
+            <div class="cartogram">
+                <p><span></span>作业各题型正确率</p>
+                <div class="homework_correct"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/student_analysis/single_statistics.js"></script>
+
+</html>

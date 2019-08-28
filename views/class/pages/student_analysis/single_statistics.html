@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/student_analysis/single_statistics.css" />
+</head>
+
+<body>
+    <div class="prepare_main single_statistics_body">
+        <div class="prepare_head">
+            <span class="pitch_on loadurl" data-url="./pages/prepare_lessons.html">查看学情</span>
+            <span class="loadurl" data-url="./pages/student_analysis/phase_analysis.html">阶段分析</span>
+            <span class="loadurl" data-url="./pages/prepare_lessons_class.html">教学参考</span>
+        </div>
+        <div class="single_statistics_head">
+            <div class="homework_name">
+                <p><img src="img/public/zuoye.png" />{{homework.papername}}-{{homework.groupname}}</p>
+            </div>
+            <button class="loadurl" data-url="./pages/prepare_lessons.html"><img
+                src="img/public/backtrack.png"/>返回
+        </button>
+        </div>
+        <div class="single_statistics_detail">
+            <div class="cartogram">
+                <p><span></span>题目完成用时</p>
+                <div class="problem_done"></div>
+            </div>
+            <div class="cartogram">
+                <p><span></span>作业各题型正确率</p>
+                <div class="homework_correct"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/student_analysis/single_statistics.js"></script>
+
+</html>

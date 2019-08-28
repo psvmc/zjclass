@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>学生做题效果</title>
+    <link rel="stylesheet" type="text/css" href="css/lanclass/studentbiji.css" />
+</head>
+
+<body>
+    <div class="studentbiji_content">
+        <h2>{{stuname}}做题结果<img @click="close_preview" src="img/zujuan/padlock.png" alt="关闭"></h2>
+        <div class="studentbiji_main">
+            <div v-for="pic in stupic">
+                <img v-bind:src="pic" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/lanclass/studentbiji.js"></script>
+
+</html>

@@ -1,0 +1,554 @@
+[v-cloak] {
+    display: none !important;
+}
+
+
+/* 检测浏览器版本为ie10以下，显示提示 */
+
+.update_browser {
+    width: 100%;
+    height: 30px;
+    background: #f7e9cb;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.update_browser p {
+    line-height: 30px;
+    float: left;
+    padding-left: 30px;
+}
+
+.update_browser a {
+    display: block;
+    text-decoration: none;
+    border-radius: 4px;
+    line-height: 26px;
+    text-align: center;
+    background: #69ca95;
+    width: 80px;
+    height: 26px;
+    color: #ffffff;
+    cursor: pointer;
+    margin: 2px 0 0 30px;
+    outline: none;
+    float: left;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*背景*/
+
+.notoperation {
+    background-color: rgb(216, 214, 214) !important;
+    border: solid 1px #cccccc !important;
+    color: #ffffff !important;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background: url(../img/prepare_lessons/bg.png);
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.main {
+    font-size: 1rem;
+    opacity: 0;
+}
+
+.bg_bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.main .logo:after,
+.select_chapter .select_chapter_main:after,
+.main_important:after,
+.select_chapter:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/*规定中间区域*/
+
+.main {
+    width: 99%;
+    margin: auto;
+}
+
+.main .logo {
+    padding: 0.5rem 0 1.4rem 0;
+    position: relative;
+}
+
+.main>.logo>img {
+    float: left;
+    width: 11.6rem;
+    margin: 1.6rem 0 0 1rem;
+}
+
+.main .logo .personal {
+    float: right;
+    margin-top: 2rem;
+}
+
+.main .logo .personal .person_information {
+    margin-left: 0.7rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 20px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    float: left;
+    max-width: 18rem;
+    line-height: 2rem;
+}
+
+.main .logo .personal .person_information img {
+    vertical-align: middle;
+}
+
+.main>.logo>.personal>img {
+    float: left;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.personal span.exit {
+    float: right;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 6.9rem;
+    height: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 1.3rem 0rem rgba(44, 137, 230, 0.61);
+    border-radius: 1rem;
+    border: solid 0.1rem #40a7db;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #474747;
+}
+
+.personal span.exit img {
+    width: 1.4rem;
+    vertical-align: middle;
+    margin: -4px 0 0 0;
+}
+
+
+/*选择章节*/
+
+.select_chapter {
+    width: 70rem;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    margin-left: -35rem;
+}
+
+.select_chapter img.select_chapter_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.select_chapter .select_chapter_main {
+    position: absolute;
+    top: 1.2rem;
+    z-index: 3;
+    left: 50%;
+    margin-left: -32rem;
+    width: 64rem;
+}
+
+.select_chapter .select_chapter_main span {
+    font-family: MicrosoftYaHei;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3.9rem;
+    letter-spacing: 0px;
+    color: #ffffff;
+    cursor: pointer;
+    float: left;
+}
+
+.select_chapter .select_chapter_main .knob {
+    float: left;
+    margin: 0 4rem;
+}
+
+.select_chapter .select_chapter_main .knob h2 {
+    width: 46rem;
+    font-family: MicrosoftYaHei;
+    font-size: 2.2rem;
+    letter-spacing: 0.2rem;
+    height: 3.9rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3.9rem;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.select_chapter .select_chapter_main .knob h2 img {
+    width: 1.1rem;
+    position: absolute;
+    right: 0.4rem;
+    top: 1.8rem;
+}
+
+
+/*选择章节*/
+
+.select_chapter .select_chapter_main .knob .select_chapter_list {
+    height: 486px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 24px 0px #0f78e1;
+    border-radius: 6px;
+    border: solid 1px #cae4fe;
+    overflow-y: scroll;
+    padding: 12px 0;
+    display: none;
+}
+
+.select_chapter_option p {
+    line-height: 32px;
+    font-family: SimSun;
+    font-size: 1em;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #4f4f4f;
+    cursor: pointer;
+}
+
+.select_chapter_option p.pitch_on {
+    background-color: #2b76e7;
+    color: #ffffff;
+}
+
+.select_chapter_option_1 {
+    border-bottom: 1px dashed #d0d0d0;
+    padding: 10px 0;
+}
+
+.select_chapter_option_1:last-of-type {
+    border: none;
+}
+
+.select_chapter_option_1 p {
+    text-indent: 2em;
+}
+
+.select_chapter_option_2 p {
+    text-indent: 4em;
+}
+
+.select_chapter_option_3 p {
+    text-indent: 6em;
+}
+
+
+/*菜单栏*/
+
+.main_important {
+    position: relative;
+    z-index: 1;
+    position: relative;
+}
+
+.main_important .left_menu {
+    width: 12%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #f1f5fa;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    -webkit-border-top-left-radius: 0.5rem;
+    -webkit-border-bottom-left-radius: 0.5rem;
+    -moz-border-radius-topleft: 0.5rem;
+    -moz-border-radius-bottomleft: 0.5rem;
+    float: left;
+    overflow: hidden;
+}
+
+.main_important #content {
+    float: left;
+    width: 88%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    -webkit-border-top-right-radius: 0.5rem;
+    -webkit-border-bottom-right-radius: 0.5rem;
+    -moz-border-radius-topright: 0.5rem;
+    -moz-border-radius-bottomright: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.left_menu div {
+    margin: 1.5rem 0 0 0.4rem;
+    cursor: pointer;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.left_menu div img {
+    width: 8.7rem;
+}
+
+
+/*选中效果*/
+
+.left_menu div.pitch_on {
+    background: #dde7f3;
+}
+
+.prepare_body {
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.kejian_detail::-webkit-scrollbar,
+.question_list::-webkit-scrollbar,
+.prepare_body::-webkit-scrollbar,
+.comment_appraise_body::-webkit-scrollbar,
+.select_chapter_list::-webkit-scrollbar,
+.lecture_body::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.kejian_detail::-webkit-scrollbar-button,
+.question_list::-webkit-scrollbar-button,
+.prepare_body::-webkit-scrollbar-button,
+.comment_appraise_body::-webkit-scrollbar-button,
+.select_chapter_list::-webkit-scrollbar-button,
+.lecture_body::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.kejian_detail::-webkit-scrollbar-track,
+.question_list::-webkit-scrollbar-track,
+.prepare_body::-webkit-scrollbar-track,
+.comment_appraise_body::-webkit-scrollbar-track,
+.select_chapter_list::-webkit-scrollbar-track,
+.lecture_body::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.kejian_detail::-webkit-scrollbar-thumb,
+.question_list::-webkit-scrollbar-thumb,
+.prepare_body::-webkit-scrollbar-thumb,
+.comment_appraise_body::-webkit-scrollbar-thumb,
+.select_chapter_list::-webkit-scrollbar-thumb,
+.lecture_body::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.kejian_detail,
+.question_list,
+.prepare_body,
+.comment_appraise_body,
+.select_chapter_list,
+.lecture_body {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}
+
+
+/*全屏*/
+
+.all_screen {
+    width: 100% !important;
+    height: 100%;
+}
+
+.all_screen .logo,
+.all_screen .select_chapter,
+.all_screen .main_important .left_menu {
+    display: none;
+}
+
+.all_screen .main_important {
+    width: 100%;
+    height: 100% !important;
+    margin: 0;
+}
+
+.all_screen .main_important #content {
+    width: 100%;
+    height: 100% !important;
+    margin: 0;
+}
+
+
+/*批阅*/
+
+.read_over_style .main_important .left_menu {
+    display: none;
+}
+
+.read_over_style .main_important #content {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+
+/*遮罩层*/
+
+.mask_layer {
+    background-color: #929292;
+    opacity: 0.15;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+}
+
+.pop-up_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 11;
+    display: none;
+    font-size: 1rem;
+}
+
+
+/*小题题号*/
+
+.smallquestion i {
+    text-indent: 0em;
+    display: inline-block;
+    min-width: 22px;
+    padding: 0 1px;
+    height: 24px;
+    border-radius: 15px;
+    background: #f27a3e;
+    line-height: 24px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.smallquestion img {
+    vertical-align: middle;
+    margin: -4px 0 0 -24px;
+}
+
+
+/*沒有數據*/
+
+.no-date {
+    min-height: 300px;
+    background: url("../img/public/no-date.png") #ffffff no-repeat center center !important;
+}
+
+@media only screen and (max-width: 1681px) {
+    body,
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1601px) {
+    body,
+    html {
+        font-size: 13.5px;
+    }
+}
+
+@media only screen and (max-width: 1441px) {
+    body,
+    html {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 1401px) and (min-width: 1367px) {
+    .left_menu div {
+        margin: 4rem 0 0 0.4rem;
+    }
+}
+
+@media only screen and (max-width: 1367px) {
+    .select_chapter {
+        width: 66rem;
+        margin-left: -33rem;
+    }
+    .select_chapter .select_chapter_main {
+        margin-left: -31rem;
+        width: 62rem;
+    }
+    .select_chapter .select_chapter_main .knob h2 {
+        width: 44rem;
+    }
+    .left_menu div img {
+        width: 7.7rem;
+    }
+}
+
+@media only screen and (max-width: 1281px) {
+    .select_chapter {
+        width: 58rem;
+        margin-left: -29rem;
+    }
+    .select_chapter .select_chapter_main {
+        margin-left: -28rem;
+        width: 56rem;
+    }
+    .select_chapter .select_chapter_main span {
+        height: 2.9rem;
+        line-height: 2.9rem;
+    }
+    .select_chapter .select_chapter_main .knob h2 {
+        height: 2.9rem;
+        line-height: 2.9rem;
+        width: 38rem;
+    }
+    @media only screen and (max-height: 1024px)and (min-height: 801px) {
+        .left_menu div {
+            margin: 6rem 0 0 0.4rem;
+        }
+    }
+}

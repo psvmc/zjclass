@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>试题替换弹出框</title>
+    <link rel="stylesheet" type="text/css" href="css/zujuan/change_question.css" />
+</head>
+
+<body>
+    <div class="change_question">
+        <h2>试题替换<img class="padlock" src="img/zujuan/padlock.png" /></h2>
+        <div class="change_question_main">
+            <div class="change_question_main_title">
+                <h2>准备替换——第{{ques.topicNumber}}题【{{ques.typeTextName}}】【{{ques.complexity|complexity_filter}}】</h2>
+                <!--<button @click="change_que_list()"><img src="img/zujuan/batch.png"/>换一批</button>-->
+            </div>
+            <div class="change_question_main_body">
+                <div class="test_questions" v-for="(question,index) in ques_list">
+                    <div class="test_questions_title"><b>{{index+1}}</b> <span>试题来源：{{question.sourcename}}</span></div>
+                    <div class="test_questions_main" v-html="get_dochtml_all(question)">
+
+                    </div>
+                    <div class="test_question_operation">
+                        <p>
+                            <span>题型：{{question.typeTextName}}</span>
+                            <span>难易度：{{question.complexity|complexity_filter}}</span>
+                            <span> 组卷次数：{{question.count}}次</span>
+                        </p>
+                        <button @click="change_ques(question)">换为该题</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/zujuan/change_question.js"></script>
+
+</html>

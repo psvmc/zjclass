@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<script>
+    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+    var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+    var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+    var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+    if (isIE) {
+        var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+        reIE.test(userAgent);
+        var fIEVersion = parseFloat(RegExp["$1"]);
+        if (fIEVersion == 9 || fIEVersion == 10) {} else {
+            alert("当前页面不支持ie9以下版本浏览.请升级浏览器版本");
+        }
+    }
+</script>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/guidance.css" />
+
+    <title>智慧教学</title>
+</head>
+
+<body>
+    <div class="center">
+        <div class="header">
+            <div class="logo">
+                <img src="img/index/LOGO.png" />
+            </div>
+
+            <div class="user">
+                <dl>
+                    <dt>
+                    <img src="img/index/head_portrait.png"/>
+                </dt>
+                    <dd>
+                        <p v-cloak>用户名：{{loginuser.username|nameFilter}}</p>
+                        <p v-cloak>学 科：{{loginuser.subjectname}}</p>
+                    </dd>
+                </dl>
+                <img src="img/public/exit.png" />
+            </div>
+        </div>
+        <div class="logo_second">
+            <img src="img/index/wisdom_class.png" />
+        </div>
+        <div class="main">
+            <div class="main_top">
+                <div class="before_class" dataurl="./pages/prepare_lessons.html" number="0">
+                    <img src="img/index/after_class.png" />
+                </div>
+                <div class="classroom" dataurl="./pages/lecture.html" number="1">
+                    <img src="img/index/classroom.png" />
+                </div>
+                <div class="after_class" dataurl="./pages/homework.html" number="2">
+                    <img src="img/index/before_class.png" />
+                </div>
+            </div>
+            <div class="main_bottom">
+                <div>
+                    <img src="img/index/assign_homework.png" />
+                </div>
+                <div>
+                    <img src="img/index/Classroom_practice.png" />
+                </div>
+                <div>
+                    <img src="img/index/capacity_topic.png" />
+                </div>
+                <div>
+                    <img src="img/index/preview_homework.png" />
+                </div>
+                <div>
+                    <img src="img/index/homework_learning.png" />
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>豫ICP备17031890号-1 河南星火燎原软件科技有限公司 Copyright@2003-2017 All Rights Reserved</p>
+        </div>
+    </div>
+    <img class="bg_bottom" src="img/prepare_lessons/bg_bottom.png" />
+</body>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/lib/vue/vue.js"></script>
+<script src="js/config.js"></script>
+<script src="js/lib/layer/layer.js"></script>
+<script src="js/lib/jquery.cookie.js"></script>
+<script src="js/zj_cookie.js"></script>
+<script src="js/guidance.js"></script>
+
+</html>

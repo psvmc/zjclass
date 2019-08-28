@@ -1,0 +1,172 @@
+.pop-up_box {
+    width: 1328px;
+    height: 632px;
+    background-color: #0080ff;
+    box-shadow: 0px 0px 14px 0px #0f78e1;
+    margin-left: -664px;
+    margin-top: -316px;
+}
+
+.examinationpaper_analysis {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.padlock {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.examinationpaper_analysis h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 3em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 108px;
+    letter-spacing: 5px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.examinationpaper_analysis_main {
+    width: 1298px;
+    height: 511px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 3px 0px rgba(66, 138, 219, 0.33);
+    border-radius: 4px;
+    margin: auto;
+}
+
+.examinationpaper_analysis_main_title {
+    padding: 10px 0;
+}
+
+.examinationpaper_analysis_main_title span {
+    width: 301px;
+    height: 83px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 7px 0px rgba(0, 51, 101, 0.24);
+    border-radius: 4px;
+    margin-left: 16px;
+    display: inline-block;
+    font-family: MicrosoftYaHei;
+    font-size: 1.6em;
+    font-weight: normal;
+    letter-spacing: -1px;
+    color: #272727;
+    line-height: 83px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.examinationpaper_analysis_main_title img {
+    vertical-align: middle;
+    margin: -4px 10px 0 0;
+}
+
+.examinationpaper_analysis_main_title span.pitch_on {
+    box-shadow: 0px 0px 8px 0px rgba(0, 66, 131, 0.84);
+    color: #0080ff;
+}
+
+.examinationpaper_analysis_main_table {
+    height: 394px;
+    overflow-y: scroll;
+    padding: 0 10px;
+}
+
+.examinationpaper_analysis_main_table > div {
+    margin-top: 10px;
+}
+
+.examinationpaper_analysis_main_table table {
+    border-collapse: collapse;
+    border: 1px solid #c2c2c2;
+    width: 100%;
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: 1.5em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 52px;
+    letter-spacing: 1px;
+    color: #454545;
+}
+
+.examinationpaper_analysis_main_table table tr th {
+    background-color: #f7f7f7;
+    font-size: 1.5em;
+    color: #0080ff;
+}
+
+.examinationpaper_analysis_main_table::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.examinationpaper_analysis_main_table::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.examinationpaper_analysis_main_table::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #eaecf2;
+}
+
+.examinationpaper_analysis_main_table::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.examinationpaper_analysis_main_table {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}
+
+@media only screen and (max-width: 1601px) {
+    .pop-up_box {
+        width: 946px;
+        height: 450px;
+        margin-left: -473px;
+        margin-top: -225px;
+    }
+
+    .padlock {
+        width: 36px;
+    }
+
+    .examinationpaper_analysis h2 {
+        line-height: 76px;
+    }
+
+    .examinationpaper_analysis_main {
+        width: 924px;
+        height: 364px;
+    }
+
+    .examinationpaper_analysis_main_title span {
+        width: 214px;
+        height: 60px;
+        margin-left: 10px;
+        line-height: 60px;
+    }
+
+    .examinationpaper_analysis_main_title img {
+        width: 50px;
+    }
+
+    .examinationpaper_analysis_main_table {
+        height: 280px;
+    }
+
+    .examinationpaper_analysis_main_table table {
+        line-height: 36px;
+    }
+}

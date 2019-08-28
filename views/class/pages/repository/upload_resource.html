@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>上传资源</title>
+    <link rel="stylesheet" type="text/css" href="css/repository/upload_resource.css" />
+</head>
+
+<body>
+    <div class="prepare_main upload_resource">
+        <div class="prepare_head">
+            <span class="loadurl" data-url="./pages/prepare_lessons.html">查看学情</span>
+            <span class="loadurl" data-url="./pages/student_analysis/phase_analysis.html">阶段分析</span>
+            <span class="pitch_on loadurl" data-url="./pages/repository/repository_class.html">教学参考</span>
+        </div>
+        <div class="upload_resource_main">
+            <div class="upload_resource_main_title">
+                <h2><img src="img/repository/uploading_resources.png" />上传资源</h2>
+                <span class="backtrack loadurl" data-url="./pages/repository/upload_resource_list.html"><img
+                    src="img/public/backtrack.png"/>返回</span>
+            </div>
+
+            <!--<div class="resourcetype">
+            <span>资源类型:</span>
+            <div class="select_resourcetype">
+                <h3>请选择类型 <img src="img/repository/drop_dowm.png"/></h3>
+                <ul>
+                    <li>课件</li>
+                    <li>学案</li>
+                </ul>
+            </div>
+        </div>-->
+            <div class="upload_resource_now">
+                <p>*注意:上传资源大小不超过20M</p>
+                <div class="uploading">
+                    <div class="uploading_main">
+                        <input type="file" name="fileUpload" id="fileUpload" value="" />
+                        <img src="img/repository/uploading.png" />
+                        <h4 id="textfield">未选择文件</h4>
+                        <h3>格式：doc,ppt,xls,pdf,zip,rar,class</h3>
+                    </div>
+                </div>
+            </div>
+            <button type="button" onclick="uploadfile()"><img
+                src="img/repository/confirm_upload.png"/>确认上传
+        </button>
+        </div>
+    </div>
+</body>
+<script src="js/repository/upload_resource.js"></script>
+
+</html>

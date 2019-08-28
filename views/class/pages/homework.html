@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>作业</title>
+    <link rel="stylesheet" type="text/css" href="css/homework.css" />
+    <link rel="stylesheet" type="text/css" href="css/prepare_lessons/prepare_lessons.css" />
+</head>
+
+<body>
+    <div class="push_homework">
+        <div class="push_homework_main" v-cloak>
+            <div class="compensation_homework" v-for="xadata in xadatas" v-on:click="xadetialClick(xadata)">
+                <img src="img/public/ico_tuisong.png" />
+                <div class="compensation_homework_property">
+                    <h2 :title="xadata.papername">{{xadata.papername|nameFilter}}</h2>
+                    <p>
+                        <span><img src="img/public/time.png"/>{{xadata.handletime|timeFilter}}</span>
+                        <span><img src="img/public/grade.png"/>{{xadata.questionnum}}道题</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="assignment" v-cloak>
+        <div class="assignment_title">
+            <h2>作业</h2>
+            <span class="loadurl" data-url="./pages/homework_list.html">更多>></span>
+        </div>
+        <div class="assignment_main" :class="{'no-date':pagedata.length == 0}">
+            <div class="homework_list" v-for="homework in pagedata">
+                <img class="homework_list_ico" src="img/public/ico_kehou.png" />
+                <div class="homework_information">
+                    <h2 :title="homework.papername">{{homework.papername}}</h2>
+                    <p>
+                        <span>{{homework.groupname}}</span>
+                        <span>{{homework.starttime|timeFilter}}</span>
+                    </p>
+
+                </div>
+                <div class="homework_number">
+                    <span><b>{{homework.qcount}}</b>/{{homework.tcount}}/{{homework.scount}}<img
+                        src="img/public/message.png"/></span>
+                </div>
+                <div class="homework_operation">
+                    <span class="look" @click="show_detail(homework)">
+					<img src="img/public/previewdetail_w.png"/><img src="img/public/previewdetail.png"/>详情
+				</span>
+
+                    <span class="arrange" :class="{notoperation:homework.status==22}" @click="buzhiClick(homework)">
+                    <img src="img/public/commented_w.png"/><img src="img/public/commented.png"/>布置
+                </span>
+                    <span @click="piyueClick(homework)" :class="{notoperation:(homework.tcount==0||homework.qcount==homework.tcount)}">
+					<img src="img/public/operaico_piyue_white.png"/><img src="img/public/operaico_piyue_blue.png"/>批阅
+				</span>
+
+                </div>
+            </div>
+        </div>
+        <div class="alternate">
+            <button class="another_set" @click="paper_more">
+            <img src="img/public/another_set.png"/>
+            再来一套
+        </button>
+            <button class="next_section" @click="paper_next">
+            <img src="img/public/next_section.png"/>
+            下节预习作业
+        </button>
+        </div>
+    </div>
+</body>
+<script src="js/homework/homework.js"></script>
+
+</html>

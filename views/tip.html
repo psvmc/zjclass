@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="msg">
+
+</div>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .msg {
+        width: 100vw;
+        height: 100vh;
+        background-color: deepskyblue;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+    }
+
+</style>
+
+<script>
+    const {ipcRenderer} = require('electron');
+    ipcRenderer.on('my_notifition_reply', (event, message) => {
+        let msgobj = document.querySelector(".msg");
+        msgobj.innerHTML = message;
+    })
+</script>
+
+</body>
+</html>

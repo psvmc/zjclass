@@ -1,0 +1,385 @@
+.read_over_main:after,
+.correction_title:after,
+.correction_main .question .question_title:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.growbig {
+    transform: scale(1.2);
+}
+
+.read_over_main {
+    background-color: #f1f5fa;
+    position: relative;
+    height: 100%;
+}
+
+.read_over_main .padlock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.read_over_main .padlock img {
+    width: 1.9rem;
+}
+
+/*是否提交*/
+
+.whether_grade {
+    float: left;
+    margin: 0.5rem 0.6rem;
+}
+
+/*已提交*/
+
+.submitted {
+    width: 17.3rem;
+    height: 80%;
+    background-color: #5f9dff;
+    border-radius: 0.3rem;
+}
+
+.submitted h2,
+.not_filed h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 1.6em;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+    line-height: 2.6rem;
+    text-align: center;
+}
+
+.submitted_main {
+    margin: 0 0.4rem 0.4rem 0.4rem;
+    background-color: #ffffff;
+    border-radius: 0.3rem;
+}
+
+.submitted_student_list {
+    overflow-y: scroll;
+}
+
+.submitted_legend {
+    padding-bottom: 0.5rem;
+}
+
+.submitted_student_list span,
+.not_filed_main span {
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1.4rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+    padding: 1px 10px;
+    display: inline-block;
+    margin: 0.5rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+}
+
+submitted_student_list span.responses {
+    color: #3385e6;
+}
+
+.submitted_legend span {
+    display: inline-block;
+    margin-left: 0.8rem;
+    font-family: SimSun;
+    font-size: 0.8em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1rem;
+    letter-spacing: 1px;
+    color: #3d3d3d;
+}
+
+.submitted_legend span i {
+    display: inline-block;
+    width: 0.9rem;
+    height: 0.9rem;
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+/*已批改*/
+
+.responses {
+    background-color: #dde7f3;
+}
+
+/*批改中*/
+
+.midnight {
+    background-color: #31cd75;
+}
+
+/*未批改*/
+
+.uncommitted {
+    background-color: #f55b63;
+}
+
+/*未提交*/
+
+.not_filed {
+    width: 17.3rem;
+    background-color: #f55b63;
+    border-radius: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.not_filed .not_filed_main {
+    margin: 0 0.4rem 0.4rem 0.4rem;
+    background-color: #ffffff;
+    border-radius: 0.3rem;
+    overflow-y: scroll;
+}
+
+/*批改主体*/
+
+.correction {
+    float: left;
+    height: 100%;
+}
+
+.correction_main {
+    overflow-y: scroll;
+    height: 100%;
+    background: #ffffff;
+}
+
+.correction_main .question {
+    margin: 0.8rem;
+}
+
+.correction_main .question .question_title {
+    height: 1.8rem;
+    background-color: #568bfc;
+    border-radius: 0.3rem;
+    padding: 0 0.5rem;
+    display: inline-block;
+    margin-bottom: 0.2rem;
+}
+
+.correction_main .question .question_title a {
+    font-family: ArialNarrow-Bold;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1.8rem;
+    letter-spacing: 0rem;
+    color: #ffffff;
+    margin: -8px 4px 0 0;
+    vertical-align: middle;
+}
+
+.correction_main .question .question_title span {
+    display: inline-block;
+    font-family: MicrosoftYaHei;
+    font-size: 1.1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1.8rem;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+}
+
+.correction_main .question .studentnotes {
+    position: relative;
+}
+
+.correction_main > .question > .studentnotes > .studentnotes_main,
+.correction_main > .question > .studentnotes > .studentnotes_main > img {
+    width: 100%;
+}
+
+.studentnotes {
+    min-height: 353px;
+}
+
+.corrections_button {
+    text-align: right;
+    padding: 16px 0;
+    height: 42px;
+}
+
+.studentnotes .correcting_handwriting {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+
+.corrections_button button {
+    width: 7rem;
+    height: 1.9rem;
+    background-color: #f2f7ff;
+    box-shadow: 0.1rem 0.1rem 0.4rem 0rem rgba(51, 133, 230, 0.43);
+    border-radius: 1rem;
+    border: solid 1px #3261e5;
+    font-family: FZZCHJW--GB1-0;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #3261e5;
+    margin-right: 8px;
+    line-height: 1.9rem;
+    cursor: pointer;
+}
+
+.corrections_button button img {
+    width: 1.3rem;
+    vertical-align: middle;
+    margin: -4px 0.5rem 0 0;
+}
+
+.corrections_button button img:first-of-type {
+    display: none;
+}
+
+.corrections_button button:hover {
+    background-color: #3261e5;
+    color: #ffffff;
+}
+
+.corrections_button button:hover img:first-of-type {
+    display: inline-block;
+}
+
+.corrections_button button:hover img:last-of-type {
+    display: none;
+}
+
+.student_question {
+    float: left;
+    width: 8.8rem;
+    height: 100%;
+    margin-left: 0.5rem;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.student_question_main {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.student_question h2 {
+    width: 7rem;
+    height: 2.1rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: dashed 0.1rem #3386e6;
+    text-align: center;
+    line-height: 2.1rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #3385e6;
+    overflow: hidden;
+    margin: 2.2rem auto 0 auto;
+}
+
+.student_question h2 b {
+    font-weight: 400;
+}
+
+.student_question p.question_n {
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3rem;
+    letter-spacing: 0rem;
+    color: #2d2d2d;
+}
+
+.student_question p a {
+    display: inline-block;
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: #ffffff;
+    border: 1px solid #3385e6;
+    border-radius: 0.2rem;
+    text-align: center;
+    line-height: 2.6rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #3385e6;
+    text-decoration: none;
+    margin: 0 0 0.5rem 0.4rem;
+}
+
+.student_question p a.pigai {
+    background-color: #3385e6;
+    color: #ffffff;
+}
+
+.submitted_student_list::-webkit-scrollbar,
+.not_filed_main::-webkit-scrollbar,
+.correction_main::-webkit-scrollbar,
+.student_question_main::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.submitted_student_list::-webkit-scrollbar-button,
+.not_filed_main::-webkit-scrollbar-button,
+.correction_main::-webkit-scrollbar-button,
+.student_question_main::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.submitted_student_list::-webkit-scrollbar-track,
+.not_filed_main::-webkit-scrollbar-track,
+.correction_main::-webkit-scrollbar-track,
+.student_question_main::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.submitted_student_list::-webkit-scrollbar-thumb,
+.not_filed_main::-webkit-scrollbar-thumb,
+.correction_main::-webkit-scrollbar-thumb,
+.student_question_main::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.submitted_student_list,
+.not_filed_main,
+.correction_main,
+.student_question_main {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}
+
+@media only screen and (max-width: 1601px) and (min-width: 1441px) {
+    .student_question {
+        width: 7.7rem;
+    }
+
+    .student_question p a {
+        width: 2.2rem;
+        height: 2.2rem;
+        line-height: 2.2rem;
+    }
+}

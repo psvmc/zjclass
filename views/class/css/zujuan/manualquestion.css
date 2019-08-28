@@ -1,0 +1,477 @@
+.question_rank .rank_way:after,
+.question_detail:after,
+.question_detail_bottom:after,
+.question_rank:after,
+paper_basket:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.prepare_lessons_manualquestion_main {
+    position: relative;
+}
+
+/*手动选题,智能组题*/
+
+.group_way {
+    margin-left: 12px;
+    margin-bottom: 10px;
+}
+
+.group_way span {
+    width: 98px;
+    height: 23px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    border: dashed 1px #0080ff;
+    display: inline-block;
+    text-align: center;
+    line-height: 23px;
+    font-family: MicrosoftYaHei;
+    font-size: 1em;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #0080ff;
+    cursor: pointer;
+}
+
+.group_way span.pitch_on {
+    background-color: #71b8ff;
+    color: #ffffff;
+}
+
+/*过滤条件*/
+
+.question_screen {
+    margin: 0 2.2rem 0 1.2rem;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 3px 0px rgba(66, 138, 219, 0.33);
+    border-radius: 4px;
+}
+
+.question_screen p {
+    padding: 0.6rem 0;
+}
+
+.question_screen p:first-of-type {
+    border-bottom: 1px dashed #cacaca;
+}
+
+.question_screen p b {
+    width: 6.2rem;
+    font-family: SimSun;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    display: inline-block;
+    text-align: right;
+    letter-spacing: 0px;
+    color: #7e7e7e;
+}
+
+.question_screen p span {
+    font-family: SimSun;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #7e7e7e;
+    padding: 0 0.5rem;
+    line-height: 1.4rem;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 0.2rem;
+}
+
+.question_screen p span.pitch_on {
+    background-color: #3361e6;
+    color: #ffffff;
+}
+
+.question_screen p:last-of-type span {
+    margin-left: 4px;
+}
+
+.question_screen p i {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.question_screen p i img {
+    width: 1.4rem;
+}
+
+/*排序*/
+
+.question_rank {
+    margin: 1rem 2.2rem 0.5rem 1.2rem;
+}
+
+.question_rank .rank_way {
+    float: left;
+    line-height: 1.2rem;
+    padding-left: 8px;
+    font-family: SimSun;
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #414141;
+}
+
+.question_rank .rank_way b {
+    font-weight: 400;
+}
+
+.question_rank .rank_way span {
+    cursor: pointer;
+}
+
+.question_rank .rank_way span.pitch_on {
+    color: #3361e6;
+}
+
+.question_rank_operation {
+    float: right;
+}
+
+.question_rank_operation p {
+    float: left;
+    font-family: SimSun;
+}
+
+.question_rank_operation p.question_num {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: #414141;
+    line-height: 1.2rem;
+    margin-right: 10px;
+}
+
+.question_rank_operation p.question_num span {
+    color: #f27a3e;
+}
+
+.question_rank_operation p.choose_all {
+    padding: 0 0.4rem;
+    height: 1.2rem;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #1d8bd1;
+    text-align: center;
+    line-height: 1.2rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: #1169be;
+    cursor: pointer;
+}
+
+.question_rank_operation p.chooseed_all {
+    color: #ffffff;
+    background: gainsboro;
+    border: 1px solid gainsboro;
+}
+
+/*试题列表*/
+
+.question_list {
+    margin: 0 2.2rem 0 1.1rem;
+    overflow-y: scroll;
+}
+
+.question_detail {
+    margin: 0 0.1rem 0.4rem 0.1rem;
+    box-shadow: 0px 0px 3px 0px rgba(0, 128, 255, 0.17);
+    border: solid 1px #e0e0e0;
+}
+
+.question_detail:hover {
+    border: solid 1px #0080ff;
+}
+
+.question_detail_title {
+    height: 2.3rem;
+    border-bottom: 1px solid #eff3f3;
+    background: #f9f9f9;
+}
+
+.question_property {
+    float: left;
+    margin-left: -4px;
+}
+
+.question_property b {
+    display: inline-block;
+    width: 1.9rem;
+    height: 1.9rem;
+    background-color: #3361e6;
+    font-family: ArialNarrow-Bold;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    text-align: center;
+    margin: 0.2rem 0.8rem 0 0;
+}
+
+.question_property span {
+    font-family: SimSun;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0px;
+    color: #666666;
+    margin-right: 40px;
+}
+
+.question_detail_title p {
+    float: right;
+    margin-right: 8px;
+    line-height: 2.3rem;
+    font-family: SimSun;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #666666;
+}
+
+.question_detail_main {
+    min-height: 30px;
+    border-bottom: 1px dashed #cacaca;
+    margin: auto;
+    line-height: 34px;
+    padding: 10px;
+    font-size: 1em;
+    color: #414141;
+}
+
+.question_detail_bottom .question_detail_opreation {
+    float: left;
+    height: 40px;
+}
+
+.question_detail_bottom .question_detail_opreation span {
+    float: left;
+    margin-left: 14px;
+    line-height: 40px;
+    font-family: SimSun;
+    font-size: 0.7em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: #1d8bd1;
+    cursor: pointer;
+}
+
+.question_detail_bottom .question_detail_opreation span img {
+    vertical-align: middle;
+    margin-right: 4px;
+    width: 18px;
+}
+
+.question_detail_groupnumber {
+    float: right;
+}
+
+.question_detail_groupnumber .groupnumber {
+    font-family: SimSun;
+    font-size: 0.7em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: #414141;
+}
+
+.question_detail_groupnumber .selecttopic {
+    width: 78px;
+    height: 30px;
+    background-color: #2b76e7;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0 10px;
+    line-height: 30px;
+    text-align: center;
+    font-family: SimSun;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.question_detail_groupnumber .selecttopic img {
+    vertical-align: middle;
+    margin: -2px 4px 0 0;
+}
+
+.question_detail_groupnumber .prohibited_topics {
+    background: gainsboro;
+}
+
+/*试题篮*/
+.paper_basket {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.paper_basket_title {
+    width: 1.6rem;
+    height: 100%;
+    background: #6795ff;
+    box-shadow: 0rem 0rem 0.2rem 0rem rgba(66, 138, 219, 0.61);
+    float: left;
+    position: relative;
+}
+
+.paper_basket_title_content {
+    width: 100%;
+    height: 16rem;
+    background-color: #f27a3e;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -8rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.paper_basket_title_content img {
+    display: block;
+    margin: auto;
+}
+
+.paper_basket_title_content img:first-of-type {
+    width: 1.3rem;
+    margin-top: 1.5rem;
+
+}
+
+.paper_basket_title_content img:nth-of-type(2) {
+    width: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.paper_basket_title_content span {
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.8rem;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+}
+
+.paper_basket_title_content span b {
+    letter-spacing: -1px;
+    display: block;
+}
+
+.paper_basket_main {
+    float: left;
+    width: 15.2rem;
+    height: 100%;
+    background: #f6f6f6;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all .5s ease-in;
+}
+
+.paper_basket_main h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3rem;
+    letter-spacing: 0rem;
+    color: #272727;
+    width: 13.2rem;
+    margin: 0 1rem;
+}
+
+.paper_basket_main h2 b {
+    font-weight: 400;
+    color: #3361e6;
+}
+
+.paper_basket_main p {
+    height: 2.5rem;
+    background-color: #ffffff;
+    line-height: 2.5rem;
+    padding: 0 0.5rem;
+    font-family: SimSun;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #272727;
+    text-align: center;
+    width: 13.2rem;
+    margin: 0.5rem 1rem 0 1rem;
+}
+
+.paper_basket_main p span:first-of-type {
+    float: left;
+}
+
+.paper_basket_main p span:last-of-type {
+    float: right;
+}
+
+.paper_basket_main p span img {
+    vertical-align: middle;
+    margin: -0.4rem 0 0 0.5rem;
+    width: 0.9rem;
+    cursor: pointer;
+}
+
+.paper_basket_main p span b {
+    font-weight: 400;
+    color: #ff742e;
+    margin: 0 2px;
+}
+
+.empty_paper {
+    text-align: right;
+    cursor: pointer;
+    font-family: SimSun;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3.4rem;
+    letter-spacing: 0rem;
+    color: #898989;
+    margin: 0 1rem;
+    width: 13.2rem;
+}
+
+.test_paper_generation {
+    margin: 1rem;
+    width: 13.2rem;
+}
+
+.test_paper_generation button {
+    width: 100%;
+    height: 2.6rem;
+    background-color: #f27a3e;
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+    font-family: SimSun;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1.5rem;
+    letter-spacing: 0rem;
+    color: #ffffff;
+    cursor: pointer;
+}

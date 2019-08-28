@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>授课-学情分析-讲评</title>
+    <link rel="stylesheet" type="text/css" href="css/comment/comment_appraise.css" />
+</head>
+
+<body>
+    <div class="prepare_main comment_appraise_main">
+        <div class="prepare_head">
+            <span class="loadurl pitch_on" data-url="./pages/lecture.html">学情展示</span>
+            <span class="loadurl" data-url="./pages/repository/teaching_class.html">授课包</span>
+            <span class="loadurl" data-url="./pages/comment/classroom_training.html">当堂小测</span>
+        </div>
+        <div class="comment_appraise_body" v-cloak>
+            <div class="job_information">
+                <img src="img/comment/homework.png" />
+                <div class="job_information_main">
+                    <h2 v-cloak>{{homework.papername}}</h2>
+                    <p v-cloak>
+                        <span><img src="img/comment/job_type.png"/>{{homework.type|typeFilter}}</span>
+                        <span><img src="img/comment/group.png"/>{{homework.groupname}}</span>
+                        <span><img src="img/comment/time.png"/>发布时间：{{homework.starttime|timeFilter}}</span>
+                        <span v-show="homework.type!=41"><img
+                            src="img/comment/jiezhi_time.png"/>截止时间：{{homework.stoptime?homework.stoptime:"不限制"}}</span>
+                    </p>
+                </div>
+                <div class="job_information_main_operation">
+                    <button type="button" class="refresh" @click="refresh_page"><img src="img/comment/refresh.png"/>刷新
+                </button>
+                    <button type="button" class="backtrack"><img src="img/public/backtrack.png"/>返回</button>
+                    <button type="button" class="full"><img src="img/comment/full.png"/>全屏</button>
+                </div>
+            </div>
+            <div class="topic">
+                <div class="topic_number">
+                    <dl v-for="(question,index) in questions" v-on:click="changeselect(index)" v-bind:class="{ lower: rightrate_error_show(question),pitch_on:index==selectindex }">
+                        <dt>题{{index+1}}</dt>
+                        <dd>{{question|rightratefilter}}%</dd>
+                    </dl>
+                </div>
+                <div class="topic_detail">
+                    <div class="test_questions">
+                        <div class="test_questions_title" v-cloak>
+                            <b>{{selectindex+1}}</b>
+                            <span>{{selectques.typeTextName}}</span>
+                        </div>
+
+                        <div class="test_questions_main" v-cloak v-html="select_dochtml"></div>
+                    </div>
+                    <div class="answer-analysis">
+                        <h2>【答案】</h2>
+                        <div class="answer-analysis_main" v-cloak v-html="select_answers"></div>
+                    </div>
+                    <div class="answer-analysis">
+                        <h2>【解析】</h2>
+                        <div class="answer-analysis_main" v-cloak v-html="select_analyzes"></div>
+                    </div>
+                    <button class="errorcause_analysis" :class="{unuse:errornum==0}" @click="erroranalyze(errornum)"><img
+                        src="img/public/errorcause_analysis.png"/>错误原因分析
+                </button>
+                </div>
+                <div class="answer_is">
+                    <div class="answer_is_title">
+                        <h2><img src="img/comment/answer_icon.png" />作答情况</h2>
+                        <div class="legend">
+                            <span class="students_untijiao"><i></i>未提交</span>
+                            <span class="students_unpigai"><i></i>未批改</span>
+                            <span class="students_right"><i></i>做对学生</span>
+                            <span class="students_wrong"><i></i>做错学生</span>
+                        </div>
+                        <div class="answer_is_property">
+                            <p>
+                                <span><img
+                                    src="img/comment/average_time.png"/>平均做题时长：<b>{{question_detail.avgtime}}</b></span>
+                                <span><img
+                                    src="img/comment/shortest_time.png"/>最短做题时长：<b>{{question_detail.mintime}}</b></span>
+                                <span class="shortest_time_person" v-bind:clsss="{display_none:question_detail.uservo==null}">{{question_detail.uservo?question_detail.uservo.username:""}}</span>
+                            </p>
+                            <p><span><img src="img/comment/full_class.png"/>全班学生名单：</span></p>
+                            <div class="full_class">
+                                <span v-for="user in question_detail2">
+                                <span v-if="user.answered == 0" class="uncommitted">{{user.username}}</span>
+                                <span v-else-if="user.checked == 0" class="no_corrections">{{user.username}}</span>
+                                <span v-else @click="show_student_ans(user)" v-bind:class="{err:user.corrected==2 || user.corrected==3}">{{user.username}}</span>
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="js/comment/comment_appraise.js"></script>
+
+</html>

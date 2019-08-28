@@ -1,0 +1,73 @@
+.studentbiji {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #3385e6;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.studentbiji_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.studentbiji_content>h2 {
+    height: 3.4rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3.4rem;
+    letter-spacing: 0.2rem;
+    color: #ffffff;
+    padding: 0 1rem;
+}
+
+.studentbiji h2 img {
+    float: right;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.studentbiji_main {
+    background-color: #ffffff;
+    overflow-y: scroll;
+    padding: 1rem;
+}
+
+.studentbiji_main img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.studentbiji_main::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.studentbiji_main::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.studentbiji_main::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.studentbiji_main::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.studentbiji_main {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}

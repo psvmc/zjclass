@@ -1,0 +1,163 @@
+.second_level_directory:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.prepare_main {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 97, 210, 0.34);
+    margin: 0.5rem;
+}
+
+.prepare_head {
+    height: 3.4rem;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.prepare_head span {
+    display: inline-block;
+    padding: 0 1.8rem;
+    line-height: 3.2rem;
+    height: 3.2rem;
+    text-align: center;
+    margin-left: 34px;
+    font-family: MicrosoftYaHei;
+    font-size: 1.5em;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #333333;
+    cursor: pointer;
+}
+
+.prepare_head span.pitch_on {
+    border-bottom: 0.2rem solid #3385e6;
+    color: #3385e6;
+}
+
+/*上传按钮,仅在查看资料部分出现*/
+
+.prepare_head span.resource_upload {
+    float: right;
+    width: 107px;
+    height: 36px;
+    background-color: #f27a3e;
+    box-shadow: 4px 5px 5px 1px rgba(242, 122, 62, 0.37);
+    border-radius: 18px;
+    display: inline-block;
+    margin-right: 124px;
+    margin-top: 4px;
+    color: #ffffff;
+    line-height: 36px;
+    font-size: 1.4em;
+}
+
+.prepare_head span.resource_upload img {
+    margin: -4px 4px;
+}
+
+.prepare_head a {
+    float: right;
+    font-family: SimSun;
+    font-size: 0.8em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3.3rem;
+    letter-spacing: 0px;
+    color: #6c6c6c;
+    margin-right: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.second_level_directory > span,
+.item_bank span {
+    margin: 1rem 1.2rem;
+    width: 8.7rem;
+    height: 2.4rem;
+    background-color: #f2f6ff;
+    box-shadow: -0.4rem 0rem 0.3rem 0rem rgba(229, 238, 255, 0.37);
+    border-radius: 1.2rem;
+    border: solid 1px #3385e6;
+    font-family: MicrosoftYaHei;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.4rem;
+    letter-spacing: 0.1rem;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.second_level_directory > span > img,
+.item_bank span > img {
+    width: 1.2rem;
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.second_level_directory > span > img:first-of-type,
+.item_bank span > img:first-of-type {
+    display: none;
+}
+
+.second_level_directory > span {
+    float: left;
+}
+
+.second_level_directory span.pitch_on {
+    background-color: #3385e6;
+    box-shadow: -0.4rem 0rem 0.3rem 0rem rgba(229, 238, 255, 0.37);
+    color: #ffffff;
+}
+
+.second_level_directory span.pitch_on img:first-of-type {
+    display: inline-block;
+}
+
+.second_level_directory span.pitch_on img:last-of-type {
+    display: none;
+}
+
+/*试题库*/
+
+.second_level_directory .item_bank {
+    float: left;
+    position: relative;
+}
+
+.second_level_directory .item_bank .item_bank_option {
+    width: 8.7rem;
+    height: 9.8rem;
+    box-shadow: 0rem 0rem 0.2rem 0rem rgba(148, 148, 148, 0.7);
+    border-radius: 0.4rem;
+    border: solid 0.1rem #f1f5fa;
+    position: absolute;
+    top: 3.4rem;
+    left: 1.2rem;
+    display: none;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.second_level_directory .item_bank .item_bank_option p {
+    font-family: SimSun;
+    font-size: 0.9rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.1rem;
+    letter-spacing: 0rem;
+    color: #0079ff;
+    width: 7.3rem;
+    height: 2.1rem;
+    border-radius: 1rem;
+    margin: 1rem auto 0 auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.second_level_directory .item_bank .item_bank_option p.pitch_on {
+    border: solid 1px #3261e5;
+    background-color: #f2f7ff;
+}

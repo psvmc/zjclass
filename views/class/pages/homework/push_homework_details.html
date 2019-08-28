@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>作业-推送作业详情</title>
+    <link rel="stylesheet" type="text/css" href="css/homework/push_homework_details.css" />
+</head>
+
+<body>
+    <div class="prepare_main prepare_lessons_manualquestion_main">
+        <div class="push_homework_title">
+            <h2>推送作业</h2>
+            <button class="backtrack"><img src="img/public/backtrack.png">返回</button>
+        </div>
+        <div class="test_paper">
+
+            <div class="test_paper_title">
+                <h2>{{paper.papername}}</h2>
+            </div>
+            <!--<div class="test_paper_opreation">
+					<span v-if="!is_star" @click="star_paper()">
+					<img src="img/zujuan/collect_group.png"/>
+					收藏组卷
+				</span>
+            <span v-else @click="star_paper()">
+					<img src="img/zujuan/papers_collected.png"/>
+					取消收藏组卷
+				</span>
+        </div>-->
+            <div class="all_question">
+                <div class="test_paper_detail" v-for="type_ques in type_ques_list">
+                    <div class="dati">
+                        <h2>{{type_ques.typeTextName}}</h2>
+                    </div>
+                    <div class="test_paper_question" v-for="(ques,index) in type_ques.quesitons">
+                        <div class="test_paper_question_detail">
+                            <p class="tihao">{{ques.topicNumber}}.</p>
+                            <div v-html="get_dochtml_all(ques)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="operation_homework">
+                    <button type="button" class="save" @click="save_as_homework()"><img src="img/zujuan/save.png"/>保存为作业
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/homework/push_homework_details.js"></script>
+</body>
+
+</html>

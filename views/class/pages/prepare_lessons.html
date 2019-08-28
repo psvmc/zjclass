@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>备课主页-查看学情</title>
+    <link rel="stylesheet" type="text/css" href="css/prepare_lessons/prepare_lessons.css" />
+</head>
+
+
+<body>
+    <div class="prepare_main" v-cloak>
+        <div class="prepare_head">
+            <span class="pitch_on loadurl" data-url="./pages/prepare_lessons.html">查看学情</span>
+            <span class="loadurl" data-url="./pages/student_analysis/phase_analysis.html">阶段分析</span>
+            <span class="loadurl" data-url="./pages/repository/repository_class.html">教学参考</span>
+            <a class="loadurl" data-url="./pages/prepare_lessons_homeworklist.html">更多>></a>
+        </div>
+        <div class="prepare_body" :class="{'no-date':pagedata.length == 0}">
+            <div class="prepare_body_main">
+                <div class="homework_list" v-cloak v-for="homework in pagedata">
+                    <img v-if="homework.type == 40" class="homework_list_ico" src="img/public/ico_yuxi.png" />
+                    <img v-else-if="homework.type == 41" class="homework_list_ico" src="img/public/ico_dangtang.png" />
+                    <img v-else="homework.type == 42" class="homework_list_ico" src="img/public/ico_kehou.png" />
+                    <div class="homework_information">
+                        <h2 v-cloak :title="homework.papername">{{ homework.papername }}</h2>
+                        <p>
+                            <span v-cloak><img src="img/public/smallico_group.png"/>{{homework.groupname}}</span>
+                            <span v-cloak><img src="img/public/smallico_time.png"/>{{homework.starttime|timeFilter}}</span>
+                        </p>
+                    </div>
+                    <div class="homework_number">
+                        <span><b>{{homework.qcount}}</b>/{{homework.tcount}}/{{homework.scount}}<img
+                        src="img/public/message.png"/></span>
+                    </div>
+                    <div class="homework_operation">
+                        <span v-on:click="piyueClick(homework)" :class="{notoperation:(homework.tcount==0||homework.qcount==homework.tcount)}">
+                        <img src="img/public/operaico_piyue_white.png"/><img src="img/public/operaico_piyue_blue.png"/>批阅
+                    </span>
+                        <span v-on:click="jiangpingClick(homework)">
+                        <img src="img/public/operaico_jiangping_white.png"/><img
+                            src="img/public/operaico_jiangping_blue.png"/>讲评
+                    </span>
+                        <span v-on:click="tongjiClick(homework)" :class="{notoperation:homework.tcount==0}">
+                        <img src="img/public/operaico_tongji_white.png"/><img
+                            src="img/public/operaico_tongji_blue.png"/>统计
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="push" v-cloak>
+    <div class="push_content" v-for="xadata in xadatas" v-on:click="xadetialClick(xadata)">
+        <img src="img/public/ico_tuisong.png"/>
+        <div class="push_content_main">
+            <h2>{{xadata.papername}}</h2>
+            <p>
+                <span><img src="img/public/synopsis.png"/>类型：{{xadata.type|xuantypeFilter}}</span>
+                <span><img src="img/public/time.png"/>{{xadata.handletime|timeFilter}}</span>
+                <span><img src="img/public/grade.png"/>{{xadata.questionnum}}道题</span>
+            </p>
+        </div>
+    </div>
+</div>-->
+</body>
+<script src="js/prepare_lessons/prepare_lessons.js"></script>
+
+</html>

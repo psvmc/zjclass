@@ -1,0 +1,232 @@
+.question_number_main:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.smart_choice {
+    padding: 0 1.2rem;
+    overflow-y: scroll;
+}
+
+.select_class,
+.question_number {
+    margin-top: 2rem;
+}
+
+.paper_conditions_title,
+.select_class_title,
+.question_number_title {
+    background-color: #f7f9fc;
+    border-radius: 0.2rem;
+    border: solid 0.1rem #e1e9ef;
+    padding: 0.6rem 0.5rem;
+}
+
+.paper_conditions_title h2,
+.select_class_title h2,
+.question_number_title h2 {
+    height: 1.4rem;
+    padding: 0 0.4rem;
+    line-height: 1.4rem;
+    font-family: MicrosoftYaHeiLight;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #333333;
+    border-left: 0.3rem solid #3361e6;
+}
+
+.job_type,
+.difficulty_level {
+    padding: 2rem 1rem 0 1rem;
+}
+
+.paper_conditions b {
+    font-family: MicrosoftYaHeiLight;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0rem;
+    color: #333333;
+}
+
+.paper_conditions span {
+    display: inline-block;
+    width: 8rem;
+    height: 2.3rem;
+    background-color: #ffffff;
+    box-shadow: 0.1rem 0.1rem 0.4rem 0rem rgba(51, 97, 230, 0.3);
+    border-radius: 1.1rem;
+    border: solid 0.1rem #3361e6;
+    text-align: center;
+    line-height: 2.3rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #3361e6;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.paper_conditions span.pitch_on {
+    background-color: #e5eeff;
+}
+
+.select_class_main {
+    padding: 1rem;
+}
+
+.select_class_main span {
+    font-family: MicrosoftYaHeiLight;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #333333;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.select_class_main span b {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    display: inline-block;
+    border: solid 1px #3361e6;
+    position: relative;
+    vertical-align: middle;
+    margin: -4px 0.5rem 0 0;
+}
+
+.select_class_main span b img {
+    width: 0.6rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -0.3rem 0 0 -0.3rem;
+}
+
+.question_number_main > div {
+    float: left;
+    margin: 2rem 17rem 0 1rem;
+    width: 31rem;
+}
+
+.question_number div span {
+    font-family: MicrosoftYaHeiLight;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1.9rem;
+    letter-spacing: 0rem;
+    color: #333333;
+    float: left;
+}
+
+.question_number div span.question_types {
+    width: 8rem;
+}
+
+.question_number div .question_amount {
+    display: inline-block;
+    width: 12rem;
+    color: #757575;
+}
+
+.question_number div .questions_written {
+    float: left;
+}
+
+.question_number div .questions_written input {
+    width: 7rem;
+    height: 1.9rem;
+    border: solid 1px #dcdcdc;
+    background: #f8fafb;
+    outline: none;
+    text-indent: 1em;
+}
+
+.question_number div .questions_written img {
+    vertical-align: middle;
+    width: 0.9rem;
+    margin: 0 0.5rem;
+}
+
+.question_number div .dao {
+    color: #333333;
+    display: inline-block;
+}
+
+.paper_generation {
+    margin: 3rem 2rem 0 2rem;
+    padding: 2rem;
+    border-top: 0.1rem dashed #cacaca;
+    text-align: center;
+}
+
+.paper_generation button {
+    width: 16rem;
+    height: 2.9rem;
+    background-color: #ff785f;
+    border-radius: 0.2rem;
+    border: none;
+    outline: none;
+    font-family: MicrosoftYaHei;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.smart_choice::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.smart_choice::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.smart_choice::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.smart_choice::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.smart_choice {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}
+
+@media only screen and (max-width: 1401px) {
+    .question_number_main > div {
+        margin: 2rem 16rem 0 1rem;
+    }
+}
+
+@media only screen and (max-width: 1367px) {
+    .question_number_main > div {
+        margin: 2rem 15rem 0 1rem;
+    }
+}
+
+@media only screen and (max-width: 1281px) {
+    .question_number_main > div {
+        margin: 2rem 12rem 0 1rem;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>授课包</title>
+    <link rel="stylesheet" type="text/css" href="css/repository/repository_class.css" />
+    <link rel="stylesheet" type="text/css" href="css/repository/teaching_class.css" />
+</head>
+
+<body>
+    <div class="prepare_main lecture_main">
+        <div class="prepare_head">
+            <span class="loadurl" data-url="./pages/lecture.html">学情展示</span>
+            <span class="loadurl pitch_on" data-url="./pages/repository/teaching_courseware.html">授课包</span>
+            <span class="loadurl" data-url="./pages/comment/classroom_training.html">当堂小测</span>
+            <button type="button" class="loadurl" data-url="./pages/lanclass/guangdong_education.html"><img
+                src="img/lanclass/guangdong.png"/>互动历史
+        </button>
+        </div>
+        <div class="filter">
+            <div class="whole" :class="{'pitch_on':classtype==0}" @click="filterclasstype(0)">
+                <span><b></b></span>
+                <p>全部</p>
+            </div>
+            <div class="interactive" :class="{'pitch_on':classtype==1}" @click="filterclasstype(1)">
+                <span><b></b></span>
+                <p>互动课堂</p>
+            </div>
+        </div>
+        <div class="courseware_list lecture_body" :class="{'no-date':list_data.length == 0}">
+            <div class="courseware_li" v-cloak v-for="res in list_data" v-if="classtype==0">
+                <img :src="'img/repository/'+get_resource_ico(res.resourceclass)" />
+                <div class="courseware_li_main_information">
+                    <h2><b>{{res.resourcename}}</b>
+                        <span class="my_collection" v-if="res.actiontype==1"><img
+                            src="img/repository/my.png"/>我的收藏</span>
+                        <span class="my_download" v-if="res.actiontype==0"><img src="img/repository/my.png"/>我的上传</span>
+                    </h2>
+                    <p>
+                        <span><img src="img/public/time.png"/>{{res.createtime|timeFilter}}</span>
+                        <span><img src="img/public/grade.png"/>{{res.gradename}}</span>
+                        <span><img src="img/public/downcount.png"/>{{res.downloadnum}}次</span>
+                    </p>
+                </div>
+                <div class="courseware_li_main_operation">
+                    <span v-if="res.pageNumber!=0" class="lanclass" @click="creat_class(res.resourcecode)"><img
+                        src="img/lanclass/lanclass.png"/>互动课堂</span>
+                    <span class="preview" v-on:click="detialClick(res)" :class="{notoperation:res.pageNumber==0}">
+                        <img v-if="res.pageNumber==0" src="img/public/operaico_piyue_white.png"/>
+                        <img v-else="res.pageNumber!==0" src="img/prepare_lessons/preview.png"/>预览</span>
+                    <span class="download" @click="downloadfile(res)"><img
+                        src="img/prepare_lessons/download.png"/>下载</span>
+                </div>
+            </div>
+            <div class="courseware_li" v-cloak v-for="res in list_data_lan" v-if="classtype==1">
+                <img :src="'img/repository/'+get_resource_ico(res.resourceclass)" />
+                <div class="courseware_li_main_information">
+                    <h2><b>{{res.resourcename}}</b>
+                        <span class="my_collection" v-if="res.actiontype==1"><img
+                            src="img/repository/my.png"/>我的收藏</span>
+                        <span class="my_download" v-if="res.actiontype==0"><img src="img/repository/my.png"/>我的上传</span>
+                    </h2>
+                    <p>
+                        <span><img src="img/public/time.png"/>{{res.createtime|timeFilter}}</span>
+                        <span><img src="img/public/grade.png"/>{{res.gradename}}</span>
+                        <span><img src="img/public/downcount.png"/>{{res.downloadnum}}次</span>
+                    </p>
+                </div>
+                <div class="courseware_li_main_operation">
+                    <span v-if="res.pageNumber!=0" class="lanclass" @click="creat_class(res.resourcecode)"><img
+                        src="img/lanclass/lanclass.png"/>互动课堂</span>
+                    <span class="preview" v-on:click="detialClick(res)" :class="{notoperation:res.pageNumber==0}">
+                        <img v-if="res.pageNumber==0" src="img/public/operaico_piyue_white.png"/>
+                        <img v-else="res.pageNumber!==0" src="img/prepare_lessons/preview.png"/>预览</span>
+                    <span class="download" @click="downloadfile(res)"><img
+                        src="img/prepare_lessons/download.png"/>下载</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/repository/teaching_class.js"></script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>授课-当堂小测</title>
+    <link rel="stylesheet" type="text/css" href="css/prepare_lessons/prepare_lessons_head.css" />
+    <link rel="stylesheet" type="text/css" href="css/comment/classroom_training.css" />
+</head>
+
+<body>
+    <div class="prepare_main lecture_main">
+        <div class="prepare_head">
+            <span class="loadurl" data-url="./pages/lecture.html">学情展示</span>
+            <span class="loadurl" data-url="./pages/repository/teaching_class.html">授课包</span>
+            <span class="loadurl pitch_on" data-url="./pages/comment/classroom_training.html">当堂小测</span>
+        </div>
+
+        <div class="homework_assigned_list" v-cloak :class="{'no-date':pagedata.length == 0}">
+            <div class="homework_assigned" v-for="(homework,index) in pagedata">
+                <img src="img/comment/homework_list_ico.png" />
+                <h2 :title="homework.papername">{{ homework.papername }}</h2>
+                <span class="class"><img src="img/comment/class.png"/>{{homework.groupname}}</span>
+                <span class="date_saved"><img src="img/comment/save_time.png"/>{{homework.starttime|timeFilter}}</span>
+                <span><img src="img/comment/question_number.png"/><b>{{homework.questionnum}}</b>题</span>
+                <div class="homework_assigned_ico">
+                    <button @click="buzhi(homework)" v-if="!homework.isbuzhi"><img
+                        src="img/comment/homework_assigned_ico.png"/>布置作业
+                </button>
+                    <button v-if="!homework.isbuzhi" @click="delecthomework(homework,index)" class="delect"><img
+                        src="img/comment/delect.png"/>删除
+                </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="homework_detail">
+
+        </div>
+    </div>
+</body>
+<script src="js/comment/classroom_training.js"></script>
+
+</html>

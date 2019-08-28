@@ -1,0 +1,273 @@
+.headline:after,
+.upload_main .classification:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.upload_title {
+    padding: 0.8rem 0 0.8rem 1.8rem;
+}
+
+.upload_title span {
+    padding: 0.3rem 1.7rem;
+    margin-right: 20px;
+    border-radius: 16px;
+    border: solid 2px #ffffff;
+    font-family: MicrosoftYaHei;
+    font-size: 1.1em;
+    line-height: 39px;
+    letter-spacing: 1px;
+    color: #756f6f;
+}
+
+.upload_title span.pitch_on {
+    box-shadow: 0px 0px 7px 0px rgba(73, 128, 168, 0.61);
+    border-radius: 16px;
+    border: solid 2px #6aa8f0;
+    color: #3772bd;
+}
+
+.upload_main {
+    padding: 0 24px;
+}
+
+.upload_main .headline {
+    padding-left: 0.6rem;
+}
+
+.upload_main .headline input {
+    float: left;
+    padding-left: 10px;
+    margin-right: 16px;
+    width: 60.1rem;
+    height: 36px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: solid 1px #acacac;
+    font-family: MicrosoftYaHei;
+    font-size: 1em;
+    line-height: 36px;
+    letter-spacing: 1px;
+    color: #756f6f;
+}
+
+.upload_main .headline span,
+.upload_main .classification span {
+    font-family: MicrosoftYaHei;
+    font-size: 1.1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.4rem;
+    letter-spacing: 0.1rem;
+    color: #fe6121;
+    float: left;
+}
+
+.upload_main .headline span img,
+.upload_main .classification span img {
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+    width: 1.6rem;
+}
+
+.upload_main .classification {
+    padding: 0.6rem 0 1.3rem 0.6rem;
+}
+
+.upload_main .classification select {
+    float: left;
+    width: 7.6rem;
+    height: 2.1rem;
+    background-color: #ffffff;
+    border-radius: 0.2rem;
+    border: solid 0.1rem #acacac;
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    line-height: 2.1rem;
+    color: #756f6f;
+    margin-right: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.upload_main .add_tags {
+    padding: 0 0 0.3rem 0.6rem;
+}
+
+.upload_main .add_tags b {
+    display: inline-block;
+    width: 6.4rem;
+    height: 1.8rem;
+    background-color: #2b8cff;
+    font-family: MicrosoftYaHei;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 400;
+    position: relative;
+    margin-right: 34px;
+}
+
+.upload_main .add_tags b i {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 0.9rem 0 0.9rem 0.9rem;
+    border-style: solid;
+    border-color: transparent transparent transparent #2b8cff;
+    position: absolute;
+    top: 0px;
+    right: -0.8rem;
+}
+
+.upload_main .add_tags span {
+    display: inline-block;
+    padding: 0 14px;
+    height: 1.8rem;
+    background-color: #f2f2f2;
+    color: #2b8cff;
+    border-radius: 0.2rem;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.upload_main .add_tags span.pitch_on {
+    background-color: #2b8cff;
+    color: #ffffff;
+}
+
+.upload_document h2 {
+    width: 6.4rem;
+    height: 1.8rem;
+    background-color: #2b8cff;
+    font-family: MicrosoftYaHei;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 400;
+    position: relative;
+    margin: 0 0 1.1rem 0.6rem;
+}
+
+.upload_document h2 span {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 0.9rem 0 0.9rem 0.9rem;
+    border-style: solid;
+    border-color: transparent transparent transparent #2b8cff;
+    position: absolute;
+    top: 0px;
+    right: -0.8rem;
+}
+
+.upload_document .upload_document_main {
+    width: 85.3rem;
+    height: 27.2rem;
+    background-color: #fafafa;
+}
+
+.upload_document .upload_document_main h3 {
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.4rem;
+    letter-spacing: 0.1rem;
+    color: #fe6121;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.upload_document .upload_document_main .upload_file {
+    width: 83.3rem;
+    height: 20.4rem;
+    background-color: #ffffff;
+    border: dashed 0.1rem #bfbfbf;
+    margin-left: 20px;
+}
+
+.upload_document .upload_document_main .upload_file .uplaodbutton {
+    width: 17.1rem;
+    height: 4.8rem;
+    background-color: #fd9209;
+    border-radius: 0.3rem;
+    position: relative;
+    margin: 80px auto 40px auto;
+}
+
+.upload_document .upload_document_main .upload_file .uplaodbutton input {
+    width: 17.1rem;
+    height: 4.8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 4;
+    opacity: 0;
+}
+
+.upload_document .upload_document_main .upload_file .uplaodbutton img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.upload_document .upload_document_main .upload_file h4 {
+    font-family: MicrosoftYaHei;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #818181;
+    text-align: center;
+}
+
+.upload_document .upload_document_main .upload_file h5 {
+    font-family: MicrosoftYaHei;
+    font-size: 2rem;
+    font-weight: normal;;
+    color: #787878;
+    text-align: center;
+    line-height: 3.8rem;
+}
+
+.upload_document .upload_document_main .upload_file h5 b {
+    font-family: Arial-BoldMT;
+    font-size: 2.8rem;
+    color: #fe6121;
+}
+
+.upload_document .upload_document_main p {
+    padding: 20px 0 0 20px;
+}
+
+.upload_document .upload_document_main p b {
+    font-family: MicrosoftYaHei;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    color: #333333;
+}
+
+.upload_document .upload_document_main p span {
+    font-family: MicrosoftYaHei;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    color: #3399ff;
+}
+
+.upload_document .upload_document_main p span img {
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}

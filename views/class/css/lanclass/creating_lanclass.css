@@ -1,0 +1,139 @@
+.selclass_main:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.pop-up_box {
+    width: 84rem;
+    height: 33rem;
+    background-color: #3385e6;
+    box-shadow: 0rem 0rem 1rem 0rem #0f78e1;
+    margin-top: -16.5rem;
+    margin-left: -42rem;
+}
+
+.selclass > h2 {
+    height: 3.4rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3.4rem;
+    letter-spacing: 0.2rem;
+    color: #ffffff;
+    padding: 0 1rem;
+}
+
+.selclass h2 img {
+    float: right;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.selclass_main {
+    height: 29.6rem;
+    background-color: #ffffff;
+    padding: 0 2.5rem 3.3rem 0;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.selclass_main div {
+    float: left;
+    margin: 3rem 0 0 2.5rem;
+    width: 17rem;
+    height: 10rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 1rem 0rem rgba(206, 206, 206, 0.45);
+    border-radius: 4px;
+    border: solid 1px #cdcdcd;
+    position: relative;
+    text-align: center;
+}
+
+.selclass_main > div > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4rem;
+}
+
+.selclass_main div h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 5rem;
+    letter-spacing: 0rem;
+    color: #333333;
+    text-align: center;
+    height: 5rem;
+    overflow: hidden;
+}
+
+.selclass_main div button {
+    width: 10rem;
+    height: 2rem;
+    background-color: #3385e6;
+    box-shadow: 0rem 0rem 1rem 0rem rgba(73, 119, 252, 0.79);
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2rem;
+    letter-spacing: 0rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.selclass_main div button img {
+    vertical-align: middle;
+    margin: -4px 0.5rem 0 0;
+    width: 1rem;
+}
+
+.selclass_main div button.unclick {
+    background: #ccc;
+    box-shadow: 0rem 0rem 1rem 0rem #ccc;
+}
+
+.selclass_main div.pitch_on {
+    border: solid 1px #3385e6;
+}
+
+.selclass_main div.pitch_on button {
+    background-color: #f27a3e;
+    box-shadow: 0rem 0rem 1rem 0rem rgba(242, 122, 62, 0.79);
+}
+
+.selclass_main::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.selclass_main::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.selclass_main::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.selclass_main::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.selclass_main {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}

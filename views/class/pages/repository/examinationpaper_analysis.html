@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>学案-试卷分析页面</title>
+    <link rel="stylesheet" type="text/css" href="css/repository/examinationpaper_analysis.css" />
+</head>
+
+<body>
+    <div class="examinationpaper_analysis">
+        <img class="padlock" src="img/repository/padlock.png" />
+        <h2>试卷分析</h2>
+        <div class="examinationpaper_analysis_main">
+            <div class="examinationpaper_analysis_main_title">
+                <span class="pitch_on"><img src="img/repository/overall_distribution_analysis.png"/>试卷总体分布分析</span>
+                <span><img src="img/repository/quantity_distribution.png"/>试卷题量分布分析</span>
+                <span><img src="img/repository/difficulty_structure.png"/>试卷难度结构分析</span>
+                <span><img src="img/repository/overall_distribution.png"/>试卷总体分布分析</span>
+            </div>
+            <div class="examinationpaper_analysis_main_table">
+                <div class="overall_distribution_analysis">
+                    <table border="" cellspacing="" cellpadding="">
+                        <tr>
+                            <th colspan="3">总分：{{paperanalyze.paper.score}}</th>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">分值分布</td>
+                            <td>客观题(占比)</td>
+                            <td>{{paperanalyze.objectiveQuestionScore}}({{paperanalyze.objectiveScoreScale}}%)</td>
+                        </tr>
+                        <tr>
+                            <td>主观题(占比)</td>
+                            <td>{{paperanalyze.subjectiveQuestionScore}}({{paperanalyze.subjectiveScoreScale}%)</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">题量分布</td>
+                            <td>客观题(占比)</td>
+                            <td>{{paperanalyze.objectiveQuestionSum}}({{paperanalyze.objectiveSumScale}}%)</td>
+                        </tr>
+                        <tr>
+                            <td>主观题(占比)</td>
+                            <td>{{paperanalyze.subjectiveQuestionSum}}({{paperanalyze.subjectiveSumScale}}%)</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="quantity_distribution">
+                    <table border="" cellspacing="" cellpadding="">
+                        <tr>
+                            <th>题型</th>
+                            <th>题目量(占比)</th>
+                            <th>分值(分值)</th>
+                        </tr>
+                        <tr v-for="question in paperanalyze.questionType">
+                            <td>{{question.docHtml}}</td>
+                            <td>{{question.questionnum}}({{question.sumScale}}%)</td>
+                            <td>{{question.scoretotal}}({{question.scoreScale}}%)</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="difficulty_structure">
+
+                </div>
+                <div class="overall_distribution">
+                    <table border="" cellspacing="" cellpadding="">
+                        <tr>
+                            <th>序号</th>
+                            <th>知识点(认知水平)</th>
+                            <th>分值(占比)</th>
+                            <th>对应题号</th>
+                        </tr>
+                        <tr v-for="(point,index) in knowledgepoints">
+                            <td>{{index+1}}</td>
+                            <td>{{point.pointname}}</td>
+                            <td>{{point.scoreTotal}}({{point.scoreScale}}%)</td>
+                            <td>
+                                <span v-for="(or,index) in knowledgepoints.orders"><font c-if="index>0">,</font>{{or}}</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/repository/examinationpaper_analysis.js"></script>
+
+</html>

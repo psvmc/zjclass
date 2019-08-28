@@ -1,0 +1,227 @@
+.operational_attributes .job_name:after,
+.operational_attributes .expiration_date:after,
+.operational_attributes .select_class:after,
+.operational_attributes .correcting_style:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.pop-up_box {
+    width: 83.8rem;
+    height: 41.6rem;
+    background-color: #3385e6;
+    box-shadow: 0rem 0rem 0.9rem 0rem #0f78e1;
+    margin-left: -41.9rem;
+    margin-top: -20.8rem;
+}
+
+.assign_homework_title h2 {
+    height: 3.4rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3.4rem;
+    letter-spacing: 0.2rem;
+    color: #ffffff;
+    padding: 0 1rem;
+}
+
+.assign_homework_title h2 img {
+    float: right;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+/*作业类型*/
+.assign_job_type {
+    height: 5.9rem;
+    background-color: #f5f8fc;
+    text-align: center;
+}
+
+.assign_job_type span {
+    display: inline-block;
+    width: 17.1rem;
+    height: 3.8rem;
+    background-color: #f5f7fd;
+    border-radius: 1.9rem;
+    border: solid 1px #3385e6;
+    font-family: MicrosoftYaHei;
+    font-size: 1.9rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3.8rem;
+    letter-spacing: 0.1rem;
+    color: #0080ff;
+    text-align: center;
+    cursor: pointer;
+    margin: 1rem 0 0 4rem;
+}
+
+.assign_job_type span:first-of-type {
+    margin-left: 0;
+}
+
+.assign_job_type span img {
+    width: 2rem;
+    vertical-align: middle;
+    margin: -4px 0.6rem 0 0;
+}
+
+.assign_job_type span img:first-of-type {
+    display: none;
+}
+
+.assign_job_type span.pitch_on {
+    background-color: #3385e6;
+    color: #ffffff;
+}
+
+.assign_job_type span.pitch_on img:first-of-type {
+    display: inline-block;
+}
+
+.assign_job_type span.pitch_on img:last-of-type {
+    display: none;
+}
+
+/*作业属性*/
+.operational_attributes {
+    height: 25.6rem;
+    background-color: #ffffff;
+    padding: 0 5rem;
+}
+
+.expiration_date{
+    margin-top: 3rem;
+}
+
+.operational_attributes .job_name {
+    padding-top: 1rem;
+}
+
+.operational_attributes .select_class,
+.operational_attributes .correcting_style {
+    padding-top: 3rem;
+}
+
+.operational_attributes .job_name img,
+.operational_attributes .expiration_date img,
+.operational_attributes .select_class img,
+.operational_attributes .correcting_style img {
+    width: 3rem;
+    float: left;
+    margin: -4px 0.4rem 0 0;
+}
+
+.operational_attributes .job_name h2,
+.operational_attributes .expiration_date h2,
+.operational_attributes .select_class h2,
+.operational_attributes .correcting_style h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #000000;
+    float: left;
+}
+
+.operational_attributes .job_name h2,
+.operational_attributes .expiration_date h2 {
+    line-height: 2.7rem;
+}
+
+.operational_attributes .select_class h2,
+.operational_attributes .correcting_style h2 {
+    line-height: 2.3rem;
+}
+
+.operational_attributes .job_name input {
+    color: #3385e6;
+}
+
+.operational_attributes .job_name input,
+.operational_attributes .expiration_date input {
+    width: 21.1rem;
+    overflow: hidden;
+    height: 2.7rem;
+    border-radius: 0.3rem;
+    border: solid 0.1rem #e6e6e6;
+    font-family: MicrosoftYaHei;
+    font-size: 1.5rem;
+    font-weight: normal;
+    letter-spacing: 0rem;
+    outline: none;
+    padding: 0 0.5rem;
+}
+
+.operational_attributes .select_class span,
+.operational_attributes .correcting_style span {
+    float: left;
+    line-height: 2.3rem;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 2.7rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.5rem;
+    font-weight: normal;
+    letter-spacing: 0rem;
+    color: #333333;
+}
+
+.operational_attributes .select_class span i,
+.operational_attributes .correcting_style span i {
+    display: inline-block;
+    width: 2.1rem;
+    height: 2.1rem;
+    border: solid 0.1rem #3385e6;
+    background-color: #ffffff;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 0.4rem;
+}
+
+.operational_attributes .select_class span i img,
+.operational_attributes .correcting_style span i img {
+    width: 2.4rem;
+    position: absolute;
+    top: -0.1rem;
+    left: 0px;
+}
+
+/*操作*/
+.assign_homework_determine {
+    height: 5.6rem;
+    background-color: #f5f8fc;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.assign_homework_determine span {
+    width: 16.1rem;
+    height: 4.1rem;
+    background-color: #3386e6;
+    border-radius: 2.1rem;
+    line-height: 4.1rem;
+    font-family: FZZZHONGJW--GB1-0;
+    font-size: 2.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0;
+    color: #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 6rem;
+}
+
+.assign_homework_determine span:last-of-type {
+    margin-right: 0rem;
+}
+
+.assign_homework_determine span img {
+    vertical-align: middle;
+    margin: -4px 2rem 0 0;
+}

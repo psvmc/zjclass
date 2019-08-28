@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>备课-手动组卷</title>
+    <link rel="stylesheet" type="text/css" href="css/zujuan/manualquestion.css" />
+</head>
+
+<body>
+    <div class="prepare_main prepare_lessons_manualquestion_main">
+        <div class="prepare_head">
+            <span class="loadurl" data-url="./pages/prepare_lessons.html">查看学情</span>
+            <span class="loadurl" data-url="./pages/student_analysis/phase_analysis.html">阶段分析</span>
+            <span class="loadurl pitch_on" data-url="./pages/prepare_lessons_resource.html">教学参考</span>
+        </div>
+        <div class="second_level_directory">
+            <span class="loadurl" data-url="./pages/repository/repository_class.html"><img
+                src="img/repository/kejian_w.png"/><img src="img/repository/kejian.png"/>课件</span>
+            <span class="loadurl" data-url="./pages/repository/repository_learningcase.html"><img
+                src="img/repository/xuean_w.png"/><img src="img/repository/xuean.png"/>学案</span>
+            <div class="item_bank">
+                <span class="pitch_on loadurl" data-url="./pages/zujuan/manualquestion.html"><img
+                    src="img/repository/questionku_w.png"/><img src="img/repository/questionku.png"/>试题库</span>
+                <div class="item_bank_option">
+                    <p class="pitch_on loadurl" data-url="./pages/zujuan/manualquestion.html">手动选题</p>
+                    <p class="loadurl" data-url="./pages/zujuan/smartchoice.html">智能选题</p>
+                    <p class="loadurl" data-url="./pages/prepare_lessons/taojuan.html">套卷</p>
+                </div>
+            </div>
+            <span class="loadurl" data-url="./pages/repository/upload_resource_list.html"><img
+                src="img/repository/myresource_w.png"/><img src="img/repository/myresource.png"/>我的资源</span>
+        </div>
+
+        <div class="question_screen">
+            <p>
+                <b>题型：</b>
+                <span :class="{pitch_on:select_type==''}" @click="type_change('')">全部</span>
+                <span v-for="typetext in question_type_list" :class="{pitch_on:select_type==typetext.typeTextId}" @click="type_change(typetext.typeTextId)" v-cloak>{{typetext.typeTextName}}</span>
+            </p>
+            <p><b>难易程度：</b><span :class="{pitch_on:complexity==0}" @click="complexity_change(0)">全部</span>
+                <i :class="{unstar:i>complexity,star:i<=complexity}" v-for="i in 5" @click="complexity_change(i)">
+                <img v-if="i<=complexity" src="img/zujuan/star-on.png" alt="">
+                <img v-else src="img/zujuan/star-off.png" alt="">
+            </i>
+
+            </p>
+        </div>
+        <div class="question_rank">
+            <div class="rank_way">
+                <b>排序：</b>
+                <span :class="{pitch_on:sort=='time'}" @click="sort_change('time')">时间↓</span>
+                <span :class="{pitch_on:sort=='count'}" @click="sort_change('count')">组卷次数↑</span>
+            </div>
+            <div class="question_rank_operation">
+                <p class="question_num" v-cloak>共计：<span>{{ques_count}}</span>题</p>
+                <p class="choose_all">
+                    <span v-if="is_select_all" @click="cancel_all_ques()">取消本页全部试题</span>
+                    <span v-else @click="select_all_ques()">选择本页全部试题</span>
+                </p>
+            </div>
+        </div>
+        <div class="question_list" v-cloak :class="{'no-date':question_list.length == 0}">
+            <div class="question_detail" v-for="(question,index) in question_list" :key="index">
+                <div class="question_detail_title">
+                    <div class="question_property">
+                        <b>{{index+1}}</b>
+                        <span>题型： {{question.typeTextName}}</span>
+                        <span>难易度： {{question.complexityText}}</span>
+                        <span>上传时间：{{question.handletime|timeFilter}}</span>
+                    </div>
+                    <p>试题来源：{{question.sourcename}}</p>
+                </div>
+                <div class="question_detail_main" v-html="get_dochtml_all(question)"></div>
+                <div class="question_detail_bottom">
+                    <div class="question_detail_opreation">
+                        <span @click="check_parsing(question)"><img src="img/prepare_lessons/examine.png"/>查看解析</span>
+                    </div>
+                    <div class="question_detail_groupnumber">
+                        <span class="groupnumber">组卷次数：{{question.count}}次</span>
+                        <span class="selecttopic" :class="{prohibited_topics:question.inbasket>0}" @click="select_ques(question)">
+							<img v-if="question.inbasket>0" src="img/prepare_lessons/remove.png"/>
+							<img v-else src="img/prepare_lessons/select_topic.png"/>
+							选题
+						</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="paper_basket">
+            <div class="paper_basket_title" @click="basketanimate">
+                <div class="paper_basket_title_content">
+                    <img src="img/zujuan/line.png" />
+                    <img src="img/zujuan/cart.png" />
+                    <span>试题篮<b>{{selcct_num}}</b></span>
+                    <img src="img/zujuan/line.png" />
+                </div>
+            </div>
+            <div class="paper_basket_main" :style="{width:width+'rem'}">
+                <h2>试题总量（<b>{{selcct_num}}</b>）</h2>
+                <p v-for="typeText in shitilan" v-cloak>
+                    <span>{{typeText.typeTextName}}:</span>
+                    <span><b>{{typeText.testids.length}}</b>道<img src="img/zujuan/delect.png"
+                                                              @click="delete_type(typeText)"/></p></span>
+                    <div class="test_paper_generation" @click="test_paper_generation()">
+                        <button type="button">生成试卷</button>
+                    </div>
+            </div>
+        </div>
+        <div class="pagingfirst">
+            <zj-page v-if="question_list.length > 0" :showpage="showpage" :currpage="currpage" :pages="pages" @gotopage="gotopage"></zj-page>
+        </div>
+    </div>
+
+</body>
+<script src="js/zujuan/manualquestion.js"></script>
+
+</html>

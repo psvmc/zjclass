@@ -1,0 +1,712 @@
+.display_none {
+    display: none;
+}
+
+.display_none {
+    display: none;
+}
+
+.job_information:after,
+.topic_number:after,
+.topic_detail .answer-analysis:after,
+.full_class:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.comment_appraise_body {
+    overflow-y: scroll;
+    margin-top: 6px;
+}
+
+.job_information {
+    margin: 1rem;
+    padding: 0.5rem;
+    height: 4rem;
+    background-color: #f1f4f9;
+    box-shadow: 0rem 0rem 0.4rem 0rem rgba(66, 138, 219, 0.22);
+    border-radius: 0.3rem;
+    border: solid 0.1rem #d6dee5;
+}
+
+.job_information > img {
+    float: left;
+    margin: 0px 14px 0px 8px;
+}
+
+.job_information_main {
+    float: left;
+}
+
+.job_information_main h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #333333;
+}
+
+.job_information_main h2 sup {
+    display: inline-block;
+    width: 42px;
+    height: 20px;
+    line-height: 20px;
+    background-color: #85bffb;
+    border-radius: 10px;
+    margin-left: 4px;
+    font-family: SimSun;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.job_information_main p {
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #999999;
+    line-height: 2rem;
+}
+
+.job_information_main p span {
+    margin-right: 14px;
+}
+
+.job_information_main p span img {
+    width: 1rem;
+    margin: -4px 4px 0 0;
+    vertical-align: middle;
+}
+
+.job_information_main_operation {
+    float: right;
+    margin-top: 0.8rem;
+}
+
+.job_information_main_operation button {
+    margin-right: 12px;
+    width: 7.3rem;
+    height: 2.4rem;
+    border-radius: 1.2rem;
+    outline: none;
+    font-family: MicrosoftYaHei;
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.4rem;
+    letter-spacing: 0.1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0.1rem 0.1rem 0.6rem 0rem rgba(73, 119, 252, 0.79);
+    color: #4977fc;
+    float: left;
+}
+
+.job_information_main_operation button.full {
+    background-color: #3385e6;
+    box-shadow: 0.1rem 0.2rem 0.3rem 0rem rgba(51, 97, 230, 0.37);
+    color: #fff;
+}
+
+.job_information_main_operation button:hover {
+    border: 1px solid #3385e6;
+}
+
+.job_information_main_operation button img {
+    width: 1.3rem;
+    vertical-align: middle;
+    margin: -4px 8px 0 0;
+}
+
+.topic {
+    margin: 22px 8px;
+}
+
+.topic_number dl {
+    cursor: pointer;
+    width: 8.2rem;
+    height: 6.1rem;
+    background-color: #ffffff;
+    border-radius: 0.3rem;
+    border: solid 0.1rem #3386e6;
+    float: left;
+    margin: 0 20px 10px 0;
+    -webkit-transition: -webkit-transform 1s ease 0s;
+    transition: transform 1s ease 0s;
+}
+
+.topic_number dl.pitch_on {
+    animation: myfirst 3s infinite;
+    -moz-animation: myfirst 3s infinite; /* Firefox */
+    -webkit-animation: myfirst 3s infinite; /* Safari 和 Chrome */
+    -o-animation: myfirst 3s infinite;
+}
+
+.topic_number dl.pitch_on:hover {
+    transform: none;
+}
+
+@keyframes myfirst {
+    from {
+        box-shadow: 0 0 0px #000000;
+    }
+    50% {
+        box-shadow: 0 0 30px #e4393c;
+    }
+    to {
+        box-shadow: 0 0 0px #000000;
+    }
+}
+
+@-moz-keyframes myfirst {
+    from {
+        box-shadow: 0 0 0px #e4393c;
+    }
+    50% {
+        box-shadow: 0 0 30px #e4393c;
+    }
+    to {
+        box-shadow: 0 0 0px #e4393c;
+    }
+}
+
+@-webkit-keyframes myfirst {
+    from {
+        box-shadow: 0 0 0px #e4393c;
+    }
+    50% {
+        box-shadow: 0 0 30px #e4393c;
+    }
+    to {
+        box-shadow: 0 0 0px #e4393c;
+    }
+}
+
+@-o-keyframes myfirst {
+    from {
+        box-shadow: 0 0 0px #e4393c;
+    }
+    50% {
+        box-shadow: 0 0 30px #e4393c;
+    }
+    to {
+        box-shadow: 0 0 0px #e4393c;
+    }
+}
+
+.topic_number dl:hover {
+    transform: scale(1.2);
+}
+
+.topic_number dl.lower {
+    border: solid 0.1rem #f55b63;
+}
+
+.topic_number dl dt {
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #3386e6;
+    line-height: 2.5rem;
+}
+
+.topic_number dl dd {
+    width: 7rem;
+    height: 2.9rem;
+    background-color: #f1f5fa;
+    box-shadow: 0rem 0rem 0.3rem 0rem rgba(51, 134, 230, 0.5);
+    border-radius: 0.3rem;
+    font-family: ArialRoundedMTBold;
+    font-family: ArialRoundedMTBold;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #3386e6;
+    font-size: 800;
+    text-align: center;
+    line-height: 2.9rem;
+    margin: auto;
+}
+
+.topic_number dl.lower dt,
+.topic_number dl.lower dd {
+    color: #f55b63;
+}
+
+.topic_detail {
+    margin: 10px 0px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 128, 255, 0.17);
+    border: solid 1px #0080ff;
+    position: relative;
+}
+
+.test_questions {
+    min-height: 100px;
+    font-size: 14px;
+    line-height: 40px;
+    color: #212121;
+    letter-spacing: 1px;
+    font-family: SimSun;
+}
+
+.test_questions .test_questions_title {
+    height: 40px;
+    background: #f9f9f9;
+}
+
+.test_questions .test_questions_title b {
+    width: 31px;
+    height: 31px;
+    background-color: #1d8bd1;
+    text-align: center;
+    display: inline-block;
+    line-height: 31px;
+    font-family: ArialNarrow-Bold;
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    margin: 4px 0 0 -4px;
+    float: left;
+}
+
+.test_questions .test_questions_title span {
+    font-family: SimSun;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: #1d8bd1;
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+}
+
+.test_questions_main {
+    padding: 16px;
+}
+
+.topic_detail .answer-analysis {
+    background-color: #f7fbff;
+    padding: 8px 6px;
+}
+
+.topic_detail .answer-analysis h2 {
+    float: left;
+    padding: 0 0.6rem;
+    height: 29px;
+    background-color: #3385e6;
+    border-radius: 0.7rem;
+    text-align: center;
+    line-height: 29px;
+    font-family: SimSun;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.answer-analysis_main {
+    float: left;
+    line-height: 29px;
+    font-family: SimSun;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #212121;
+    width: 65%;
+    padding-left: 10px;
+}
+
+/*答案解析*/
+.answer_keys,
+.show_answer_keys {
+    width: 10.5rem;
+    height: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0.1rem 0.1rem 0.6rem 0rem rgba(51, 133, 230, 0.79);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: 18px;
+    right: 11rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: MicrosoftYaHei;
+    font-size: 1.1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #1d8bd1;
+    line-height: 2rem;
+}
+
+.answer_keys img,
+.show_answer_keys img {
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.show_answer_keys {
+    background-color: #1d8bd1;
+    color: #ffffff;
+}
+
+/*错误原因分析*/
+
+.errorcause_analysis {
+    position: absolute;
+    bottom: 18px;
+    right: 0.5rem;
+    width: 10rem;
+    height: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0.1rem 0.1rem 0.6rem 0rem rgba(30, 134, 239, 0.79);
+    font-family: MicrosoftYaHei;
+    font-size: 1.1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #1d8bd1;
+    line-height: 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.unuse {
+    background-color: #dbdce4;
+    box-shadow: 0.1rem 0.1rem 0.6rem 0rem rgba(163, 164, 166, 0.79);
+    color: #ffffff;
+}
+
+.errorcause_analysis img {
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+/*作答情况*/
+
+.answer_is {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(66, 138, 219, 0.33);
+    border-radius: 4px;
+    border: solid 1px #0080ff;
+    padding: 10px 0 16px 0;
+}
+
+.answer_is .answer_is_title h2 {
+    display: inline-block;
+    font-family: MicrosoftYaHeiLight;
+    font-size: 28px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #0080ff;
+}
+
+.answer_is .answer_is_title h2 img {
+    vertical-align: middle;
+    margin: -4px 6px 0 10px;
+}
+
+.answer_is .answer_is_title .legend {
+    float: right;
+}
+
+.answer_is .answer_is_title .legend span {
+    margin-right: 14px;
+    font-family: SimSun;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 28px;
+    letter-spacing: 1px;
+    color: #3d3d3d;
+}
+
+.answer_is .answer_is_title .legend span i {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: -4px 6px 0 0;
+    vertical-align: middle;
+}
+
+.answer_is .answer_is_title .legend span.students_right i {
+    background-color: #dde7f3;
+    border: 1px solid #dde7f3;
+}
+
+.answer_is .answer_is_title .legend span.students_wrong i {
+    background-color: #f55b63;
+    border: 1px solid #f55b63;
+}
+
+.answer_is .answer_is_title .legend span.students_unpigai i {
+    background-color: #cdcdcd;
+    border: 1px solid #cdcdcd;
+}
+
+.answer_is .answer_is_title .legend span.students_untijiao i {
+    border: dashed 1px #999999;
+
+}
+
+.answer_is_property {
+    padding-left: 30px;
+    margin-top: 8px;
+}
+
+.answer_is_property p span {
+    font-family: MicrosoftYaHei;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: #0080ff;
+    margin-right: 30px;
+}
+
+.answer_is_property p span img {
+    vertical-align: middle;
+    margin: -4px 10px 0 0;
+}
+
+.answer_is_property p span b {
+    font-size: 23px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #eb2700;
+}
+
+.answer_is_property p span.shortest_time_person {
+    padding: 2px 12px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    border: dashed 1px #0080ff;
+    cursor: pointer;
+}
+
+.full_class {
+    padding-left: 26px;
+}
+
+.full_class span span {
+    padding: 2px 12px;
+    background-color: #dde7f3;
+    border-radius: 12px;
+    border: solid 1px #dde7f3;
+    font-family: MicrosoftYaHei;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #3385e6;
+    margin: 14px 6px 0 0;
+    float: left;
+    cursor: pointer;
+}
+
+.full_class span.err {
+    background-color: #f55b63;
+    border: solid 1px #f55b63;
+    color: #ffffff;
+}
+
+/*未提交*/
+.full_class span.uncommitted {
+    background: #ffffff;
+    border: dashed 1px #999999;
+    color: #686868;
+}
+
+.full_class span.no_corrections {
+    background-color: #cdcdcd;
+    border: solid 1px #cdcdcd;
+    color: #212121;
+
+}
+
+.pop-up_box {
+    width: 984px;
+    height: 508px;
+    background-color: #0080ff;
+    box-shadow: 0px 0px 14px 0px #0f78e1;
+    margin-left: -492px;
+    margin-top: -254px;
+}
+
+@media only screen and (max-width: 1601px) {
+    .job_information {
+        margin: 0 4px;
+        padding: 6px 0;
+    }
+
+    .job_information > img {
+        margin: 0px 10px 0px 6px;
+        width: 42px;
+    }
+
+    .job_information_main h2 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .job_information_main h2 sup {
+        width: 30px;
+        height: 16px;
+        line-height: 16px;
+        margin-left: 2px;
+    }
+
+    .job_information_main p {
+        font-size: 12px;
+    }
+
+    .job_information_main p span {
+        margin-right: 10px;
+    }
+
+    .job_information_main p span img {
+        width: 12px;
+        margin-right: 2px;
+    }
+
+    .job_information_main_operation button {
+        margin-right: 6px;
+        width: 84px;
+        height: 30px;
+        border-radius: 14px;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .job_information_main_operation button img {
+        width: 22px;
+        margin: -4px 4px 0 0;
+    }
+
+    .topic {
+        margin: 12px 6px;
+    }
+
+    .topic_number dl {
+        width: 94px;
+        height: 68px;
+        margin-right: 12px;
+    }
+
+    .topic_number dl dt {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .topic_number dl dd {
+        width: 88px;
+        height: 38px;
+        font-size: 20px;
+        line-height: 38px;
+    }
+
+    .topic_detail {
+        margin: 16px 0px;
+    }
+
+    .test_questions {
+        min-height: 100px;
+    }
+
+    .topic_detail .answer-analysis {
+        padding: 6px 4px;
+    }
+
+    .topic_detail .answer-analysis h2 {
+        width: 54px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+    }
+
+    /*作答情况*/
+    .answer_is {
+        padding: 8px 0 6px 0;
+    }
+
+    .answer_is .answer_is_title h2 {
+        font-size: 20px;
+    }
+
+    .answer_is .answer_is_title h2 img {
+        width: 18px;
+        margin: -4px 4px 0 6px;
+    }
+
+    .answer_is .answer_is_title .legend span {
+        margin-right: 8px;
+        font-size: 12px;
+        line-height: 22px;
+    }
+
+    .answer_is .answer_is_title .legend span i {
+        width: 12px;
+        height: 12px;
+        margin: -4px 4px 0 0;
+    }
+
+    .answer_is_property {
+        padding-left: 26px;
+        margin-top: 6px;
+    }
+
+    .answer_is_property p span {
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 30px;
+        margin-right: 22px;
+    }
+
+    .answer_is_property p span img {
+        width: 14px;
+        margin: -4px 6px 0 0;
+    }
+
+    .answer_is_property p span b {
+        font-size: 16px;
+    }
+
+    .answer_is_property p span.shortest_time_person {
+        padding: 1px 8px;
+    }
+
+    .answer-analysis_main {
+        width: 60%;
+    }
+
+    .full_class {
+        padding-left: 20px;
+    }
+
+    .full_class span span {
+        padding: 1px 8px;
+        font-size: 12px;
+        margin: 8px 6px 0 0;
+    }
+}

@@ -1,0 +1,24 @@
+.courseware_list .courseware_li .learning_case_li_main_information p {
+    line-height: 2rem;
+    height: 2rem;
+}
+
+.courseware_list .courseware_li .courseware_li_main_information p span.question_count {
+    width: 6.4rem;
+    height: 1.4rem;
+    background-color: #e9f0fc;
+    border-radius: 0.7rem;
+    display: inline-block;
+    line-height: 1.4rem;
+    text-align: center;
+    color: #3385e6;
+}
+
+.courseware_list .courseware_li .courseware_li_main_information p span.question_count b {
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.learning_case_li_main_operation span {
+    width: 9.9rem;
+}

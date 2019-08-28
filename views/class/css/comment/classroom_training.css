@@ -1,0 +1,101 @@
+.homework_assigned_list {
+    padding: 0.8rem 1.2rem 0 1.2rem;
+}
+
+.homework_assigned {
+    display: flex;
+    justify-content:space-around;
+    margin-bottom: 0.8rem;
+    height: 4.3rem;
+    background-color: #f7f7f7;
+    box-shadow: 0rem 0rem 0.4rem 0rem rgba(66, 138, 219, 0.22);
+    border-radius: 0.3rem;
+    border: solid 1px #e8e8e8;
+}
+
+.homework_assigned > img {
+    width: 3rem;
+    margin: 0.6rem 0;
+}
+
+.homework_assigned h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #000000;
+    line-height: 4.3rem;
+    height: 4.3rem;
+    width: 24rem;
+    overflow: hidden;
+}
+
+.homework_assigned span {
+    font-family: MicrosoftYaHei;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #656565;
+    line-height: 4.3rem;
+    display: inline-block;
+}
+
+.homework_assigned span b {
+    font-size: 1.9em;
+    color: #f27a3e;
+}
+
+.homework_assigned span img {
+    width: 1.8rem;
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.homework_assigned span:last-of-type img {
+    margin: -12px 4px 0 0;
+}
+
+.homework_assigned .homework_assigned_ico {
+    float: right;
+    margin: 1rem 1.2rem;
+}
+
+.homework_assigned .homework_assigned_ico button {
+    width: 9.4rem;
+    height: 2.4rem;
+    background-color: #3385e6;
+    box-shadow: 0.1rem 0.2rem 0.2rem 0rem rgba(95, 175, 255, 0.37);
+    border-radius: 1.2rem;
+    outline: none;
+    border: none;
+    font-family: MicrosoftYaHei;
+    font-size: 1.4em;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.homework_assigned .homework_assigned_ico button.delect {
+    width: 7.4rem;
+}
+
+.homework_assigned .homework_assigned_ico button img {
+    width: 1.4rem;
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+/*布置作业弹出框*/
+
+.pop-up_box {
+    width: 1662px;
+    height: 816px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    margin-left: -831px;
+    margin-top: -408px;
+}

@@ -1,0 +1,148 @@
+.phase_analysis_screen:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*筛选*/
+.phase_analysis_screen {
+    margin: 1rem 0;
+}
+
+.phase_analysis_screen .select_class {
+    float: left;
+}
+
+.phase_analysis_screen div h2 {
+    float: left;
+    margin: 0 0.9rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0rem;
+    color: #1e1e1e;
+}
+
+.phase_analysis_screen .select_class select {
+    float: left;
+    width: 11.3rem;
+    height: 2.3rem;
+    border-radius: 0.3rem;
+    border: solid 1px #a7a7a7;
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0rem;
+    color: #12203e;
+    outline: none;
+}
+
+.select_date {
+    float: left;
+}
+
+.select_date .select_date_main {
+    float: left;
+}
+
+.select_date .select_date_main span {
+    display: inline-block;
+    width: 14.3rem;
+    height: 2.3rem;
+    box-sizing: border-box;
+    border-radius: 0.3rem;
+    border: solid 1px #a7a7a7;
+    text-indent: 1em;
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0rem;
+    color: #12203e;
+}
+
+.select_date .select_date_main button {
+    width: 4.6rem;
+    height: 2.3rem;
+    background-color: #3385e6;
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+    font-family: MicrosoftYaHei;
+    font-size: 1.1em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0px;
+    color: #ffffff;
+}
+
+.single_statistics_detail {
+    overflow-y: scroll;
+}
+
+.single_statistics_detail::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.single_statistics_detail::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.single_statistics_detail::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #eaecf2;
+}
+
+.single_statistics_detail::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.single_statistics_detail {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}
+
+.cartogram {
+    margin: 0.2rem 0.9rem 1rem 0.9rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 0.4rem 0rem rgba(152, 152, 152, 0.45);
+    border-radius: 0.3rem;
+    padding: 0.7rem 0;
+}
+
+.single_statistics_detail .cartogram p {
+    line-height: 28px;
+    font-family: MicrosoftYaHei;
+    font-size: 1.5em;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #0080ff;
+}
+
+.single_statistics_detail .cartogram p span {
+    width: 8px;
+    height: 28px;
+    background-color: #3399ff;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: -2px 10px 0 10px;
+}
+
+.single_statistics_detail .cartogram div {
+    padding: 8px 0;
+    min-height: 400px;
+}

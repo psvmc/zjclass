@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>学生客观题答案</title>
+    <link rel="stylesheet" type="text/css" href="css/comment/student_writing.css" />
+</head>
+
+<body>
+    <div class="students_writing_outer">
+        <img src="img/comment/padlock.png" @click="close_pop" />
+        <h2>{{user.username}}的{{right_or_wrong}}答案</h2>
+        <div class="students_writing_keguan objective_correct objective_error">
+            <div class="topic" v-html="select_dochtml">
+
+            </div>
+            <div class="topic_bottom">
+                <p>备注：正确答案为<b>蓝色</b>，错误为<b>红色</b>，<b>黑色</b>则该题学生未作答。</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="js/comment/students_writing_keguan.js"></script>
+
+</html>

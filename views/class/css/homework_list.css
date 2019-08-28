@@ -1,0 +1,75 @@
+.assignment_main {
+    overflow-y: scroll;
+    margin: 0.5rem 0;
+}
+
+.backtrack {
+    float: right;
+    margin-right: 12px;
+    width: 7.3rem;
+    height: 2.4rem;
+    border-radius: 1.2rem;
+    outline: none;
+    font-family: MicrosoftYaHei;
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.4rem;
+    letter-spacing: 0.1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0.1rem 0.1rem 0.6rem 0rem rgba(73, 119, 252, 0.79);
+    color: #4977fc;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.backtrack img {
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.backtrack:hover {
+    border: 1px solid #3385e6;
+}
+
+.assignment_main::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.assignment_main::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.assignment_main::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #eaecf2;
+}
+
+.assignment_main::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.assignment_main {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}
+
+@media only screen and (max-width: 1601px) {
+    .backtrack {
+        width: 94px;
+        height: 26px;
+        line-height: 26px;
+    }
+
+    .backtrack img {
+        width: 20px;
+    }
+}

@@ -1,0 +1,184 @@
+.push_homework .push_homework_main:after,
+.assignment .assignment_title:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.push_homework {
+    margin: 0.5rem;
+    height: 10.8rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 0.2rem 0rem #3361e6;
+    border-radius: 0.3rem;
+}
+
+.assignment .assignment_title {
+    border-bottom: 1px solid #d9d9d9;
+    height: 3.4rem;
+    padding-left: 26px;
+}
+
+.assignment .assignment_title h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 1.4em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 3.2rem;
+    letter-spacing: 1px;
+    color: #0080ff;
+    width: 9.9rem;
+    text-align: center;
+    border-bottom: 0.3rem solid #3385e6;
+    float: left;
+}
+
+.assignment .assignment_title span {
+    cursor: pointer;
+}
+
+.assignment_main {
+    margin-top: 0.7rem;
+    overflow-y: scroll;
+}
+
+.push_homework .push_homework_main .compensation_homework {
+    width: 30%;
+    margin-left: 3%;
+    padding: 2.1rem 0;
+    height: 6.5rem;
+    overflow: hidden;
+    float: left;
+    cursor: pointer;
+}
+
+.push_homework > .push_homework_main > .compensation_homework > img {
+    float: left;
+    width: 5.8rem;
+    margin-right: 12px;
+}
+
+.push_homework .push_homework_main .compensation_homework .compensation_homework_property {
+    float: left;
+}
+
+.push_homework .push_homework_main .compensation_homework .compensation_homework_property h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 4.3rem;
+    letter-spacing: 0rem;
+    max-width: 22rem;
+    height: 4.3rem;
+    color: #333333;
+    overflow: hidden;
+}
+
+.push_homework .push_homework_main .compensation_homework .compensation_homework_property p {
+    font-family: MicrosoftYaHei;
+    font-size: 0.9em;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #444444;
+    margin-top: 4px;
+}
+
+.push_homework .push_homework_main .compensation_homework .compensation_homework_property p img {
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.assignment {
+    margin: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 0.2rem 0rem #3361e6;
+    border-radius: 0.3rem;
+}
+
+.assignment .assignment_title span {
+    float: right;
+    margin-right: 10px;
+    font-size: 0.9em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 44px;
+    letter-spacing: 0px;
+    color: #6c6c6c;
+}
+
+.alternate {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.alternate button {
+    width: 24.6rem;
+    height: 4.3rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 1rem 0rem rgba(51, 133, 230, 0.61);
+    border-radius: 2.2rem;
+    border: solid 0.1rem #3385e6;
+    font-family: FZZZHONGJW--GB1-0;
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 4.3rem;
+    letter-spacing: 0.1rem;
+    color: #3385e6;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.alternate button img {
+    width: 3.3rem;
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.alternate button.another_set {
+    background-color: #3385e6;
+    color: #fff;
+    margin-right: 7rem;
+}
+
+.assignment_main::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.assignment_main::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.assignment_main::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.assignment_main::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.assignment_main {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}
+
+.no-date {
+    min-height: 0px;
+    background-size: contain;
+}
+
+@media only screen and (max-width: 1441px) {
+    .push_homework .push_homework_main .compensation_homework .compensation_homework_property h2 {
+        max-width: 17rem;
+    }
+}

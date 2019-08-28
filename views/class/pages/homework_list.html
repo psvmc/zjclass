@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/homework.css" />
+    <link rel="stylesheet" type="text/css" href="css/prepare_lessons/prepare_lessons.css" />
+    <link rel="stylesheet" type="text/css" href="css/homework_list.css" />
+</head>
+
+<body>
+    <div class="assignment">
+        <div class="assignment_title">
+            <h2>作业</h2>
+            <button class="backtrack loadurl" data-url="./pages/homework.html"><img src="img/public/backtrack.png">返回
+        </button>
+        </div>
+        <div class="assignment_main" v-cloak :class="{'no-date':pagedata.length == 0}">
+            <div class="homework_list" v-for="homework in pagedata">
+                <img class="homework_list_ico" src="img/public/ico_kehou.png" />
+                <div class="homework_information">
+                    <h2>{{homework.papername}}</h2>
+                    <p>
+                        <span>{{homework.groupname}}</span>
+                        <span>{{homework.starttime|timeFilter}}</span>
+                    </p>
+                </div>
+                <div class="homework_number">
+                    <span><b>{{homework.qcount}}</b>/{{homework.tcount}}/{{homework.scount}}<img
+                        src="img/public/message.png"/></span>
+                </div>
+                <div class="homework_operation">
+                    <span class="look" @click="show_detail(homework)">
+					<img src="img/prepare_lessons/preview.png"/>详情
+				</span>
+
+                    <span class="arrange" :class="{notoperation:homework.status==22}" @click="buzhiClick(homework)">
+                    <img src="img/public/commented.png"/>布置
+                </span>
+                    <span @click="piyueClick(homework)" :class="{notoperation:(homework.tcount==0||homework.qcount==homework.tcount)}">
+					<img src="img/public/operaico_piyue_white.png"/><img src="img/public/operaico_piyue_blue.png"/>批阅
+				</span>
+                </div>
+            </div>
+        </div>
+        <!--这里是分页-->
+        <div class="pagingfirst">
+            <zj-page v-if="pagedata.length > 0" :showpage="showpage" :currpage="currpage" :pages="pages" @gotopage="gotopage"></zj-page>
+        </div>
+    </div>
+</body>
+<script src="js/homework_list.js"></script>
+
+</html>

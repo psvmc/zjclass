@@ -1,0 +1,4 @@
+.prepare_lessons_homeworklist_main .prepare_body {
+    width: 100%;
+    overflow-y: scroll;
+}

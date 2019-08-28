@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/zujuan/smartchoice.css" />
+</head>
+
+<body>
+    <div class="prepare_main prepare_lessons_manualquestion_main">
+        <div class="prepare_head">
+            <span class="loadurl" data-url="./pages/prepare_lessons.html">查看学情</span>
+            <span class="loadurl" data-url="./pages/student_analysis/phase_analysis.html">阶段分析</span>
+            <span class="loadurl pitch_on" data-url="./pages/prepare_lessons_resource.html">教学参考</span>
+        </div>
+        <div class="second_level_directory">
+            <span class="loadurl" data-url="./pages/repository/repository_class.html"><img
+                src="img/repository/kejian_w.png"/><img src="img/repository/kejian.png"/>课件</span>
+            <span class="loadurl" data-url="./pages/repository/repository_learningcase.html"><img
+                src="img/repository/xuean_w.png"/><img src="img/repository/xuean.png"/>学案</span>
+            <div class="item_bank">
+                <span class="pitch_on loadurl" data-url="./pages/zujuan/manualquestion.html"><img
+                    src="img/repository/questionku_w.png"/><img src="img/repository/questionku.png"/>试题库</span>
+                <div class="item_bank_option">
+                    <p class="loadurl" data-url="./pages/zujuan/manualquestion.html">手动选题</p>
+                    <p class="pitch_on loadurl" data-url="./pages/zujuan/smartchoice.html">智能选题</p>
+                    <p class="loadurl" data-url="./pages/prepare_lessons/taojuan.html">套卷</p>
+                </div>
+            </div>
+            <span class="loadurl" data-url="./pages/repository/upload_resource_list.html"><img
+                src="img/repository/myresource_w.png"/><img src="img/repository/myresource.png"/>我的资源</span>
+        </div>
+        <div class="smart_choice">
+            <div class="paper_conditions">
+                <div class="paper_conditions_title">
+                    <h2>设置试卷条件</h2>
+                </div>
+                <div class="job_type">
+                    <b>作业类型：</b>
+                    <span :class="{pitch_on:papertype==41}" @click="change_papertype(41)">课堂作业</span>
+                    <span :class="{pitch_on:papertype==42}" @click="change_papertype(42)">课后作业</span>
+                </div>
+                <div class="difficulty_level">
+                    <b>试卷难度：</b>
+                    <span :class="{pitch_on:complexity==1}" @click="change_complexity(1)">容易</span>
+                    <span :class="{pitch_on:complexity==2}" @click="change_complexity(2)">中度</span>
+                    <span :class="{pitch_on:complexity==3}" @click="change_complexity(3)">很难</span>
+                </div>
+            </div>
+            <div class="select_class">
+                <div class="select_class_title">
+                    <h2>选择班级</h2>
+                </div>
+                <div class="select_class_main">
+                    <span v-for="group in groups" @click="change_group(group)"><b><img v-if="group.checked"
+                                                                                   src="img/repository/checked.png"/></b>{{group.groupname}}</span>
+                </div>
+            </div>
+            <div class="question_number">
+                <div class="question_number_title">
+                    <h2>设置题型及数量</h2>
+                </div>
+                <div class="question_number_main">
+                    <div v-for="typetext in question_type_list">
+                        <span class="question_types">{{typetext.typeTextName}}</span>
+                        <span class="question_amount">{{typetext.num}}道试题可用</span>
+                        <div class="questions_written">
+                            <input v-model="typetext.select_num" @keyup="num_change(typetext)" />
+                            <img src="img/prepare_lessons/delect_questionnum.png" @click="typetext.select_num=0" />
+                        </div>
+                        <span class="dao">道</span>
+                    </div>
+                </div>
+            </div>
+            <div class="paper_generation">
+                <button type="button" @click="zuti()">生成试卷</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/zujuan/samrtchoice.js"></script>
+
+</html>

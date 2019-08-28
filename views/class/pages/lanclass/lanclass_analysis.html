@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>互动课堂统计</title>
+    <link rel="stylesheet" type="text/css" href="css/lanclass/lanclass_analysis.css" />
+</head>
+
+<body>
+    <div class="lanclass_analysis">
+        <div class="lanclass_analysis_head">
+            <span class="loadurl" data-url="./pages/lanclass/guangdong_education.html"><img src="img/public/backtrack.png">返回互动历史</span>
+            <div class="lanclass_operation">
+                <button :class="{pitch_on:isshow==1}" @click="change_section(1)">理解情况</button>
+                <button :class="{pitch_on:isshow==2}" @click="change_section(2)">学生作答情况</button>
+                <button :class="{pitch_on:isshow==3}" @click="change_section(3)">课堂活跃度排行</button>
+            </div>
+        </div>
+        <div class="lanclass_analysis_main">
+            <div class="understand_situation" v-show="isshow==1">
+                <h2>{{crname}}互动课堂报告</h2>
+                <div class="understand_situation_main">
+                    <div class="understand_situation_main_title">
+                        <span>理解情况</span>
+                        <div class="understand_situation_main_title_operation">
+                            <!-- <button class="notclick"><img src="img/lanclass/previous_g.png" alt="" @click='loadpage(pages)'>上一页</button>
+                        <button><img src="img/lanclass/next_b.png" alt="" @click='loadpage(pages)'>下一页</button> -->
+                        </div>
+                    </div>
+                    <div class="ppt">
+                        <div class="ppt_page_left" v-for='ket in class_ppt'>
+                            <img :src="ket.rpath" alt="">
+                            <div class="understand"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="students_answers" v-show="isshow==2">
+                <h2>学生作答情况</h2>
+                <span></span>
+                <div class="students_answers_main">
+                    <div class="dati" v-for='(kes,index) in docHtmls'>
+
+                        <h3>{{ index+1+kes.typeTextName }}</h3>
+                        <div class="xiaoti" v-html='get_dochtml_all(kes)'>
+
+                        </div>
+                        <div class="daan">
+                            <span class="daanspan">答案</span>
+                            <div class="daan_main" v-html="select_answers(kes)">
+                            </div>
+                        </div>
+                        <div class="jiexi">
+                            <span class="jiexispan">解析</span>
+                            <div class="jiexi_main" v-html='select_analyzes(kes)'>
+
+                            </div>
+                        </div>
+                        <div class="tongji">
+                            <p><img src="img/lanclass/average_time.png" alt="">平均时长: <span>{{ kes.avgtime }}</span>秒</p>
+                            <p><img src="img/lanclass/shor_time.png" alt="">最短时长: <span>{{ kes.mintime }}</span>秒</p>
+                            <p><img src="img/lanclass/corrate_num.png" alt="">正确人数：<span>{{ kes.rightcount }}</span>人</p>
+                            <p><img src="img/lanclass/error_number.png" alt="">错误人数：<span>{{ kes.errorcount }}</span>人</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="classroom_activity" v-show="isshow==3">
+                <img src="img/lanclass/classroom_activity_title.png" alt="">
+                <div class="classroom_activity_main">
+                    <div class="student" v-for='keg in class_ranking'>
+                        <h2>
+                            <img :src="keg.headportrait" alt="" class=""> {{ keg.username }}
+                        </h2>
+                        <p>抢答 <span>{{ keg.num }}</span> 次</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/lanclass/lanclass_analysis.js"></script>
+
+</html>

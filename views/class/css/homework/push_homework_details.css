@@ -1,0 +1,228 @@
+.test_paper_question ul:after,
+.pop-up_box .homework_property:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.push_homework_title,
+.assignment .assignment_title {
+    border-bottom: 1px solid #d9d9d9;
+    height: 2.7rem;
+    padding-left: 26px;
+}
+
+.push_homework_title h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 1.4em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.5rem;
+    letter-spacing: 1px;
+    color: #0080ff;
+    width: 137px;
+    text-align: center;
+    border-bottom: 0.2rem solid #3399ff;
+    float: left;
+}
+
+.backtrack {
+    float: right;
+    margin-right: 12px;
+    width: 7.3rem;
+    height: 2.4rem;
+    border-radius: 1.2rem;
+    outline: none;
+    font-family: MicrosoftYaHei;
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.4rem;
+    letter-spacing: 0.1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0.1rem 0.1rem 0.6rem 0rem rgba(73, 119, 252, 0.79);
+    color: #4977fc;
+    text-align: center;
+    margin-top: 0.2rem;
+}
+
+.backtrack img {
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.test_paper_title {
+    padding: 1rem 0;
+}
+
+.test_paper_title h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 2rem;
+    color: #333333;
+    text-align: center;
+    font-weight: 400;
+    line-height: 2.6rem;
+}
+
+.test_paper_opreation {
+    text-align: right;
+}
+
+.test_paper_opreation span {
+    margin-right: 1rem;
+    font-family: SimSun;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #888888;
+    line-height: 1.6rem;
+    cursor: pointer;
+}
+
+.test_paper_opreation span img {
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.all_question {
+    overflow-y: scroll;
+}
+
+.test_paper_detail .dati {
+    margin: 0.5rem 1.2rem;
+    height: 1.4rem;
+    background-color: #f7f9fc;
+    border-radius: 0.2rem;
+    border: solid 0.1rem #e1e9ef;
+    padding: 0.5rem 0.2rem;
+}
+
+.test_paper_detail h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 1.1em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 22px;
+    letter-spacing: 1px;
+    color: #333333;
+    padding-left: 4px;
+    border-left: 7px solid #0080ff;
+}
+
+.test_paper_question {
+    margin: 0 1.2rem;
+    border: solid 1px #ffffff;
+    position: relative;
+}
+
+.test_paper_question:hover {
+    border: solid 1px #0080ff;
+    box-shadow: 0px 0px 3px 0px rgba(0, 128, 255, 0.17);
+}
+
+.test_paper_question:hover ul {
+    display: block;
+}
+
+.test_paper_question ul {
+    position: absolute;
+    top: -2rem;
+    right: 0;
+    display: none;
+}
+
+.test_paper_question ul li {
+    list-style: none;
+    float: left;
+    font-size: 1rem;
+    color: white;
+    width: 4.1rem;
+    text-align: center;
+    height: 2rem;
+    background-color: #4977fc;
+    cursor: pointer;
+    line-height: 2rem;
+}
+
+.test_paper_question ul li img {
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+    width: 1rem;
+}
+
+.test_paper_question_detail {
+    padding: 20px;
+    line-height: 34px;
+    position: relative;
+}
+
+.test_paper_question_detail .tihao {
+    position: absolute;
+    top: 20px;
+    left: 2px;
+}
+
+/*保存/布置按钮*/
+
+.operation_homework {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.operation_homework button {
+    width: 13.9rem;
+    height: 2.8rem;
+    background-color: rgb(51, 97, 230);
+    box-shadow: rgba(51, 97, 230, 0.49) -0.4rem 0rem 0.9rem 0.1rem;
+    cursor: pointer;
+    font-family: MicrosoftYaHei;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0.1rem;
+    color: rgb(255, 255, 255);
+    outline: none;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 1.4rem;
+}
+
+.operation_homework button img {
+    width: 2rem;
+    margin: -4px 0.6rem 0 0;
+    vertical-align: middle;
+}
+
+.all_question::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.all_question::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.all_question::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #eaecf2;
+}
+
+.all_question::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.all_question {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}

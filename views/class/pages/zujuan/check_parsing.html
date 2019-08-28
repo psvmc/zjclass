@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>查看试题解析弹出框</title>
+    <link rel="stylesheet" type="text/css" href="css/zujuan/check_parsing.css" />
+</head>
+
+<body>
+    <div class="check_parsing">
+        <h2>查看解析 <img src="img/zujuan/padlock.png" /></h2>
+        <div class="check_parsing_main">
+            <div class="question_detail">
+                <div class="question_detail_title">
+                    <div class="question_property">
+                        <span>题型： {{question.typeTextName}}</span>
+                        <span>难易度： {{question.complexityText}}</span>
+                        <span>上传时间：{{question.handletime|timeFilter}}</span>
+                    </div>
+                    <p>试题来源：{{question.sourcename}}</p>
+                </div>
+                <div class="question_detail_main">
+                    <div v-html="get_dochtml_all(question)"></div>
+                    <div class="question_analysis">
+                        <div class="daan">
+                            <h2>【答案】</h2>
+                            <div v-html="get_answer_all(question)"></div>
+                        </div>
+                        <div class="jiexi">
+                            <h2>【解析】</h2>
+                            <div v-html="get_jiexi_all(question)"></div>
+                        </div>
+                        <div class="kaodian">
+                            <h2>【考点】</h2>
+                            <div>{{question.pointnames}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="question_detail_bottom">
+                    <div class="question_detail_opreation" @click="star_ques(question)">
+                        <span class="question_collect">
+                            <img v-if="question.collect==1" src="img/prepare_lessons/collected.png"/>
+							<img v-else src="img/prepare_lessons/star.png"/>
+							收藏
+                    </span>
+                    </div>
+                    <div class="question_detail_groupnumber"><span class="groupnumber">组卷次数：{{question.count}}次</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/zujuan/check_parsing.js"></script>
+
+</html>

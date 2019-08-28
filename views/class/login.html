@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="js/lib/layer/theme/zjgreen/style.css" />
+    <title>智慧教学登录</title>
+</head>
+
+<body>
+    <!-- 检测浏览器版本为ie10以下，显示提示 -->
+    <div class="update_browser">
+        <p>系统检测到您正在使用ie8以下内核的浏览器，不能实现完美体验，请及时更新浏览器版本！</p>
+        <a href="https://www.google.cn/chrome/" target="_blank">点击下载</a>
+    </div>
+    <div class="login">
+        <div class="login_main">
+            <div class="login_main_left">
+                <img src="img/login/login.png" alt="" />
+            </div>
+            <div class="login_main_right">
+                <p>
+                    <img src="img/login/logo.png" alt="" />
+                </p>
+                <div class="log_in">
+                    <div id="login_form">
+                        <div class="username">
+                            <img src="img/login/username.png" alt="" />
+                            <input @keyup.enter="loginAction" type="text" placeholder="请输入账号/手机号/用户名" v-model="loginname" />
+                        </div>
+                        <div class="password">
+                            <img src="img/login/password.png" />
+                            <input @keyup.enter="loginAction" type="password" placeholder="请输入密码" v-model="loginpwd" />
+                        </div>
+                        <button class="register" type="button" v-on:click="loginAction()">登录</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.1.1.js"></script>
+    <script>
+        if (!window.$) {
+            window.$ = window.jQuery = require('./js/jquery-3.1.1.js')
+        }
+    </script>
+    <script src="js/lib/layer/layer.js"></script>
+    <script src="js/lib/vue/vue.js"></script>
+    <script src="js/lib/jquery.cookie.js"></script>
+    <script src="js/zj_cookie.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>

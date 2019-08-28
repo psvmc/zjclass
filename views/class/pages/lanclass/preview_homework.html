@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>互动课堂布置作业预览</title>
+    <link rel="stylesheet" type="text/css" href="css/lanclass/preview_homework.css" />
+</head>
+
+<body>
+    <div class="preview_homework">
+        <h2>{{papername}}预览 <img @click="close_preview" src="img/zujuan/padlock.png" alt="关闭"></h2>
+        <div class="preview_homework_main">
+            <div class="jobdetails">
+                <div class="onepice" v-for="type_ques in type_ques_list">
+                    <div class="dati">
+                        <h2>{{type_ques.typeTextName}}</h2>
+                    </div>
+                    <div class="question" v-for="(ques,index) in type_ques.quesitons">
+                        <p class="tihao">{{ques.topicNumber}}.</p>
+                        <div v-html="get_dochtml_all(ques)"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="release">
+                <button type="button" @click="check_results"><img src="img/lanclass/release.png" alt="">发布</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/lanclass/preview_homework.js"></script>
+
+</html>

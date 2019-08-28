@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>布置作业弹出框</title>
+    <link rel="stylesheet" type="text/css" href="css/zujuan/assign_homework.css" />
+</head>
+
+<body>
+    <div class="assign_homework" v-cloak>
+        <div class="assign_homework_title">
+            <h2>布置作业 <img class="padlock" src="img/zujuan/padlock.png" /></h2>
+        </div>
+        <div class="assign_job_type">
+            <span :class="{pitch_on:type==40}" @click="change_type(40)"><img
+                src="img/assign_homework/previewhomework_w.png"/><img src="img/assign_homework/previewhomework.png"/>预习作业</span>
+            <span :class="{pitch_on:type==41}" @click="change_type(41)"><img
+                src="img/assign_homework/seatwork_w.png"/><img
+                src="img/assign_homework/seatwork.png"/>课堂作业</span>
+            <span :class="{pitch_on:type==42}" @click="change_type(42)"><img src="img/assign_homework/homework_w.png"/><img
+                src="img/assign_homework/homework.png"/>课后作业</span>
+        </div>
+        <div class="operational_attributes">
+            <div class="job_name">
+                <img src="img/assign_homework/job_name.png" />
+                <h2>作业名称：</h2>
+                <input type="text" v-model="papername" />
+            </div>
+            <div class="expiration_date" v-if="type==40 || type==42">
+                <img src="img/assign_homework/expiration_date.png" />
+                <h2>截止日期：</h2>
+                <input type="text" id="expiration_date" :value="stoptime" />
+            </div>
+            <div class="select_class">
+                <img src="img/assign_homework/select_class.png" />
+                <h2>选择班级：</h2>
+                <span v-for="group in groups" @click="change_group(group)" v-if="paper_type == 1">
+					<i><img v-if="group.checked" src="img/zujuan/checked.png"/></i>
+					{{group.groupname}}
+				</span>
+
+                <span v-for="group in groups" @click="change_group(group)" v-if="paper_type == 2 && group.checked">
+					<i><img v-if="group.checked" src="img/zujuan/checked.png"/></i>
+					{{group.groupname}}
+				</span>
+            </div>
+            <div class="correcting_style">
+                <img src="img/assign_homework/correcting_style.png" />
+                <h2>批改方式：</h2>
+                <span @click="change_checktype(1)"><i><img src="img/zujuan/checked.png" v-if="checktype==1"/></i>老师批改</span>
+                <span @click="change_checktype(2)"><i><img src="img/zujuan/checked.png" v-if="checktype==2"/></i>自己批改</span>
+                <span @click="change_checktype(3)"><i><img src="img/zujuan/checked.png" v-if="checktype==3"/></i>学生互改</span>
+            </div>
+        </div>
+        <div class="assign_homework_determine">
+            <span @click="paper_properties_save(1)" v-show="operation" v-if="type!=40"><img
+                src="img/assign_homework/save.png"/>保 存</span>
+            <span @click="paper_properties_save(2)" v-show="operation" v-if="type!=41"><img
+                src="img/assign_homework/release.png"/>发 布</span>
+        </div>
+    </div>
+
+</body>
+<script src="js/zujuan/assign_homework.js"></script>
+
+</html>

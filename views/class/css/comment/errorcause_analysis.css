@@ -1,0 +1,69 @@
+.pop-up_box {
+    width: 984px;
+    height: 508px;
+    background-color: #0080ff;
+    box-shadow: 0px 0px 14px 0px #0f78e1;
+    margin-left: -492px;
+    margin-top: -254px;
+}
+
+.error_analysis {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.error_analysis > img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.error_analysis h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 3em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 100px;
+    letter-spacing: 5px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.error_analysis_main {
+    width: 943px;
+    height: 394px;
+    margin: auto;
+    overflow-y: scroll;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+.error_analysis_main::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.error_analysis_main::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.error_analysis_main::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #eaecf2;
+}
+
+.error_analysis_main::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.error_analysis_main {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}

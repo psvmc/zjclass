@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>备课-教学参考-课件</title>
+    <link rel="stylesheet" type="text/css" href="css/repository/repository_class.css" />
+</head>
+
+<body>
+    <div class="prepare_main prepare_lessons_resource_main">
+        <div class="prepare_head">
+            <span class="loadurl" data-url="./pages/prepare_lessons.html">查看学情</span>
+            <span class="loadurl" data-url="./pages/student_analysis/phase_analysis.html">阶段分析</span>
+            <span class="loadurl pitch_on" data-url="./pages/repository/repository_class.html">教学参考</span>
+        </div>
+        <div class="second_level_directory">
+            <span class="pitch_on" data-url="./pages/repository/repository_class.html"><img
+                src="img/repository/kejian_w.png"/><img src="img/repository/kejian.png"/>课件</span>
+            <span class="loadurl" data-url="./pages/repository/repository_learningcase.html"><img
+                src="img/repository/xuean_w.png"/><img src="img/repository/xuean.png"/>学案</span>
+            <div class="item_bank">
+                <span class="loadurl" data-url="./pages/zujuan/manualquestion.html"><img
+                    src="img/repository/questionku_w.png"/><img src="img/repository/questionku.png"/>试题库</span>
+                <div class="item_bank_option">
+                    <p class="loadurl" data-url="./pages/zujuan/manualquestion.html">手动选题</p>
+                    <p class="loadurl" data-url="./pages/zujuan/smartchoice.html">智能选题</p>
+                    <p class="loadurl" data-url="./pages/prepare_lessons/taojuan.html">套卷</p>
+                </div>
+            </div>
+            <span class="loadurl" data-url="./pages/repository/upload_resource_list.html"><img
+                src="img/repository/myresource_w.png"/><img src="img/repository/myresource.png"/>我的资源</span>
+        </div>
+        <div class="courseware_list" v-cloak :class="{'no-date':pagedata.length == 0}">
+            <div class="courseware_li" v-cloak v-for="res in pagedata">
+                <img :src="'img/repository/'+get_resource_ico(res.resourceclass)" />
+                <div class="courseware_li_main_information">
+                    <h2>{{res.resourcename}}</h2>
+                    <p>
+                        <span><img src="img/public/time.png"/>{{res.createtime|timeFilter}}</span>
+                        <span><img src="img/public/grade.png"/>{{res.gradename}}</span>
+                        <span><img src="img/public/downcount.png"/>{{res.downloadnum}}次</span>
+                    </p>
+                </div>
+                <div class="courseware_li_main_operation">
+                    <span class="preview" :class="{notoperation:res.pageNumber==0}" v-on:click="detialClick(res)">
+                        <img src="img/prepare_lessons/preview.png"/>预览</span>
+                    <span class="download" @click="downloadfile(res)"><img
+                        src="img/prepare_lessons/download.png"/>下载</span>
+                </div>
+            </div>
+        </div>
+        <div class="pagingfirst">
+            <zj-page v-if="pagedata.length > 0" :showpage="showpage" :currpage="currpage" :pages="pages" @gotopage="gotopage"></zj-page>
+        </div>
+    </div>
+</body>
+
+<script>
+    if (!window.$) {
+        window.$ = window.jQuery = require('./js/jquery-3.1.1.js')
+    }
+</script>
+<script src="js/repository/repository_class.js"></script>
+
+</html>

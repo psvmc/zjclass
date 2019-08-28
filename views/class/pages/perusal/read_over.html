@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>备课-批阅</title>
+    <link rel="stylesheet" type="text/css" href="css/perusal/read_over.css" />
+</head>
+
+<body>
+    <div class="read_over_main">
+        <div class="padlock">
+            <img src="img/perusal/close.png" />
+        </div>
+        <div class="whether_grade">
+            <div class="submitted">
+                <h2>已提交</h2>
+                <div class="submitted_main">
+                    <div class="submitted_student_list">
+                        <span v-for="(tjs,index) in students" v-if="tjs.status!=0" v-on:click="studentchange(index)" v-bind:class="{responses:tjs.checked==1,uncommitted:tjs.checked==2,midnight:tjs.checked==3}">{{tjs.username}}</span>
+                    </div>
+                    <div class="submitted_legend">
+                        <span><i class="responses"></i>已批改</span>
+                        <span><i class="midnight"></i>正批改</span>
+                        <span><i class="uncommitted"></i>未批改</span>
+                    </div>
+                </div>
+            </div>
+            <div class="not_filed">
+                <h2>未提交</h2>
+                <div class="not_filed_main">
+                    <span class="uncommitted" v-for="(notjs,index) in students" v-if="notjs.status==0">{{notjs.username}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="correction">
+            <div class="correction_main">
+                <div class="question" v-for="(userans,index) in studentanswers">
+                    <div class="question_title">
+                        <a :id="'question_'+(index+1)">{{index+1}}</a>
+                        <span>{{userans.typeTextName}}</span>
+                    </div>
+                    <div class="studentnotes">
+                        <div class="studentnotes_main" v-html="userans.useranswer_html">
+
+                        </div>
+                        <div class="correcting_handwriting">
+                            <img v-if="userans.corrected==1" src="img/perusal/counter.png" />
+                            <img v-if="userans.corrected==2" src="img/perusal/mistake.png" />
+                            <img v-if="userans.corrected==3" src="img/perusal/paraweld.png" />
+                        </div>
+                    </div>
+                    <div class="corrections_button" v-if="userans.checked != 1">
+                        <button type="button" class="counter" v-on:click="checkquesiton(userans,1)">
+                        <img src="img/perusal/counter_ico_white.png"/><img src="img/perusal/counter_ico.png"/>对
+                    </button>
+                        <button type="button" class="mistake" v-on:click="checkquesiton(userans,2)">
+                        <img src="img/perusal/mistake_ico_white.png"/><img src="img/perusal/mistake_ico.png"/>错
+                    </button>
+                        <button type="button" class="paraweld" v-on:click="checkquesiton(userans,3)">
+                        <img src="img/perusal/paraweld_ico_white.png"/><img src="img/perusal/paraweld_ico.png"/>半对
+                    </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="student_question">
+            <div class="student_question_main">
+                <h2>学生:<b>{{selectttudent.username}}</b></h2>
+                <p class="question_n">题号区域</p>
+                <p>
+                    <a :href="'#question_' + (index+1)" :class="{growbig:(index) == curr,pigai:sa.checked==1}" v-for="(sa,index) in studentanswers" @click="growbig_this(index)">
+                    {{index+1}}
+                </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/perusal/read_over.js"></script>
+
+</html>

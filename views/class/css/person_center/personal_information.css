@@ -1,0 +1,35 @@
+.data_completeness:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.personal_information {
+    padding-left: 110px;
+}
+
+.data_completeness {
+    margin-left: -24px;
+    margin-top: 26px;
+}
+
+.data_completeness h2 {
+    float: left;
+    font-family: MicrosoftYaHeiLight;
+    font-size: 1.7em;
+    line-height: 45px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #5f5f5f;
+}
+
+.data_completeness h2 b {
+    color: #ff8a00;
+}
+
+.data_completeness .progress_bar {
+    float: left;
+    width: 671px;
+    height: 24px;
+    border-radius: 15px;
+}

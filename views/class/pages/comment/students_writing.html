@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/comment/student_writing.css" />
+</head>
+
+<body>
+    <div class="students_writing_outer">
+        <h2 v-cloak>{{user.username}}的{{right_or_wrong}}答案<img src="img/zujuan/padlock.png" @click="close_pop" /></h2>
+        <div class="students_writing objective_correct objective_error" v-html="userans_html(user.useranswer)">
+        </div>
+    </div>
+
+</body>
+<script src="js/comment/students_writing.js"></script>
+
+</html>

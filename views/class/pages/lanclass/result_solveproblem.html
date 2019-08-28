@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>互动课堂查看做题结果</title>
+    <link rel="stylesheet" type="text/css" href="css/lanclass/result_solveproblem.css" />
+</head>
+
+<body>
+    <div class="result_solveproblem">
+        <h2>做题结果<img @click="close_preview" src="img/zujuan/padlock.png" alt="关闭"></h2>
+        <div class="result_solveproblem_main">
+            <div class="submitted">
+                <div class="question_number">
+                    <span :class="{pitch_on:select_ques_index==index}" v-for="(que,index) in question" @click="choosequestion(index)">{{index+1}}</span>
+                </div>
+                <div class="result_solveproblem_bottom">
+                    <div class="question_information">
+                        <p>{{selectque.typeTextName}}</p>
+                        <div v-html="get_dochtml_all(selectque)"></div>
+                        <p class="answer_analysis" @click="show_answer()">答案解析</p>
+                        <div v-show="showanswer"><span>答案：</span>
+                            <div v-html="select_answers(selectque)"></div>
+                            <span>解析：</span>
+                            <div v-html="select_analyzes(selectque)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="answer_statistical" v-show="selectque.ctype == 1||selectque.ctype == 2">
+                        <img class="turnoff" @click="turnoff" src="img/lanclass/turnoff.png" alt="">
+                        <p><span></span>答题统计</p>
+                        <div class="answer_statistical_main"></div>
+                    </div>
+                    <div class="answer_statistical other_questions" v-show="selectque.ctype != 1&&selectque.ctype != 2">
+                        <p><span></span>提交学生答案</p>
+                        <div class="scantran_sheets">
+                            <div @click="show_studentbiji(stupic)" v-for="stupic in stuanswerpic">
+                                <img v-show="stupic.slurl==null||stupic.slurl==''" src="img/lanclass/null.png" alt="">
+                                <img v-show="stupic.slurl!==''&&stupic.slurl!=null" v-bind:src="stupic.slurl" alt="">
+                                <span>{{stupic.username}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img class="turnon" @click="turnon" src="img/lanclass/turnon.png" alt="">
+            </div>
+            <div class="uncommitted">
+                <p>已提交</p>
+                <div class="uncommitted_student">
+                    <dl v-for="stu in submitted_students">
+                        <dt>
+                        <img v-show="stu.headportrait==null||stu.headportrait==''" src="img/lanclass/touxiang.png"
+                             alt="">
+                        <img v-show="stu.headportrait!==''&&stu.headportrait!=null" v-bind:src="stu.headportrait"
+                             alt="">
+                    </dt>
+                        <dd>{{stu.username}}</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/lanclass/result_solveproblem.js"></script>
+
+</html>

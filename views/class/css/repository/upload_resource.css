@@ -1,0 +1,259 @@
+.resourcetype:after,
+.upload_resource_main_title:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.backtrack {
+    float: right;
+    width: 7.3rem;
+    height: 2.3rem;
+    background-color: #ffffff;
+    box-shadow: 0.1rem 0.1rem 0.6rem 0rem rgba(73, 119, 252, 0.79);
+    border-radius: 1.2rem;
+    margin: 10px 10px;
+    display: inline-block;
+    font-family: MicrosoftYaHei;
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0.1rem;
+    color: #3385e6;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.backtrack:hover {
+    border: solid 1px #3385e6;
+}
+
+.backtrack img {
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.upload_resource_main {
+    overflow-y: scroll;
+}
+
+.upload_resource_main h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 1.5em;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #333333;
+    padding: 22px 0 22px 14px;
+    float: left;
+}
+
+.upload_resource_main h2 img {
+    vertical-align: middle;
+    margin: -4px 6px 0 0;
+}
+
+.resourcetype {
+    padding: 4px 20px;
+}
+
+.resourcetype span,
+.resourcetype h3 {
+    float: left;
+    font-family: SimSun;
+    font-size: 1em;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 36px;
+    letter-spacing: 1px;
+    color: #333333;
+}
+
+.resourcetype .select_resourcetype {
+    float: left;
+    position: relative;
+    margin-left: 10px;
+}
+
+.resourcetype .select_resourcetype h3 {
+    width: 203px;
+    height: 36px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: solid 1px #acacac;
+    text-indent: 1em;
+    cursor: pointer;
+}
+
+.resourcetype .select_resourcetype h3 img {
+    float: right;
+    margin-right: 4px;
+    margin-top: 14px;
+}
+
+.resourcetype .select_resourcetype ul {
+    position: absolute;
+    top: 37px;
+    left: 0;
+    width: 113px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: solid 1px #acacac;
+    display: none;
+}
+
+.resourcetype .select_resourcetype ul li {
+    list-style: none;
+    line-height: 46px;
+    font-family: MicrosoftYaHei;
+    font-size: 1.2em;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #0079ff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.resourcetype .select_resourcetype ul li:hover {
+    color: #ffffff;
+    background: #1d8bd1;
+}
+
+.upload_resource_now {
+    margin: 0 1.6rem 1.6rem 1.6rem;
+    height: 28rem;
+    background-color: #f8f7f7;
+}
+
+.upload_resource_now p {
+    text-align: right;
+    margin-right: 0.7rem;
+    font-family: SimSun;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.5rem;
+    letter-spacing: 0.1rem;
+    color: #5b81ea;
+}
+
+.upload_resource_now .uploading {
+    margin: 0 0.7rem;
+    height: 25.5rem;
+    background-color: #ffffff;
+    border: dashed 0.1rem #5b81ea;
+}
+
+.uploading_main {
+    width: 21.6rem;
+    height: 21.6rem;
+    border-radius: 2.5rem;
+    border: dashed 0.3rem #dadada;
+    margin: 1.6rem auto;
+    position: relative;
+    text-align: center;
+}
+
+.uploading_main input {
+    width: 21.6rem;
+    height: 21.6rem;
+    border-radius: 2.5rem;
+    border: dashed 0.3rem #dadada;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.uploading_main img {
+    display: block;
+    width: 9rem;
+    margin: 4.8rem auto 0 auto;
+}
+
+.uploading_main h4 {
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: 1.1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.4rem;
+    letter-spacing: 0rem;
+    color: #384850;
+    width: 100%;
+    height: 2.4rem;
+    overflow: hidden;
+}
+
+.uploading_main h3 {
+    font-family: MicrosoftYaHei;
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #757575;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.upload_resource_main button {
+    width: 25.2rem;
+    height: 4.1rem;
+    background-color: #dadada;
+    border-radius: 2.1rem;
+    margin: auto;
+    display: block;
+    text-align: center;
+    font-family: FZZZHONGJW--GB1-0;
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #adadad;
+    outline: none;
+    border: none;
+}
+
+.upload_resource_main button img {
+    width: 2.1rem;
+    vertical-align: middle;
+    margin: -4px 1.6rem 0 0;
+}
+
+.upload_resource_main button.upload_right {
+    background: #5b81ea;
+    color: #fff;
+    cursor: pointer;
+}
+
+.upload_resource_main::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.upload_resource_main::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.upload_resource_main::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.upload_resource_main::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.upload_resource_main {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}

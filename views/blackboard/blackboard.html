@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑板</title>
+</head>
+<body>
+<canvas id="sketchpad"></canvas>
+<div class="toolbar">
+    <button class="button undo_action">后退</button>
+    <button class="button redo_action">前进</button>
+    <button class="button animate_action">重现</button>
+    <button class="button clear_action">清空</button>
+</div>
+</body>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    #sketchpad {
+        width: 100vw;
+        height: 100vh;
+        background-color: #043A25;
+        cursor: url('pen.ico'), pointer;
+    }
+
+    .toolbar {
+        width: 100%;
+        height: 66px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+    .toolbar button {
+        margin: 10px 20px;
+        width: 100px;
+        height: 46px;
+        color: white;
+        font-size: 18px;
+        background-color: rgba(0,0,0,0.3);
+        border-radius: 4px;
+    }
+</style>
+
+<script src="sketchpad.js"></script>
+<script>
+    var blackboardWidth = document.querySelector("#sketchpad").clientWidth;
+    var blackboardHeight = document.querySelector("#sketchpad").clientHeight;
+    console.info(document.querySelector("#sketchpad"));
+    console.info("blackboardHeight", blackboardHeight);
+    var sketchpad = new Sketchpad({
+        element: '#sketchpad',
+        width: blackboardWidth,
+        height: blackboardHeight,
+    });
+
+    document.querySelector(".undo_action").addEventListener("click", function () {
+        sketchpad.undo();
+    });
+
+    document.querySelector(".redo_action").addEventListener("click", function () {
+        sketchpad.redo();
+    });
+
+    document.querySelector(".animate_action").addEventListener("click", function () {
+        sketchpad.animate(22);
+    });
+
+    document.querySelector(".clear_action").addEventListener("click", function () {
+        sketchpad.clearAndHistory();
+    });
+</script>
+</html>

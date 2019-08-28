@@ -1,0 +1,465 @@
+.lanclass:after,
+.lanclass_head:after,
+.classroom_quiz .quiz_main:after,
+.classroom_quiz:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.select_chapter .select_chapter_main span {
+    display: none;
+}
+
+.lanclass {
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 3px 0rem #3361e6;
+    border-radius: 4px;
+    margin: 0.5rem;
+}
+
+.lanclass_main {
+    float: left;
+    transition: all .5s ease-in;
+}
+
+.lanclass_head {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.lanclass_head h2 {
+    width: 9.8rem;
+    height: 2.3rem;
+    background-image: linear-gradient(89deg, #65c3b8 0%, #55acbf 100%);
+    box-shadow: 0.1rem 0.2rem 0.3rem 0rem rgba(51, 97, 230, 0.37);
+    border-radius: 1.2rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+    position: relative;
+    margin: 0 0 0 2.6rem;
+    text-align: center;
+    float: left;
+}
+
+.lanclass_head h2 img {
+    position: absolute;
+    top: -1.4rem;
+    left: -1.4rem;
+    width: 5rem;
+}
+
+.lanclass_head span {
+    float: left;
+    line-height: 2.3rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+    margin-left: 1rem;
+}
+
+.lanclass_head button {
+    float: right;
+    width: 8.7rem;
+    height: 2.1rem;
+    background-color: #ffffff;
+    box-shadow: 0.1rem 0.1rem 0.6rem 0rem rgba(51, 133, 230, 0.79);
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    margin-right: 1rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #3385e6;
+    cursor: pointer;
+}
+
+.lanclass_head button img {
+    width: 1.2rem;
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.classroom_quiz {
+    margin: 1.6rem 1rem 0.2rem 1rem;
+    position: relative;
+}
+
+.classroom_quiz .quiz {
+    height: 4rem;
+    display: flex;
+    overflow: hidden;
+    float: left;
+}
+
+.classroom_quiz .quiz p {
+    float: left;
+    display: inline-block;
+    width: 18.8rem;
+    height: 2.4rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 0.5rem 0rem rgba(0, 0, 0, 0.19);
+    border-radius: 0.2rem;
+    overflow: hidden;
+    position: relative;
+    font-family: MicrosoftYaHei;
+    font-size: 1.1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.4rem;
+    letter-spacing: 0rem;
+    color: #000000;
+    text-align: center;
+    margin: 0 0.8rem 0.4rem 0;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.classroom_quiz .quiz p span:hover {
+    border: 1px solid #3385e6;
+}
+
+.classroom_quiz .quiz p span.decorate:hover {
+    border: 1px solid #f27a3e;
+}
+
+.classroom_quiz .quiz p span.decorate b {
+    background-color: #f27a3e;
+}
+
+.classroom_quiz .quiz p b {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 1.7rem;
+    height: 1.6rem;
+    background-color: #3385e6;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    line-height: 1.6rem;
+    font-family: ArialMT;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #ffffff;
+    text-align: center;
+}
+
+.classroom_quiz .quiz p span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-left: 1.6rem;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+}
+
+.classroom_quiz button {
+    float: right;
+    width: 8.7rem;
+    height: 2.4rem;
+    background-color: #ffffff;
+    box-shadow: 0.1rem 0.1rem 0.6rem 0rem rgba(242, 122, 62, 0.79);
+    border-radius: 1.2rem;
+    border: solid 0rem #f27a3e;
+    font-family: MicrosoftYaHei;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #f27a3e;
+    outline: none;
+    cursor: pointer;
+}
+
+.classroom_quiz button img {
+    width: 1.3rem;
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.ppt {
+    margin: 0 1rem;
+}
+
+.ppt .ppt_main {
+    background-color: #f8f7f7;
+    box-shadow: 0rem 0rem 0.5rem 0rem rgba(0, 0, 0, 0.19);
+    text-align: center;
+    position: relative;
+}
+
+.pptnow {
+    position: relative;
+    display: inline-block;
+}
+
+.pptnow canvas {
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+}
+
+.ppt .ppt_main img {
+    margin-top: 0.5rem;
+}
+
+.ppt .ppt_main span {
+    position: absolute;
+    font-family: MicrosoftYaHei;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #333333;
+    right: 1rem;
+    bottom: 1rem;
+}
+
+.ppt_opreation {
+    padding: 1.4rem 0;
+}
+
+.ppt_opreation button {
+    width: 8.7rem;
+    height: 2.4rem;
+    background-color: #f2f6ff;
+    border-radius: 1.2rem;
+    border: solid 1px #3385e6;
+    font-family: MicrosoftYaHei;
+    font-size: 1.3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0.1rem;
+    color: #333333;
+    cursor: pointer;
+    outline: none;
+}
+
+.ppt_opreation button img {
+    width: 1.1rem;
+    vertical-align: middle;
+    margin: -4px 4px 0 0;
+}
+
+.ppt_opreation button.understand {
+    float: left;
+}
+
+.ppt_opreation button.precious,
+.ppt_opreation button.next {
+    float: right;
+    margin-left: 0.5rem;
+}
+
+.ppt_opreation button.unclick {
+    background-color: #f6f6f6;
+    box-shadow: 0.2rem 0.3rem 0.3rem 0rem rgba(229, 238, 255, 0.37);
+    border: solid 1px #ebebeb;
+    color: #dcdcdc;
+    cursor: not-allowed;
+}
+
+.student_basket {
+    height: 100%;
+    float: right;
+}
+
+.student_basket_title {
+    width: 1.6rem;
+    height: 100%;
+    background: #6795ff;
+    box-shadow: 0rem 0rem 0.2rem 0rem rgba(66, 138, 219, 0.61);
+    float: left;
+    position: relative;
+}
+
+.student_basket_title_main {
+    width: 100%;
+    height: 16rem;
+    background-color: #f27a3e;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -8rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.student_basket_title_main img {
+    display: block;
+    margin: auto;
+}
+
+.student_basket_title_main img:first-of-type {
+    width: 1.3rem;
+    margin-top: 1.5rem;
+}
+
+.student_basket_title_main img:nth-of-type(2) {
+    width: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.student_basket_title_main span {
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.8rem;
+    letter-spacing: 0.1rem;
+    color: #ffffff;
+}
+
+.student_basket_title_main span b {
+    letter-spacing: -1px;
+}
+
+.student_basket_main {
+    width: 13.8rem;
+    float: left;
+    height: 100%;
+    background: #f6f6f6;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all .5s ease-in;
+}
+
+.student_basket_student {
+    width: 13.8rem;
+    height: 100%;
+}
+
+.online_student {
+    height: 50%;
+    margin: 0 0.5rem;
+}
+
+.online_student h2 {
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0rem;
+    color: #272727;
+}
+
+.online_student_main {
+    background: #ffffff;
+    overflow-y: scroll;
+}
+
+.online_student_main dl,
+.start_qingda_main dl {
+    padding: 0.3rem;
+    float: left;
+}
+
+.online_student_main dl dt,
+.start_qingda_main dl dt {
+    width: 3.6rem;
+    height: 3.6rem;
+    background-color: #f27a3e;
+    border: solid 1px #a7a7a7;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.online_student_main dl dt img,
+.start_qingda_main dl dt img {
+    width: 3.6rem;
+    height: 3.6rem;
+}
+
+.online_student_main dl dd,
+.start_qingda_main dl dd {
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: 0.9rem;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 2.3rem;
+    letter-spacing: 0rem;
+    color: #333333;
+    width: 3.6rem;
+}
+
+.start_qingda_main dl {
+    cursor: pointer;
+}
+
+.start_qingda_main dl.pitch_on dd {
+    color: red;
+}
+
+.start_qingda {
+    float: right;
+    height: 100%;
+    background-color: #f8f7f7;
+    width: 15.4rem;
+}
+
+.start_qingda h2 {
+    line-height: 2.8rem;
+    font-family: MicrosoftYaHei;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #272727;
+    padding: 0 1rem;
+}
+
+.start_qingda h2 img {
+    width: 0.9rem;
+    vertical-align: middle;
+    margin: -4px 0.6rem 0 0;
+    cursor: pointer;
+}
+
+.start_qingda_main {
+    overflow-y: scroll;
+    padding: 0 1rem;
+}
+
+.online_student_main::-webkit-scrollbar,
+.start_qingda_main::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.online_student_main::-webkit-scrollbar-button,
+.start_qingda_main::-webkit-scrollbar-button {
+    background-color: #FFFFFF;
+}
+
+.online_student_main::-webkit-scrollbar-track,
+.start_qingda_main::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.online_student_main::-webkit-scrollbar-thumb,
+.start_qingda_main::-webkit-scrollbar-thumb {
+    background: #4498ee;
+    border-radius: 2px;
+}
+
+.online_student_main,
+.start_qingda_main {
+    scrollbar-arrow-color: #FFFFFF;
+    /*三角箭头的颜色*/
+    scrollbar-face-color: #4498ee;
+    /*立体滚动条的颜色（包括箭头部分的背景色）*/
+    scrollbar-3dlight-color: #eaecf2;
+    /*立体滚动条亮边的颜色*/
+}
