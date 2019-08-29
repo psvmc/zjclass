@@ -13,7 +13,7 @@ const child = require('child_process').exec;
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
-let toolsWindow;
+let rtmpWindow;
 let tipWindow;
 let classWindow;
 let blackboardWindow;
@@ -31,7 +31,9 @@ ipcMain.on('ondragstart', (event, filePath) => {
     })
 })
 
+const Menu = electron.Menu
 function createWindow() {
+    Menu.setApplicationMenu(null)
     // 初始化截图
     useCapture()
     var winW = electron.screen.getPrimaryDisplay().workAreaSize.width;
@@ -54,7 +56,6 @@ function createWindow() {
         webPreferences: {
             nodeIntegration: true,
             devTools: true,
-            preload: path.join(__dirname, 'views/preload.js')
         }
     });
 
@@ -67,6 +68,8 @@ function createWindow() {
     mainWindow.on('closed', function () {
         mainWindow = null
     });
+
+    var bound = mainWindow.getBounds();
 
     tipWindow = new BrowserWindow({
         width: 200,
@@ -85,7 +88,6 @@ function createWindow() {
         }
     });
     tipWindow.loadFile('views/tip.html');
-
 
     blackboardWindow = new BrowserWindow({
         width: winW,
@@ -116,9 +118,6 @@ function createWindow() {
         maximizable: true,
         fullscreenable: false,
         title: "",
-        // webPreferences: {
-        //     nodeIntegration: true
-        // }
     });
     classWindow.loadFile('views/class/login.html');
     // classWindow.webContents.openDevTools();
@@ -127,8 +126,8 @@ function createWindow() {
         e.preventDefault();//阻止默认行为
     });
 
-    var bound = mainWindow.getBounds();
-    toolsWindow = new BrowserWindow({
+
+    rtmpWindow = new BrowserWindow({
         parent: mainWindow,
         width: 400,
         height: 600,
@@ -142,8 +141,8 @@ function createWindow() {
             nodeIntegration: true
         }
     });
-    toolsWindow.loadFile('views/tools.html');
-    //toolsWindow.webContents.openDevTools()
+    rtmpWindow.loadFile('views/rtmp.html');
+    rtmpWindow.webContents.openDevTools()
 }
 
 
@@ -162,14 +161,14 @@ app.on('activate', function () {
 ipcMain.on('open_tools_window', (event, arg) => {
     event.returnValue = 'ok';
     var bound = mainWindow.getBounds();
-    if (toolsWindow.isVisible()) {
-        toolsWindow.hide()
+    if (rtmpWindow.isVisible()) {
+        rtmpWindow.hide()
     } else {
-        toolsWindow.setBounds({
+        rtmpWindow.setBounds({
             x: bound.x - 400,
             y: bound.y
         });
-        toolsWindow.show();
+        rtmpWindow.show();
     }
 });
 
