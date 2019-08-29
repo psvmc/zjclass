@@ -3,3 +3,4 @@ dist
 .idea
 ffmpeg
 *.mp4
+ffmpeg.exe
