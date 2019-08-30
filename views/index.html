@@ -1,140 +1,134 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Hello World!</title>
-</head>
-<body style="-webkit-app-region: drag">
-<div id="holder0" style="-webkit-app-region: no-drag;" class="clickable">
-    <span>退出</span>
-</div>
-<div id="holder1" style="-webkit-app-region: no-drag;" class="clickable">
-    <span>CLASS</span>
-</div>
+  </head>
+  <body style="-webkit-app-region: drag">
+    <div id="holder0" style="-webkit-app-region: no-drag;" class="clickable">
+      <span>退出</span>
+    </div>
+    <div id="holder1" style="-webkit-app-region: no-drag;" class="clickable">
+      <span>CLASS</span>
+    </div>
 
-<div id="holder2" style="-webkit-app-region: no-drag;" class="clickable">
-    PPT
-</div>
+    <div id="holder2" style="-webkit-app-region: no-drag;" class="clickable">
+      PPT
+    </div>
 
+    <div id="holder3" style="-webkit-app-region: no-drag;" class="clickable">
+      <span>直播</span>
+    </div>
 
-<div id="holder3" style="-webkit-app-region: no-drag;" class="clickable">
-    <span>直播</span>
-</div>
+    <div id="holder4" style="-webkit-app-region: no-drag;" class="clickable">
+      <span>黑板</span>
+    </div>
 
-<div id="holder4" style="-webkit-app-region: no-drag;" class="clickable">
-    <span>黑板</span>
-</div>
+    <div id="holder5" style="-webkit-app-region: no-drag;" class="clickable">
+      <span>录制</span>
+    </div>
 
-<div id="holder5" style="-webkit-app-region: no-drag;" class="clickable">
-    <span>录制</span>
-</div>
+    <div id="holder99" style="-webkit-app-region: drag;" class="clickable">
+      拖动
+    </div>
 
-
-<div id="holder99" style="-webkit-app-region: drag;" class="clickable">
-    拖动
-</div>
-
-<script src="index.js"></script>
-<style>
-    body {
+    <script src="index.js"></script>
+    <style>
+      body {
         margin: 0;
         padding: 0;
         height: 100vh;
         width: 100vw;
         pointer-events: none;
-    }
+      }
 
-    .clickable {
-        pointer-events: auto
-    }
+      .clickable {
+        pointer-events: auto;
+      }
 
-    #holder0 {
+      #holder0 {
         width: 80px;
         height: 60px;
         background-color: lightgray;
         display: flex;
         flex-direction: column;
-        align-items: center;;
+        align-items: center;
         justify-content: center;
         user-select: none;
         color: #ffffff;
+      }
 
-    }
-
-    #holder1 {
+      #holder1 {
         width: 80px;
         height: 80px;
         background-color: limegreen;
         display: flex;
         flex-direction: column;
-        align-items: center;;
+        align-items: center;
         justify-content: center;
         user-select: none;
         color: #ffffff;
+      }
 
-    }
-
-
-    #holder2 {
+      #holder2 {
         width: 80px;
         height: 80px;
         background-color: deepskyblue;
         display: flex;
         flex-direction: column;
-        align-items: center;;
+        align-items: center;
         justify-content: center;
         user-select: none;
         color: #ffffff;
-    }
+      }
 
-    #holder3 {
+      #holder3 {
         width: 80px;
         height: 80px;
         background-color: lightcoral;
         color: #ffffff;
         display: flex;
         flex-direction: column;
-        align-items: center;;
+        align-items: center;
         justify-content: center;
         user-select: none;
-    }
+      }
 
-    #holder4 {
+      #holder4 {
         width: 80px;
         height: 80px;
         background-color: dodgerblue;
         color: #ffffff;
         display: flex;
         flex-direction: column;
-        align-items: center;;
+        align-items: center;
         justify-content: center;
         user-select: none;
-    }
+      }
 
-    #holder5 {
+      #holder5 {
         width: 80px;
         height: 80px;
         background-color: skyblue;
         color: #ffffff;
         display: flex;
         flex-direction: column;
-        align-items: center;;
+        align-items: center;
         justify-content: center;
         user-select: none;
-    }
+      }
 
-    #holder99 {
+      #holder99 {
         width: 80px;
         height: 80px;
         background-color: lightgreen;
         display: flex;
         flex-direction: column;
-        align-items: center;;
+        align-items: center;
         justify-content: center;
         user-select: none;
         color: #ffffff;
-    }
-
-</style>
-</body>
+      }
+    </style>
+  </body>
 </html>

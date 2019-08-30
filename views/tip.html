@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title></title>
-</head>
-<body>
-<div class="msg">
+  </head>
 
-</div>
+  <body>
+    <div class="msg"></div>
 
-<style>
-    body{
+    <style>
+      body {
         margin: 0;
         padding: 0;
-    }
-    .msg {
+      }
+
+      .msg {
         width: 100vw;
         height: 100vh;
         background-color: deepskyblue;
@@ -23,17 +23,15 @@
         justify-content: center;
         align-items: center;
         border-radius: 4px;
-    }
+      }
+    </style>
 
-</style>
-
-<script>
-    const {ipcRenderer} = require('electron');
-    ipcRenderer.on('my_notifition_reply', (event, message) => {
+    <script>
+      const { ipcRenderer } = require("electron");
+      ipcRenderer.on("my_notifition_reply", (event, message) => {
         let msgobj = document.querySelector(".msg");
         msgobj.innerHTML = message;
-    })
-</script>
-
-</body>
+      });
+    </script>
+  </body>
 </html>

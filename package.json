@@ -9,11 +9,7 @@
   },
   "build": {
     "appId": "cn.psvmc",
-    "files": [
-      "main.js",
-      "views",
-      "utils"
-    ],
+    "files": ["**/*", "static/*"],
     "asar": true,
     "mac": {
       "target": [
