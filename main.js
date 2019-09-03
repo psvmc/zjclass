@@ -16,6 +16,8 @@ let rtmpWindow;
 let tipWindow;
 let classWindow;
 let blackboardWindow;
+global.winIds= {
+};
 
 function openoffice() {
   //shell.openExternal('https://github.com')
@@ -139,7 +141,9 @@ function createWindow() {
     }
   });
   rtmpWindow.loadFile("views/rtmp.html");
-  //rtmpWindow.webContents.openDevTools()
+  rtmpWindow.webContents.openDevTools()
+  global.winIds.rtmpWindowId = rtmpWindow.id;
+
 }
 
 app.on("ready", createWindow);
@@ -164,6 +168,7 @@ ipcMain.on("open_tools_window", (event, arg) => {
       y: bound.y
     });
     rtmpWindow.show();
+    rtmpWindow.webContents.send('asynchronous-msg',rtmpWindow.id);
   }
 });
 
@@ -201,3 +206,15 @@ ipcMain.on("open_blackboard_window", (event, msg) => {
 ipcMain.on("exit_app", (event, msg) => {
   app.quit();
 });
+
+
+
+// ipcMain.on('asynchronous-message', (event, arg) => {
+//   console.log(arg) // prints "ping"
+//   event.reply('asynchronous-reply', 'pong')
+// });
+
+// ipcMain.on('synchronous-message', (event, arg) => {
+//   console.log(arg) // prints "ping"
+//   event.returnValue = 'pong'
+// });

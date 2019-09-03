@@ -1,13 +1,13 @@
 // This file is required by the index.html file and will
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
-const { shell } = require("electron");
+const {shell} = require("electron");
 const path = require("path");
 // const child = require('child_process').exec;
 // var electron = require("electron");
-const { ipcRenderer } = require("electron");
-const { Recorder } = require("../utils/Recorder");
-const { app } = require("electron").remote;
+const {ipcRenderer} = require("electron");
+const {Recorder} = require("../utils/Recorder");
+const {app} = require("electron").remote;
 
 let my_recorder = new Recorder(app.getPath("downloads"));
 
@@ -26,14 +26,14 @@ document.addEventListener("dragover", e => {
 });
 
 const setIgnoreMouseEvents = require("electron").remote.getCurrentWindow()
-  .setIgnoreMouseEvents;
+    .setIgnoreMouseEvents;
 addEventListener("pointerover", function mousePolicy(event) {
   mousePolicy._canClick =
-    event.target === document.documentElement
-      ? mousePolicy._canClick && setIgnoreMouseEvents(true, { forward: true })
-      : mousePolicy._canClick || setIgnoreMouseEvents(false) || 1;
+      event.target === document.documentElement
+          ? mousePolicy._canClick && setIgnoreMouseEvents(true, {forward: true})
+          : mousePolicy._canClick || setIgnoreMouseEvents(false) || 1;
 });
-setIgnoreMouseEvents(true, { forward: true });
+setIgnoreMouseEvents(true, {forward: true});
 
 const holder0 = document.querySelector("#holder0");
 
@@ -77,3 +77,6 @@ holder5.onclick = () => {
     ipcRenderer.send("my_notifition", "录制结束了");
   }
 };
+
+
+
