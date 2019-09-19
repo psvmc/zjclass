@@ -112,8 +112,7 @@ class Recorder {
      */
     saveMedia = (blob) => {
         let reader = new FileReader();
-        let _t = this;
-        var filename = this.mediaOutputPath + "/" + this.getnowstr() + "_vedio.webm";
+        let filename = this.mediaOutputPath + "/" + this.getnowstr() + "_vedio.webm";
         reader.onload = function () {
             let buffer = Buffer.from(reader.result);
             const fs = require('fs')
