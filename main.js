@@ -105,8 +105,10 @@ function createWindow() {
       nodeIntegration: true
     }
   });
-  //blackboardWindow.webContents.openDevTools();
+
   blackboardWindow.loadFile("views/blackboard/blackboard.html");
+
+  blackboardWindow.webContents.openDevTools();
 
   var bound = mainWindow.getBounds();
   classWindow = new BrowserWindow({
