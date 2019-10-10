@@ -1,15 +1,15 @@
-$(function () {
+$(function() {
     var j_size = parseInt($("body").css("fontSize"));
     $(".prepare_lessons_resource_main").height($("#content").height() - j_size);
     $(".courseware_list").height($(".prepare_lessons_resource_main").height() - 12.2 * j_size);
     //经过效果
-    $("body").delegate(".courseware_list .courseware_li", "mouseenter", function () {
+    $("body").delegate(".courseware_list .courseware_li", "mouseenter", function() {
         $(this).find(".courseware_li_main").css("border-bottom", "1px dashed rgba(255,255,255,0)");
         if ($(this).prev().length == 1) {
             $(this).prev().find(".courseware_li_main").css("border-bottom", "1px dashed rgba(255,255,255,0)");
         }
     })
-    $("body").delegate(".courseware_list .courseware_li", "mouseleave", function () {
+    $("body").delegate(".courseware_list .courseware_li", "mouseleave", function() {
         $(this).find(".courseware_li_main").css("border-bottom", "1px dashed #cacaca");
         if ($(this).prev().length == 1) {
             $(this).prev().find(".courseware_li_main").css("border-bottom", "1px dashed #cacaca");
@@ -54,11 +54,11 @@ new Vue({
         this.loadpages();
     },
     methods: {
-        gotopage: function (newpage, oldpage) {
+        gotopage: function(newpage, oldpage) {
             this.currpage = newpage;
             this.loadData();
         },
-        loadData: function () {
+        loadData: function() {
             var _this = this;
             var cache_data = zj.cache_get("repository_class_data");
             if (cache_data) {
@@ -72,13 +72,13 @@ new Vue({
                     time: classapi.timeout
                 });
             }
-            var directors=[];
-            directors.push(_this.loginuser.directorid);     
+            var directors = [];
+            directors.push(_this.loginuser.directorid);
             classapi.post.resourceApi_api_listCourseware({
                 directorids: JSON.stringify(directors),
                 subjectid: _this.loginuser.subjectid,
                 currentPage: this.currpage
-            }, function (result) {
+            }, function(result) {
                 layer.closeAll();
                 if (classapi.validata(result)) {
                     var obj = result.obj;
@@ -93,26 +93,26 @@ new Vue({
                 }
             });
         },
-        loadpages: function () {
+        loadpages: function() {
             var _this = this;
-            var directors=[];
+            var directors = [];
             directors.push(_this.loginuser.directorid);
             classapi.post.resourceApi_api_countCourseware({
                 directorids: JSON.stringify(directors),
                 subjectid: _this.loginuser.subjectid
-            }, function (result) {
+            }, function(result) {
                 if (classapi.validata(result)) {
                     _this.pages = result.obj;
                 }
             });
         },
-        detialClick: function (resource) {
+        detialClick: function(resource) {
             if (resource.pageNumber > 0) {
                 window.resource = resource;
                 ajaxRequest("./pages/repository/repository_class_detail.html", $('#content'));
             }
         },
-        get_resource_ico: function (suffix) {
+        get_resource_ico: function(suffix) {
             suffix = suffix.toLowerCase();
             var suffix_ico = {
                 doc: "ico_word.png",
@@ -133,7 +133,7 @@ new Vue({
             }
             return ico;
         },
-        is_show_resource: function (suffix) {
+        is_show_resource: function(suffix) {
             suffix = suffix.toLowerCase();
             var suff_arr = ["doc", "docx", "xls", "xlsx", "ppt", "pptx", "pdf"];
             if (suff_arr.indexOf(suffix) != -1) {
@@ -141,9 +141,10 @@ new Vue({
             }
             return false;
         },
-        downloadfile: function (res) {
+        downloadfile: function(res) {
+            var token = zj.getcookie("xhkjedu");
             var _this = this;
-            var params = "token=" + _this.loginuser.token + "&ssouserid=" + _this.loginuser.ssouserid + "&device=webclient"
+            var params = "token=" + token + "&ssouserid=" + _this.loginuser.ssouserid + "&device=webclient"
             location.href = classapi.config.resourceUrl + "resourceApi/api_downloadResource?resourcecode=" + res.resourcecode + "&" + params;
             res.downloadnum += 1;
         }

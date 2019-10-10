@@ -16,18 +16,25 @@
     </div>
     <div class="login">
         <div class="login_main">
-            <h2>你好，欢迎登录智慧课堂！</h2>
+            <div class="login_main_left">
+                <img src="img/login/login.png" alt="" />
+            </div>
             <div class="login_main_right">
-                <div id="login_form">
-                    <div class="username">
-                        <img src="img/login/username.png" alt="" />
-                        <input @keyup.enter="loginAction" type="text" placeholder="用户名" v-model="loginname" />
+                <p>
+                    <img src="img/login/logo.png" alt="" />
+                </p>
+                <div class="log_in">
+                    <div id="login_form">
+                        <div class="username">
+                            <img src="img/login/username.png" alt="" />
+                            <input @keyup.enter="loginAction" type="text" placeholder="请输入账号/手机号/用户名" v-model="loginname" />
+                        </div>
+                        <div class="password">
+                            <img src="img/login/password.png" />
+                            <input @keyup.enter="loginAction" type="password" placeholder="请输入密码" v-model="loginpwd" />
+                        </div>
+                        <button class="register" type="button" v-on:click="loginAction()">登录</button>
                     </div>
-                    <div class="password">
-                        <img src="img/login/password.png" />
-                        <input @keyup.enter="loginAction" type="password" placeholder="密码" v-model="loginpwd" />
-                    </div>
-                    <button class="register" type="button" v-on:click="loginAction()">登录</button>
                 </div>
             </div>
         </div>

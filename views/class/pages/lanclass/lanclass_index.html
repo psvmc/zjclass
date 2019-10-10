@@ -25,7 +25,7 @@
                         <span @click="assign_homework(homework,index)" v-if="homework.status==21" v-bind:title="homework.papername"><b>{{index+1}}</b>{{homework.papername}}</span>
                     </p>
                 </div>
-                <button type="button" @click="qd_begins"><img src="img/lanclass/begins.png"/>开始抢答</button>
+                <button type="button" @click="qd_begins" v-show="qingdaid==0"><img src="img/lanclass/begins.png"/>开始抢答</button>
             </div>
             <div class="ppt">
                 <div class="ppt_main">

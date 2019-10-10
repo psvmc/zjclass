@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     /* 检测浏览器版本为ie10以下，显示提示 */
     var DEFAULT_VERSION = 10.0;
     var ua = navigator.userAgent.toLowerCase();
@@ -10,14 +10,6 @@ $(function() {
     if (safariVersion <= DEFAULT_VERSION) {
         $(".update_browser").css("display", "block");
     }
-    //忘记密码选择
-    $(".login_main_right form .cipher .remember_password input").click(function() {
-        if ($(this).prop('checked')) {
-            $(".login_main_right form .cipher .remember_password span img").css("display", "block");
-        } else {
-            $(".login_main_right form .cipher .remember_password span img").css("display", "none");
-        }
-    });
     var loginVue = new Vue({
         el: "#login_form",
         data: {
@@ -27,7 +19,7 @@ $(function() {
             show: true
         },
         methods: {
-            loginAction: function() {
+            loginAction: function () {
                 if (this.loginname == "") {
                     window.alert("用户名不能为空！");
                 } else if (this.loginpwd == "") {
@@ -42,7 +34,7 @@ $(function() {
                         loginpwd: this.loginpwd,
                         device: "pad",
                         xmid: 1
-                    }, function(result) {
+                    }, function (result) {
                         if (classapi.validata(result)) {
                             zj.addcookie("loginuser", JSON.stringify(result.obj));
                             zj.addcookie(classapi.cookiekeyname, result.obj.token);
@@ -58,7 +50,7 @@ $(function() {
 
                 }
             },
-            remenberpassword: function() {
+            remenberpassword: function () {
                 this.show = !this.show;
             }
         }

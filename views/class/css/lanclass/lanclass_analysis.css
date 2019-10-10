@@ -112,7 +112,9 @@
     overflow-y: scroll;
 }
 
+
 /*理解情况*/
+
 .understand_situation {
     padding: 0 2rem;
 }
@@ -212,6 +214,7 @@
 .ppt_page_left img,
 .ppt_page_right img {
     width: 100%;
+    height: 100%;
 }
 
 .understand {
@@ -225,7 +228,9 @@
     bottom: 0.6rem;
 }
 
+
 /*学生答题情况*/
+
 .students_answers {
     margin: 1rem 2rem;
     background-color: #ffffff;
@@ -245,7 +250,7 @@
     text-align: center;
 }
 
-.students_answers > span {
+.students_answers>span {
     display: block;
     margin: auto;
     width: 13.6rem;
@@ -374,7 +379,7 @@
     text-align: center;
 }
 
-.classroom_activity > img {
+.classroom_activity>img {
     margin: 5rem 0;
     width: 66rem;
 }

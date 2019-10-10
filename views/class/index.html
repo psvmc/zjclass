@@ -15,51 +15,54 @@
 
 <body>
     <!-- 检测浏览器版本为ie10以下，显示提示 -->
-    <div class="update_browser">
+    <div class="update_browser" v-cloak>
         <p>系统检测到您正在使用ie8以下内核的浏览器，不能实现完美体验，请及时更新浏览器版本！</p>
         <a href="https://www.google.cn/chrome/" target="_blank">点击下载</a>
     </div>
     <div class="main">
-        <div class="logo">
-            <img src="img/prepare_lessons/LOGO.png" />
-            <div class="select_chapter" v-cloak>
-                <img class="select_chapter_bg" src="img/prepare_lessons/select_chapter.png" />
-                <div class="select_chapter_main">
-                    <span class="up" v-on:click="loadpredirector()">
-                    上一节
-                </span>
-                    <div class="knob">
-                        <h2 v-cloak>{{loginuser.directorname}} <img src="img/prepare_lessons/xiala.png" /></h2>
-                        <div class="select_chapter_list">
-                            <div class="select_chapter_option select_chapter_option_1" v-for="d1 in directors">
-                                <p v-bind:class="{pitch_on:d1.id==loginuser.directorid}" @click="directorclick(d1)">
-                                    {{d1.directorname}}
-                                </p>
-                                <div class="select_chapter_option select_chapter_option_2" v-for="d2 in d1.child">
-                                    <p v-bind:class="{pitch_on:d2.id==loginuser.directorid}" @click="directorclick(d2)">
-                                        {{d2.directorname}}</p>
-                                    <div class="select_chapter_option select_chapter_option_3" v-for="d3 in d2.child">
-                                        <p v-bind:class="{pitch_on:d3.id==loginuser.directorid}" @click="directorclick(d3)">{{d3.directorname}}</p>
+        <div class="logo_f">
+            <div class="logo">
+                <img src="img/prepare_lessons/LOGO.png" />
+                <div class="personal" v-cloak>
+                    <div class="person_information">
+                        <img src="img/prepare_lessons/personal.png" />
+                        <span v-cloak>{{loginuser.username}}（{{loginuser.subjectname}}）</span>
+                    </div>
+                    <span class="exit">
+                            <img src="img/public/exit.png"/>
+                            退出
+                        </span>
+                </div>
+            </div>
+            <div class="select_chapter_f">
+                <div class="select_chapter" v-cloak>
+                    <img class="select_chapter_bg" src="img/prepare_lessons/select_chapter.png" />
+                    <div class="select_chapter_main">
+                        <span class="up" v-on:click="loadpredirector()">
+                                上一节
+                            </span>
+                        <div class="knob">
+                            <h2 v-cloak>{{loginuser.directorname}} <img src="img/prepare_lessons/xiala.png" /></h2>
+                            <div class="select_chapter_list">
+                                <div class="select_chapter_option select_chapter_option_1" v-for="d1 in directors">
+                                    <p v-bind:class="{pitch_on:d1.id==loginuser.directorid}" @click="directorclick(d1)">
+                                        {{d1.directorname}}
+                                    </p>
+                                    <div class="select_chapter_option select_chapter_option_2" v-for="d2 in d1.child">
+                                        <p v-bind:class="{pitch_on:d2.id==loginuser.directorid}" @click="directorclick(d2)">
+                                            {{d2.directorname}}</p>
+                                        <div class="select_chapter_option select_chapter_option_3" v-for="d3 in d2.child">
+                                            <p v-bind:class="{pitch_on:d3.id==loginuser.directorid}" @click="directorclick(d3)">{{d3.directorname}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <span class="down" v-on:click="loadnextdirector()">下一节</span>
                     </div>
-                    <span class="down" v-on:click="loadnextdirector()">下一节</span>
                 </div>
-            </div>
-            <div class="personal" v-cloak>
-                <div class="person_information">
-                    <img src="img/prepare_lessons/personal.png" />
-                    <span v-cloak>{{loginuser.username}}（{{loginuser.subjectname}}）</span>
-                </div>
-                <span class="exit">
-                <img src="img/public/exit.png"/>
-                退出
-            </span>
             </div>
         </div>
-
         <div class="main_important">
             <div class="left_menu">
                 <div class="prepare_lessons loadurl" data-url="pages/prepare_lessons.html" number="0">

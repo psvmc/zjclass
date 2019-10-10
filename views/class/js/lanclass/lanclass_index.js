@@ -124,62 +124,34 @@ var lanclass = new Vue({
                 that.socket = null;
             }
             that.socket = new WebSocket(that.wsurl);
-            that.socket.onopen = function() {
-                that.teacheronlinetype = "老师上线";
-                that.shangxiansocket()
-            };
-            that.socket.onclose = function() {
-                that.teacheronlinetype = "老师离线";
-                setTimeout(function() {
-                    if (window.corba.scrockstate == 1) { //没有正常关闭需要重连                  
-                        that.connect_socket();
-                    } else {
-                        that.teacheroutline();
-                    }
-                }, 2000)
-            };
             that.socket.onmessage = function(event) {
                 if (that.isJSON(event.data)) {
                     var mes = JSON.parse(event.data);
-                    console.log(mes);
-                    if (mes.type == 1001 && mes.roomid == window.corba.crid) { //收到学生上线消息
-                        if (mes.fromuser == that.loginuser.ssouserid) {} else {
-                            that.touser = [];
-                            that.onlinestu = [];
-                            that.outlinestu = [];
-                            var allstudent = that.allstudent;
-                            for (var i = 0; i < mes.bodystr.onlineuser.length; i++) {
-                                var online = mes.bodystr.onlineuser;
-                                if (online[i] != that.loginuser.ssouserid) {
-                                    that.touser.push(online[i]);
-                                    for (var j = 0; j < allstudent.length; j++) {
-                                        if (online[i] == allstudent[j].ssouserid) {
-                                            that.onlinestu.push(that.allstudent[j]);
-                                            allstudent.splice(j, 1);
-                                        }
-                                    }
-                                }
-                                that.outlinestu = allstudent;
+                    //console.log(mes);
+                    if (mes.type == 1001 && mes.roomid == window.corba.crid) { //收到老师或学生上线消息
+                        that.touserarr = mes.bodystr.onlineuser;
+                        that.onlinestu = [];
+                        that.outlinestu = [];
+                        var online = mes.bodystr.onlineuser;
+                        for (var i = 0; i < that.allstudent.length; i++) {
+                            if (online.indexOf(that.allstudent[i].ssouserid) != -1) {
+                                that.onlinestu.push(that.allstudent[i]);
+                            } else {
+                                that.outlinestu.push(that.allstudent[i]);
                             }
                         }
                     } else if (mes.type == 1002 && mes.roomid == window.corba.crid) { //收到学生下线消息
                         if (mes.fromuser == that.loginuser.ssouserid) {} else {
-                            that.touser = [];
+                            that.touserarr = mes.bodystr.onlineuser;
                             that.onlinestu = [];
                             that.outlinestu = [];
-                            var allstudent = that.allstudent;
-                            for (var i = 0; i < mes.bodystr.onlineuser.length; i++) {
-                                var online = mes.bodystr.onlineuser;
-                                if (online[i] != that.loginuser.ssouserid) {
-                                    that.touser.push(online[i]);
-                                    for (var j = 0; j < allstudent.length; j++) {
-                                        if (online[i] == allstudent[j].ssouserid) {
-                                            that.onlinestu.push(that.allstudent[j]);
-                                            allstudent.splice(j, 1);
-                                        }
-                                    }
+                            var online = mes.bodystr.onlineuser;
+                            for (var i = 0; i < that.allstudent.length; i++) {
+                                if (online.indexOf(that.allstudent[i].ssouserid) != -1) {
+                                    that.onlinestu.push(that.allstudent[i]);
+                                } else {
+                                    that.outlinestu.push(that.allstudent[i]);
                                 }
-                                that.outlinestu = allstudent;
                             }
                         }
                     } else if (mes.type == 2002 && mes.roomid == window.corba.crid) { //收到ppt页面反馈
@@ -245,12 +217,14 @@ var lanclass = new Vue({
                             ajaxRequest("./pages/lanclass/result_solveproblem.html", $('.pop-up_box'));
                         }
                     } else if (mes.type == 4001 && mes.roomid == window.corba.crid) { //收到发起抢答
+                        that.qingdaid = mes.bodystr.caid;
                         that.begins = 1;
                         that.qingdastu = []; //清空抢答列表
                         $(".student_basket_main").width(14 * that.j_size);
                         $(".lanclass_main").width($(".lanclass").width() - 16.4 * that.j_size);
                     } else if (mes.type == 4003 && mes.roomid == window.corba.crid) { //收到教师结束抢答
                         that.begins = 0;
+                        that.qingdaid = 0;
                     } else if (mes.type == 4004 && mes.roomid == window.corba.crid) { //收到教师选择学生抢答
                         for (var i = 0; i < that.qingdastu.length; i++) {
                             if (that.qingdastu[i].ssouserid == mes.touser[0]) {
@@ -335,9 +309,7 @@ var lanclass = new Vue({
                         window.corba.paperposition = index;
                         window.corba.papername = homework.papername;
                         window.corba.openpaper = "check_result";
-                        console.log($(".mask_layer").css("display"));
                         $(".mask_layer").css("display", "block");
-                        console.log($(".mask_layer").css("display"));
                         window.corba.questionnum = 0;
                         ajaxRequest("./pages/lanclass/result_solveproblem.html", $('.pop-up_box'));
                         $(".pop-up_box").css("display", "block");
@@ -356,7 +328,6 @@ var lanclass = new Vue({
                             $('.studentbiji').remove();
                         }
                     } else if (mes.type == 7001 && mes.roomid == window.corba.crid) { //收到教师发送绘图
-                        //console.log(mes.bodystr.points);
                         var points = mes.bodystr.points;
                         var pagenum = mes.bodystr.pagenum;
                         // 保存当前笔迹
@@ -383,6 +354,20 @@ var lanclass = new Vue({
                         window.sessionStorage.setItem(pagenum, "");
                     }
                 }
+            };
+            that.socket.onopen = function() {
+                that.teacheronlinetype = "老师上线";
+                that.shangxiansocket()
+            };
+            that.socket.onclose = function() {
+                that.teacheronlinetype = "老师离线";
+                setTimeout(function() {
+                    if (window.corba.scrockstate == 1) { //没有正常关闭需要重连                  
+                        that.connect_socket();
+                    } else {
+                        that.teacheroutline();
+                    }
+                }, 2000)
             };
         },
         clearcanvas: function() { //清除canvas画布
@@ -425,12 +410,14 @@ var lanclass = new Vue({
                 onlined: 1,
             }, function(result) {
                 layer.close(index);
+                var touser = [];
+                touser.push(_this.loginuser.ssouserid);
                 if (classapi.validata(result)) {
                     var msg = {
                         "type": 1001,
                         "roomid": _this.roomid,
                         "fromuser": _this.loginuser.ssouserid,
-                        "touser": [],
+                        "touser": touser,
                         "device": "web"
                     };
                     msg = JSON.stringify(msg); // 转换为 JSON 字符串的值
@@ -592,12 +579,6 @@ var lanclass = new Vue({
                             result.obj[i].headportrait = _this.showImageUrl + result.obj[i].headportrait;
                         }
                         _this.allstudent = result.obj;
-                        if (result.obj[i].onlined == 1) { //获取在线的学生
-                            _this.onlinestu.push(result.obj[i])
-                            _this.touserarr.push(result.obj[i].ssouserid);
-                        } else { //获取不在线的学生
-                            _this.outlinestu.push(result.obj[i]);
-                        }
                     }
                 }
             });
@@ -623,7 +604,6 @@ var lanclass = new Vue({
             });
         },
         qd_begins: function() { //教师发起抢答接口
-            this.studentonline();
             this.begins = 1;
             this.qingdastu = []; //清空抢答列表
             $(".student_basket_main").width(14 * this.j_size);
@@ -700,6 +680,7 @@ var lanclass = new Vue({
             }, function(result) {
                 layer.close(index);
                 if (classapi.validata(result)) {
+                    _this.qingdaid = 0;
                     _this.closeqingda_socket();
                 }
             })

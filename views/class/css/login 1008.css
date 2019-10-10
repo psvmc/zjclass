@@ -62,68 +62,81 @@ body {
 .login {
     width: 100%;
     height: 100%;
-    background: url(../img/login/bg.jpg);
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #f4f4f4;
 }
 
 .login_main {
-    display: flex;
-    flex-direction: column;
+    width: 94.4rem;
+    height: 48.8rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0rem 0.9rem 0rem rgba(87, 117, 182, 0.29);
+    border-radius: 1.3rem;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -47.2rem;
+    margin-top: -24.4rem;
 }
 
-.login_main h2 {
-    font-size: 2.6rem;
-    color: #ffffff;
-    text-align: center;
-    line-height: 6rem;
+.login_main_left {
+    width: 45rem;
+    height: 100%;
+    float: left;
+}
+
+.login_main_left img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45rem;
 }
 
 .login_main_right {
-    width: 100%;
-    padding: 5rem 0 3rem 0;
-    background: rgba(255, 255, 255, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1rem;
+    float: left;
+    width: 49.4rem;
 }
 
-#login_form {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.login_main_right>p {
+    margin-top: 6.2rem;
+    text-align: center;
 }
 
-.username,
-.password {
-    width: 80%;
-    height: 12%;
+.login_main_right>p>img {
+    width: 17.6rem;
+}
+
+.login_main_right #login_form {
+    margin: 5rem auto 0 auto;
+    width: 40.6rem;
+}
+
+.login_main_right .username,
+.login_main_right .password {
+    width: 40.6rem;
+    height: 4.3rem;
     background-color: #ffffff;
-    border: 1px solid rgba(223, 223, 223, 1);
-    display: flex;
-    align-items: center;
+    border-radius: 0.3rem;
+    border: solid 0.1rem #cdcdcd;
 }
 
-.username {
-    margin-bottom: 2.4rem;
+.login_main_right .username {
+    margin-bottom: 2rem;
 }
 
-.password {
-    margin-bottom: 3.6rem;
+.login_main_right .password {
+    margin-bottom: 2.6rem;
 }
 
-.username img,
-.password img {
-    width: 25px;
-    height: 22px;
-    padding: 0 1rem;
+.login_main_right .username img,
+.login_main_right .password img {
+    margin: 1.1rem 1.2rem;
+    float: left;
+    width: 2rem;
 }
 
-.username input,
-.password input {
+.login_main_right .username input,
+.login_main_right .password input {
+    float: left;
     border: none;
     font-family: MicrosoftYaHeiLight;
     font-size: 1.8rem;
@@ -131,19 +144,18 @@ body {
     font-stretch: normal;
     line-height: 4.2rem;
     letter-spacing: 1px;
-    color: #5D5D5D;
+    color: #999999;
     width: 36.2rem;
     outline: none;
     overflow: hidden;
     height: 4.2rem;
-    padding-left: 10px;
 }
 
-.cipher {
+.login_main_right .cipher {
     margin-bottom: 8.6rem;
 }
 
-.cipher .remember_password {
+.login_main_right .cipher .remember_password {
     float: left;
     font-family: MicrosoftYaHeiLight;
     font-size: 1.3rem;
@@ -156,7 +168,7 @@ body {
     padding-left: 2.2rem;
 }
 
-.cipher .remember_password span {
+.login_main_right .cipher .remember_password span {
     width: 1.4rem;
     height: 1.4rem;
     background-color: #ffffff;
@@ -168,14 +180,14 @@ body {
     left: 0;
 }
 
-.cipher .remember_password span img {
+.login_main_right .cipher .remember_password span img {
     width: 0.9rem;
     position: absolute;
     top: 0.4rem;
     left: 0.3rem;
 }
 
-.cipher .remember_password input {
+.login_main_right .cipher .remember_password input {
     position: absolute;
     top: 0;
     left: 0;
@@ -185,7 +197,7 @@ body {
     opacity: 0;
 }
 
-.cipher a {
+.login_main_right .cipher a {
     float: right;
     font-family: MicrosoftYaHeiLight;
     font-size: 1.3rem;
@@ -197,15 +209,16 @@ body {
     text-decoration: none;
 }
 
-button {
-    width: 80%;
-    height: 14%;
-    background-color: #5b8dfd;
+.login_main_right button {
+    width: 40.5rem;
+    height: 4.4rem;
+    background-color: #3386e6;
+    border-radius: 2.2rem;
     font-family: MicrosoftYaHei;
     font-size: 2.2rem;
     font-weight: normal;
     font-stretch: normal;
-    letter-spacing: 1rem;
+    letter-spacing: 0rem;
     color: #ffffff;
     line-height: 4.4rem;
     text-align: center;
@@ -215,7 +228,6 @@ button {
 }
 
 @media only screen and (max-width: 1681px) {
-
     body,
     html {
         font-size: 14px;
@@ -223,7 +235,6 @@ button {
 }
 
 @media only screen and (max-width: 1601px) {
-
     body,
     html {
         font-size: 13.5px;
@@ -231,7 +242,6 @@ button {
 }
 
 @media only screen and (max-width: 1441px) {
-
     body,
     html {
         font-size: 12px;

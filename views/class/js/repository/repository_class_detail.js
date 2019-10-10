@@ -1,16 +1,16 @@
-$(function () {
+$(function() {
     var j_size = parseInt($("body").css("fontSize"));
     $(".prepare_lessons_class_detail_main").height($("#content").height() - j_size);
     $(".kejian_detail").height($(".prepare_lessons_class_detail_main").height() - 14 * j_size);
     //详情
-    $(".class_detail_operation .class_detail_detail_ico").mouseover(function () {
+    $(".class_detail_operation .class_detail_detail_ico").mouseover(function() {
         $(this).find(".class_detail_detail").stop().slideDown();
     })
-    $(".class_detail_operation .class_detail_detail_ico").mouseleave(function () {
-        $(this).find(".class_detail_detail").stop().slideUp();
-    })
-    //点击返回
-    $(".class_detail_operation").delegate(".backtrack", "click", function () {
+    $(".class_detail_operation .class_detail_detail_ico").mouseleave(function() {
+            $(this).find(".class_detail_detail").stop().slideUp();
+        })
+        //点击返回
+    $(".class_detail_operation").delegate(".backtrack", "click", function() {
         ajaxRequest(historyarr[historyarr.length - 2], $('#content'));
     })
 })
@@ -49,7 +49,7 @@ new Vue({
         this.loadData();
     },
     methods: {
-        loadData: function () {
+        loadData: function() {
             var _this = this;
             var index = layer.load(0, {
 
@@ -57,7 +57,7 @@ new Vue({
             });
             classapi.post.resourceApi_api_resourceDetail({
                 resourcecode: this.resource.resourcecode
-            }, function (result) {
+            }, function(result) {
                 layer.close(index);
                 if (classapi.validata(result)) {
                     var obj = result.obj;
@@ -65,7 +65,7 @@ new Vue({
                 }
             });
         },
-        collectClick: function () {
+        collectClick: function() {
             var that = this;
             var index = layer.load(0, {
 
@@ -74,7 +74,7 @@ new Vue({
             if (this.resource_detail.count > 0) {
                 classapi.post.resourceApi_api_cancelCollection({
                     resourceid: this.resource_detail.resourceid
-                }, function (result) {
+                }, function(result) {
                     layer.close(index);
                     if (classapi.validata(result)) {
                         if (result.code == 0) {
@@ -86,7 +86,7 @@ new Vue({
             } else {
                 classapi.post.resourceApi_api_resourceCollection({
                     resourcecode: this.resource_detail.resourcecode
-                }, function (result) {
+                }, function(result) {
                     layer.close(index);
                     if (classapi.validata(result)) {
                         if (result.code == 0) {
@@ -98,12 +98,12 @@ new Vue({
             }
 
         },
-        delClick: function () {
+        delClick: function() {
             var that = this;
             layer.confirm('确定要删除该资源吗？', {
                 skin: 'layui-layer-lan',
                 btn: ['确定', '取消'] //按钮
-            }, function () {
+            }, function() {
 
                 var index = layer.load(0, {
 
@@ -111,7 +111,7 @@ new Vue({
                 });
                 classapi.post.resourceApi_api_deleteResource({
                     resourceid: this.resource_detail.resourceid
-                }, function (result) {
+                }, function(result) {
                     layer.close(index);
                     if (classapi.validata(result)) {
                         if (result.code == 0) {
@@ -121,14 +121,15 @@ new Vue({
                     }
                 });
 
-            }, function () {
+            }, function() {
 
             });
 
         },
-        downloadfile: function () {
+        downloadfile: function() {
+            var token = zj.getcookie("xhkjedu");
             var _this = this;
-            var params = "token=" + _this.loginuser.token + "&ssouserid=" + _this.loginuser.ssouserid + "&device=webclient"
+            var params = "token=" + token + "&ssouserid=" + _this.loginuser.ssouserid + "&device=webclient"
             location.href = classapi.config.resourceUrl + "resourceApi/api_downloadResource?resourcecode=" + _this.resource_detail.resourcecode + "&" + params;
             _this.resource_detail.downloadnum += 1;
         }

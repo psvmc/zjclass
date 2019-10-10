@@ -63,6 +63,10 @@ html {
     font-size: 16px;
 }
 
+.logo_f {
+    position: relative;
+}
+
 .main {
     font-size: 1rem;
     opacity: 0;
@@ -92,12 +96,7 @@ html {
     margin: auto;
 }
 
-.main .logo {
-    padding: 0.5rem 0 1.4rem 0;
-    position: relative;
-}
-
-.main>.logo>img {
+.logo>img {
     float: left;
     width: 11.6rem;
     margin: 1.6rem 0 0 1rem;
@@ -106,6 +105,9 @@ html {
 .main .logo .personal {
     float: right;
     margin-top: 2rem;
+    position: absolute;
+    right: 0;
+    z-index: 3;
 }
 
 .main .logo .personal .person_information {
@@ -161,29 +163,40 @@ html {
 
 /*选择章节*/
 
-.select_chapter {
-    width: 70rem;
-    position: absolute;
-    z-index: 2;
-    left: 50%;
-    margin-left: -35rem;
+.logo {
+    padding: 0.5rem 0 1.4rem 0;
 }
 
-.select_chapter img.select_chapter_bg {
+.select_chapter_f {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
     width: 100%;
-    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.select_chapter {
+    width: 68rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.select_chapter img.select_chapter_bg {
+    width: 100%;
+    position: absolute;
+    left: 0;
 }
 
 .select_chapter .select_chapter_main {
-    position: absolute;
-    top: 1.2rem;
-    z-index: 3;
-    left: 50%;
-    margin-left: -32rem;
     width: 64rem;
+    position: absolute;
+    z-index: 2;
 }
 
 .select_chapter .select_chapter_main span {
@@ -198,9 +211,14 @@ html {
     float: left;
 }
 
+.select_chapter .select_chapter_main span.down {
+    float: right;
+}
+
 .select_chapter .select_chapter_main .knob {
     float: left;
-    margin: 0 4rem;
+    margin: 0 2rem;
+    position: relative;
 }
 
 .select_chapter .select_chapter_main .knob h2 {
@@ -238,6 +256,8 @@ html {
     overflow-y: scroll;
     padding: 12px 0;
     display: none;
+    position: absolute;
+    width: 100%;
 }
 
 .select_chapter_option p {
@@ -514,10 +534,8 @@ html {
 @media only screen and (max-width: 1367px) {
     .select_chapter {
         width: 66rem;
-        margin-left: -33rem;
     }
     .select_chapter .select_chapter_main {
-        margin-left: -31rem;
         width: 62rem;
     }
     .select_chapter .select_chapter_main .knob h2 {
@@ -531,11 +549,9 @@ html {
 @media only screen and (max-width: 1281px) {
     .select_chapter {
         width: 58rem;
-        margin-left: -29rem;
     }
     .select_chapter .select_chapter_main {
-        margin-left: -28rem;
-        width: 56rem;
+        width: 54rem;
     }
     .select_chapter .select_chapter_main span {
         height: 2.9rem;

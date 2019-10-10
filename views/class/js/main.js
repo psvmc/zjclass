@@ -36,6 +36,9 @@ $(function() {
             btn: ['确定', '取消'] //按钮
         }, function() {
             zj.delcookie("loginuser");
+            zj.delcookie("device");
+            zj.delcookie("xhkjedu");
+            zj.delcookie("historyarr");
             window.location.href = "login.html";
 
         }, function() {
@@ -101,17 +104,13 @@ function ajaxRequest(url, ele, parameter) {
     }
 }
 
-if (!zj.getcookie("loginuser")) {
-    window.location.href = "login.html";
-}
-
 var event = new Vue();
 window.vue_event = event;
 
 new Vue({
     el: ".personal",
     data: {
-        loginuser: JSON.parse(zj.getcookie("loginuser"))
+        loginuser: ""
     },
     mounted: function() {
         var _this = this;
@@ -129,7 +128,7 @@ new Vue({
 new Vue({
     el: ".select_chapter",
     data: {
-        loginuser: JSON.parse(zj.getcookie("loginuser")),
+        loginuser: "",
         directors: [],
         predirector: {},
         nextdirector: {}
@@ -137,7 +136,6 @@ new Vue({
     mounted: function() {
         this.validateuser();
         window.corba = {};
-        this.loadDirectors();
         var _this = this;
         event.$on("loginuser_change", function(loginuser) {
             _this.loginuser = loginuser;
@@ -159,11 +157,12 @@ new Vue({
                     }
                     if (zj.getcookie("loginuser")) {
                         _this.loginuser = $.parseJSON(zj.getcookie("loginuser"));
+                        _this.loadDirectors();
                     } else {
                         location.href = "./login.html";
                     }
                 } else if (result.code == 1) {
-                    layer.msg(data.msg, { time: 1000 });
+                    layer.msg(result.msg, { time: 1000 });
                     window.location.href = "login.html";
                 }
             });

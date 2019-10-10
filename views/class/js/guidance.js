@@ -1,18 +1,18 @@
-$(function () {
-    $(".main_top div").click(function () {
+$(function() {
+    $(".main_top div").click(function() {
         window.location.href = "index.html",
             zj.addcookie("pageType", $(this).attr("dataurl"));
         zj.addcookie("pageTypeNumber", $(this).attr("number"));
     });
-    $(".user>img").click(function () {
+    $(".user>img").click(function() {
         layer.confirm('确定要退出登录吗？', {
             skin: 'layui-layer-lan',
             btn: ['确定', '取消'] //按钮
-        }, function () {
+        }, function() {
             zj.delcookie("loginuser");
             window.location.href = "login.html";
 
-        }, function () {
+        }, function() {
 
         });
 
@@ -74,15 +74,14 @@ var user_vue = new Vue({
         }
     },
     methods: {
-        validateuser: function () {
+        validateuser: function() {
             var _this = this;
-            classapi.post.teacherclass_index_validate_user({}, function (result) {
+            classapi.post.teacherclass_index_validate_user({}, function(result) {
                 if (classapi.validata(result)) {
                     zj.addcookie("loginuser", JSON.stringify(result.obj));
                     if (window.localStorage) {
                         window.localStorage["loginuser"] = JSON.stringify(result.obj);
                     }
-
                     if (zj.getcookie("loginuser")) {
                         _this.loginuser = $.parseJSON(zj.getcookie("loginuser"));
                     } else {
