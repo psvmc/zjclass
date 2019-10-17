@@ -1,15 +1,15 @@
-// This file is required by the index.html file and will
-// be executed in the renderer process for that window.
-// All of the Node.js APIs are available in this process.
+
 const {shell} = require("electron");
 const path = require("path");
-// const child = require('child_process').exec;
-// var electron = require("electron");
+
 const {ipcRenderer} = require("electron");
 const {Recorder} = require("../utils/Recorder");
 const {app} = require("electron").remote;
+const robot = require("robotjs");
 
 let my_recorder = new Recorder(app.getPath("downloads"));
+
+console.info(process.versions);
 
 document.addEventListener("drop", e => {
   e.preventDefault();
@@ -48,8 +48,11 @@ holder1.onclick = () => {
 
 const holder2 = document.querySelector("#holder2");
 
+
 holder2.onclick = () => {
   shell.openItem(path.join(__dirname, "../static/走进河南.pptx"));
+  // ipcRenderer.send("open_ppt_window", "tools");
+  robot.keyTap("f5");
 };
 
 const holder3 = document.querySelector("#holder3");

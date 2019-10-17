@@ -1,7 +1,7 @@
 var zj = zj || {};
 
 zj.addcookie = function(key, value) {
-    if (document.cookie || document.cookie == "") {
+    if (document.cookie) {
         zj.delcookie(key);
         if (classapi.domain) {
             $.cookie(key, value, { expires: 7, path: '/', domain: classapi.domain, secure: false });
@@ -14,7 +14,7 @@ zj.addcookie = function(key, value) {
 };
 
 zj.delcookie = function(key) {
-    if (document.cookie || document.cookie == "") {
+    if (document.cookie) {
         if (classapi.domain) {
             $.cookie(key, null, { expires: -1, path: '/', domain: classapi.domain, secure: false });
         } else {

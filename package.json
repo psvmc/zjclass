@@ -5,11 +5,15 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --win --x64"
+    "dist": "electron-builder --win --x64",
+    "rebuild": "npm rebuild --runtime=electron --target=6.0.12 --disturl=https://atom.io/download/atom-shell --abi=72"
   },
   "build": {
     "appId": "cn.psvmc",
-    "files": ["**/*", "static/*"],
+    "files": [
+      "**/*",
+      "static/*"
+    ],
     "asar": true,
     "mac": {
       "target": [
@@ -25,10 +29,12 @@
     }
   },
   "devDependencies": {
-    "electron": "^6.0.2",
+    "electron": "^6.0.12",
     "electron-builder": "^21.2.0"
   },
   "dependencies": {
-    "fluent-ffmpeg": "^2.1.2"
+    "electron-rebuild": "^1.8.6",
+    "fluent-ffmpeg": "^2.1.2",
+    "robotjs": "git+https://github.com/octalmage/robotjs.git"
   }
 }
