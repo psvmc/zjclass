@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder --win --x64",
-    "rebuild": "npm rebuild --runtime=electron --target=6.0.12 --disturl=https://atom.io/download/atom-shell --abi=72"
+    "rebuild": ".\\node_modules\\.bin\\electron-rebuild.cmd"
   },
   "build": {
     "appId": "cn.psvmc",
@@ -29,12 +29,15 @@
     }
   },
   "devDependencies": {
-    "electron": "^6.0.12",
+    "electron": "^5.0.11",
     "electron-builder": "^21.2.0"
   },
   "dependencies": {
     "electron-rebuild": "^1.8.6",
     "fluent-ffmpeg": "^2.1.2",
-    "robotjs": "git+https://github.com/octalmage/robotjs.git"
+    "ffi": "github:lxe/node-ffi#node-12",
+    "ref": "github:lxe/ref#node-12",
+    "ref-array": "github:lxe/ref-array#node-12",
+    "ref-struct": "github:lxe/ref-struct#node-12"
   }
 }

@@ -5,7 +5,6 @@ const path = require("path");
 const {ipcRenderer} = require("electron");
 const {Recorder} = require("../utils/Recorder");
 const {app} = require("electron").remote;
-const robot = require("robotjs");
 
 let my_recorder = new Recorder(app.getPath("downloads"));
 
@@ -52,7 +51,6 @@ const holder2 = document.querySelector("#holder2");
 holder2.onclick = () => {
   shell.openItem(path.join(__dirname, "../static/走进河南.pptx"));
   // ipcRenderer.send("open_ppt_window", "tools");
-  robot.keyTap("f5");
 };
 
 const holder3 = document.querySelector("#holder3");

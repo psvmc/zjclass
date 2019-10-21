@@ -5,7 +5,7 @@ const path = require("path");
 const {ipcMain} = require("electron");
 const {useCapture} = require("./views/capture/capture-main");
 
-const {shell} = require("electron");
+const user32 = require('./utils/user32').User32;
 
 let mainWindow;
 let rtmpWindow;
@@ -45,6 +45,7 @@ function createWindow() {
         transparent: true, //设置透明
         alwaysOnTop: true, //窗口是否总是显示在其他窗口之前
         hasShadow: false,
+        show: false,
         webPreferences: {
             nodeIntegration: true,
             devTools: true
@@ -52,6 +53,13 @@ function createWindow() {
     });
     mainWindow.webContents.on('did-finish-load', () => {
         mainWindow.webContents.openDevTools();
+    });
+
+    mainWindow.once('ready-to-show', () => {
+        let hwnd = mainWindow.getNativeWindowHandle() //获取窗口句柄。
+        console.log(hwnd);
+        user32.GetSystemMenu(hwnd.readUInt32LE(0), true); //禁用系统菜单.
+        mainWindow.show()
     });
 
     // and load the index.html of the app.
