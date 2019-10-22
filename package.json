@@ -34,7 +34,6 @@
   },
   "dependencies": {
     "electron-rebuild": "^1.8.6",
-    "fluent-ffmpeg": "^2.1.2",
     "ffi": "github:lxe/node-ffi#node-12",
     "ref": "github:lxe/ref#node-12",
     "ref-array": "github:lxe/ref-array#node-12",

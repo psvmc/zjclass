@@ -1,7 +1,5 @@
-// Modules to control application life and create native browser window
 const {app, BrowserWindow} = require("electron");
 const electron = require("electron");
-const path = require("path");
 const {ipcMain} = require("electron");
 const {useCapture} = require("./views/capture/capture-main");
 
